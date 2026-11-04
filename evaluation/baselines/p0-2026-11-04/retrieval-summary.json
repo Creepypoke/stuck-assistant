@@ -1,0 +1,17 @@
+{
+  "answer_scoring": "manual review required; retrieval hits are not answer correctness",
+  "errors": 0,
+  "hybrid": {
+    "answerable": 19,
+    "candidate_complete": 18,
+    "context_complete": 17,
+    "context_hit": 17
+  },
+  "records": 40,
+  "vector": {
+    "answerable": 19,
+    "candidate_complete": 18,
+    "context_complete": 17,
+    "context_hit": 17
+  }
+}

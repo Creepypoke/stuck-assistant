@@ -445,3 +445,12 @@ go vet ./...
 - Query, retrieval и генерация ответа через LLM пока недоступны из CLI.
 - `/ask` использует vector retrieval по локальному `.rag`-файлу и llama.cpp.
 - Автоматический поиск прохождений и регистрация игр пока не реализованы.
+
+## Воспроизводимая оценка P0
+
+[Evaluation](evaluation/README.md): автономный retrieval-only, локальное
+сравнение `default`/`strict-ru`, oracle-context, manifest с GGUF SHA256 и trace
+стадий. OpenCode не требуется. Для сервиса доступны
+`WALKTHROUGH_PROMPT_PROFILE` и `WALKTHROUGH_RETRIEVAL_MODE=hybrid|vector`.
+Гибридный поиск объединяет cosine и FTS5/BM25 через RRF; `cosine_score` в debug
+не является итоговым hybrid-рангом. Отдельные оценки теперь доступны в trace.

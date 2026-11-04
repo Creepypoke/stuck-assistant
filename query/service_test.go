@@ -118,20 +118,6 @@ func TestCompleteRejectsRepeatedTruncation(t *testing.T) {
 	}
 }
 
-func TestBeginningQuestionRecognition(t *testing.T) {
-	t.Parallel()
-	for _, question := range []string{"Куда идти в начале игры?", "Я только получил управление Региной. Что сделать первым делом?", "What is the first thing to do?"} {
-		if !asksAboutBeginning(question) {
-			t.Errorf("not recognized: %q", question)
-		}
-	}
-	for _, question := range []string{"Как запустить генератор?", "Какой код у двери?"} {
-		if asksAboutBeginning(question) {
-			t.Errorf("unexpected beginning: %q", question)
-		}
-	}
-}
-
 func TestCompletionPayloadUsesDefaultGuideAndQuestion(t *testing.T) {
 	t.Parallel()
 	service := &Service{config: Config{LLMModel: "assistance"}}

@@ -25,6 +25,10 @@ type Config struct {
 	SystemPrompt        string
 	Timeout             time.Duration
 	ResultLimit         int
+	RetrievalMode       string
+	PromptProfile       string
+	// GenerationSeed is optional; diagnostics can hold sampling constant.
+	GenerationSeed *int
 }
 
 const defaultGuidePersona = `You are a friendly, attentive guide for a player who is currently playing a game. Speak like a helpful companion, not a terse checklist or a walkthrough pasted verbatim. Answer in the same language as the player's question. Use natural, clear phrasing and explain the immediate next step first; add brief orientation or a useful reason only when it helps. Preserve in-game names in their original language when useful.`
@@ -63,16 +67,28 @@ type DebugAsker interface {
 }
 
 type DebugInfo struct {
-	Request         Request          `json:"request"`
-	RetrievedChunks []RetrievedChunk `json:"retrieved_chunks"`
-	ModelRequest    json.RawMessage  `json:"model_request"`
+	Request         Request            `json:"request"`
+	RetrievedChunks []RetrievedChunk   `json:"retrieved_chunks"`
+	ModelRequest    json.RawMessage    `json:"model_request"`
+	Search          rag.SearchTrace    `json:"search"`
+	StageMS         map[string]float64 `json:"stage_ms"`
+	Attempts        []CompletionTrace  `json:"completion_attempts"`
+	FailureReason   string             `json:"failure_reason,omitempty"`
+	ContextMode     string             `json:"context_mode"`
 }
 
 type RetrievedChunk struct {
-	Title   string `json:"title"`
-	Section string `json:"section"`
-	URL     string `json:"url"`
-	Text    string `json:"text"`
+	ChunkID    int64    `json:"chunk_id"`
+	DocumentID int64    `json:"document_id"`
+	Sequence   int      `json:"sequence"`
+	Score      float64  `json:"cosine_score"`
+	BM25       *float64 `json:"bm25,omitempty"`
+	RRF        *float64 `json:"rrf,omitempty"`
+	Rerank     *float64 `json:"rerank,omitempty"`
+	Title      string   `json:"title"`
+	Section    string   `json:"section"`
+	URL        string   `json:"url"`
+	Text       string   `json:"text"`
 }
 
 type Service struct {
@@ -83,6 +99,15 @@ type Service struct {
 }
 
 func New(config Config) (*Service, error) {
+	if err := validatePromptProfile(config.PromptProfile); err != nil {
+		return nil, err
+	}
+	if config.RetrievalMode == "" {
+		config.RetrievalMode = "hybrid"
+	}
+	if config.RetrievalMode != "hybrid" && config.RetrievalMode != "vector" {
+		return nil, fmt.Errorf("unsupported retrieval mode %q", config.RetrievalMode)
+	}
 	repository, err := rag.NewRepository(config.StorageDirectory)
 	if err != nil {
 		return nil, err
@@ -97,6 +122,7 @@ func New(config Config) (*Service, error) {
 	if config.LLMURL == "" || config.LLMModel == "" {
 		return nil, fmt.Errorf("LLM URL and model are required")
 	}
+
 	if config.ResultLimit <= 0 {
 		config.ResultLimit = 5
 	}
@@ -115,37 +141,83 @@ func (s *Service) AskDebug(ctx context.Context, request Request) (DebugInfo, []S
 	return s.ask(ctx, request, true)
 }
 
-func (s *Service) ask(ctx context.Context, request Request, includeDebug bool) (DebugInfo, []Source, string, error) {
-	if request.GameID == "" || strings.TrimSpace(request.Question) == "" {
-		return DebugInfo{}, nil, "", fmt.Errorf("game ID and question are required")
+// RetrieveDebug runs the production retrieval path without generation.
+func (s *Service) RetrieveDebug(ctx context.Context, request Request) (DebugInfo, []Source, string, error) {
+	return s.diagnose(ctx, request, true, true, nil)
+}
+
+// OracleDebug bypasses retrieval with manually verified evidence, in supplied order.
+func (s *Service) OracleDebug(ctx context.Context, request Request, evidence []rag.SearchResult) (DebugInfo, []Source, string, error) {
+	if len(evidence) == 0 {
+		return DebugInfo{}, nil, "", fmt.Errorf("oracle requires evidence")
 	}
-	debug := DebugInfo{Request: request}
+	return s.diagnose(ctx, request, true, false, evidence)
+}
+
+func (s *Service) ask(ctx context.Context, request Request, includeDebug bool) (DebugInfo, []Source, string, error) {
+	return s.diagnose(ctx, request, includeDebug, false, nil)
+}
+
+func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, retrievalOnly bool, oracle []rag.SearchResult) (debug DebugInfo, sources []Source, answer string, err error) {
+	started := time.Now()
+	debug = DebugInfo{Request: request, StageMS: map[string]float64{}, ContextMode: "retrieved"}
+	defer func() {
+		debug.StageMS["total"] = float64(time.Since(started).Microseconds()) / 1000
+		if err != nil && debug.FailureReason == "" {
+			debug.FailureReason = "pipeline_error"
+		}
+	}()
+	if includeDebug {
+		ctx = context.WithValue(ctx, completionTraceKey{}, &debug.Attempts)
+	}
+
+	if request.GameID == "" || strings.TrimSpace(request.Question) == "" {
+		return debug, nil, "", fmt.Errorf("game ID and question are required")
+	}
 	if includeDebug {
 		debug.RetrievedChunks = []RetrievedChunk{}
 	}
 	if request.NoRAG {
 		answer, payload, err := s.completeWithPayload(ctx, request, "")
 		if err != nil {
-			return DebugInfo{}, nil, "", err
+			return debug, nil, "", err
 		}
 		if includeDebug {
 			debug.ModelRequest = payload
 		}
 		return debug, nil, answer, nil
 	}
-	vectors, err := s.embeddings.EmbedBatch(ctx, []string{request.Question})
-	if err != nil {
-		return DebugInfo{}, nil, "", fmt.Errorf("embed question: %w", err)
+	results := oracle
+	if oracle != nil {
+		debug.ContextMode = "oracle"
+		debug.Search.Selected = oracle
+		debug.Search.Selection = "manual_oracle"
+	} else {
+		stage := time.Now()
+		vectors, embedErr := s.embeddings.EmbedBatch(ctx, []string{request.Question})
+		debug.StageMS["embedding"] = float64(time.Since(stage).Microseconds()) / 1000
+		if embedErr != nil {
+			debug.FailureReason = "embedding_error"
+			return debug, nil, "", fmt.Errorf("embed question: %w", embedErr)
+		}
+		options := rag.SearchOptions{QueryText: request.Question, Mode: s.config.RetrievalMode}
+		if includeDebug {
+			options.Trace = &debug.Search
+		}
+		stage = time.Now()
+		results, err = s.repository.SearchWithOptions(ctx, request.GameID, vectors[0], s.config.ResultLimit, options)
+		debug.StageMS["retrieval"] = float64(time.Since(stage).Microseconds()) / 1000
+		if err != nil {
+			debug.FailureReason = "retrieval_error"
+			return debug, nil, "", err
+		}
 	}
-	options := rag.SearchOptions{Beginning: asksAboutBeginning(request.Question)}
-	results, err := s.repository.SearchWithOptions(ctx, request.GameID, vectors[0], s.config.ResultLimit, options)
-	if err != nil {
-		return DebugInfo{}, nil, "", err
-	}
+	contextStarted := time.Now()
 	if len(results) == 0 {
-		return DebugInfo{}, nil, "", fmt.Errorf("no walkthrough context found for game %q", request.GameID)
+		debug.FailureReason = "no_context"
+		return debug, nil, "", fmt.Errorf("no walkthrough context found for game %q", request.GameID)
 	}
-	sources := make([]Source, len(results))
+	sources = make([]Source, len(results))
 	contextParts := make([]string, len(results))
 	if includeDebug {
 		debug.RetrievedChunks = make([]RetrievedChunk, len(results))
@@ -153,33 +225,32 @@ func (s *Service) ask(ctx context.Context, request Request, includeDebug bool) (
 	for index, result := range results {
 		sources[index] = Source{Title: result.Title, Section: result.Section, URL: result.SourceURL}
 		contextParts[index] = fmt.Sprintf("[%s / %s]\n%s", result.Title, result.Section, result.Text)
+		if s.structuredPrompt(request) {
+			contextParts[index] = fmt.Sprintf("<source id=\"%d\" section=\"%s\">\n%s\n</source>", index+1, xmlText(result.Section), xmlText(result.Text))
+		}
 		if includeDebug {
-			debug.RetrievedChunks[index] = RetrievedChunk{Title: result.Title, Section: result.Section, URL: result.SourceURL, Text: result.Text}
+			debug.RetrievedChunks[index] = RetrievedChunk{ChunkID: result.ChunkID, DocumentID: result.DocumentID, Sequence: result.Sequence, Score: result.Score, BM25: result.BM25, RRF: result.RRF, Rerank: result.Rerank, Title: result.Title, Section: result.Section, URL: result.SourceURL, Text: result.Text}
 		}
 	}
 	walkthroughContext := strings.Join(contextParts, "\n\n")
+	debug.StageMS["context"] = float64(time.Since(contextStarted).Microseconds()) / 1000
+	if retrievalOnly {
+		return debug, sources, "", nil
+	}
+	generationStarted := time.Now()
 	answer, payload, err := s.completeWithPayload(ctx, request, walkthroughContext)
+	debug.StageMS["generation"] = float64(time.Since(generationStarted).Microseconds()) / 1000
+	if includeDebug {
+		debug.ModelRequest = payload
+	}
 	if err != nil {
-		return DebugInfo{}, nil, "", err
+		debug.FailureReason = "generation_error"
+		return debug, nil, "", err
 	}
 	if includeDebug {
 		debug.ModelRequest = payload
 	}
 	return debug, sources, answer, nil
-}
-
-func asksAboutBeginning(question string) bool {
-	question = strings.ToLower(question)
-	for _, phrase := range []string{
-		"в начале игры", "с начала игры", "с самого начала", "только начал", "только начала",
-		"первым делом", "получил управление", "получила управление", "первые шаги",
-		"at the beginning", "beginning of the game", "start of the game", "just started", "first thing",
-	} {
-		if strings.Contains(question, phrase) {
-			return true
-		}
-	}
-	return false
 }
 
 func (s *Service) complete(ctx context.Context, request Request, walkthroughContext string) (string, error) {
@@ -195,29 +266,52 @@ func (s *Service) completeWithPayload(ctx context.Context, request Request, walk
 	for attempt := 0; attempt < 2; attempt++ {
 		answer, truncated, err := s.sendCompletion(ctx, payload)
 		if err != nil {
-			return "", nil, err
+			return "", payload, err
 		}
 		if !truncated {
 			return answer, payload, nil
 		}
 		if attempt == 1 {
-			return "", nil, fmt.Errorf("generate answer: response truncated at max_tokens after retry")
+			return "", payload, fmt.Errorf("generate answer: response truncated at max_tokens after retry")
 		}
 		var body struct {
 			MaxTokens int `json:"max_tokens"`
 		}
 		if err := json.Unmarshal(payload, &body); err != nil {
-			return "", nil, err
+			return "", payload, err
 		}
 		payload, err = s.completionPayloadWithLimit(request, walkthroughContext, body.MaxTokens*2)
 		if err != nil {
-			return "", nil, err
+			return "", payload, err
 		}
 	}
 	return "", nil, fmt.Errorf("generate answer: no completion")
 }
 
-func (s *Service) sendCompletion(ctx context.Context, payload []byte) (string, bool, error) {
+type completionTraceKey struct{}
+type CompletionTrace struct {
+	Payload          json.RawMessage `json:"payload"`
+	PromptTokens     int             `json:"prompt_tokens"`
+	CompletionTokens int             `json:"completion_tokens"`
+	UsageAvailable   bool            `json:"usage_available"`
+	FinishReason     string          `json:"finish_reason"`
+	Seconds          float64         `json:"seconds"`
+	Error            string          `json:"error,omitempty"`
+}
+
+func (s *Service) sendCompletion(ctx context.Context, payload []byte) (answer string, truncated bool, err error) {
+	start := time.Now()
+	trace := CompletionTrace{Payload: payload}
+	defer func() {
+		trace.Seconds = time.Since(start).Seconds()
+		if err != nil {
+			trace.Error = err.Error()
+		}
+		if dest, ok := ctx.Value(completionTraceKey{}).(*[]CompletionTrace); ok {
+			*dest = append(*dest, trace)
+		}
+	}()
+
 	httpRequest, err := http.NewRequestWithContext(ctx, http.MethodPost, strings.TrimRight(s.config.LLMURL, "/")+"/v1/chat/completions", bytes.NewReader(payload))
 	if err != nil {
 		return "", false, err
@@ -235,6 +329,10 @@ func (s *Service) sendCompletion(ctx context.Context, payload []byte) (string, b
 		return "", false, fmt.Errorf("generate answer: unexpected HTTP status %s", response.Status)
 	}
 	var body struct {
+		Usage *struct {
+			PromptTokens     int `json:"prompt_tokens"`
+			CompletionTokens int `json:"completion_tokens"`
+		} `json:"usage"`
 		Choices []struct {
 			FinishReason string `json:"finish_reason"`
 			Message      struct {
@@ -247,6 +345,12 @@ func (s *Service) sendCompletion(ctx context.Context, payload []byte) (string, b
 	}
 	if len(body.Choices) == 0 {
 		return "", false, fmt.Errorf("generate answer: response contains no choices")
+	}
+	trace.FinishReason = body.Choices[0].FinishReason
+	if body.Usage != nil {
+		trace.UsageAvailable = true
+		trace.PromptTokens = body.Usage.PromptTokens
+		trace.CompletionTokens = body.Usage.CompletionTokens
 	}
 	if body.Choices[0].FinishReason == "length" {
 		return "", true, nil
@@ -272,7 +376,7 @@ func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext
 		if request.NoRAG {
 			system = defaultNoRAGPrompt
 		} else {
-			system = DefaultSystemPrompt
+			system = s.profileSystemPrompt(request)
 		}
 	} else if request.NoRAG {
 		system += "\n\nNo walkthrough context is available for this request. Answer from general knowledge; do not imply that you retrieved a guide, and acknowledge uncertainty rather than inventing game-specific details."
@@ -289,7 +393,11 @@ func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext
 		user.WriteString("\nWalkthrough context:\n" + walkthroughContext)
 	}
 	user.WriteString("\n\nQuestion: " + request.Question)
-	return json.Marshal(map[string]any{
+	if s.structuredPrompt(request) {
+		user.Reset()
+		user.WriteString(s.structuredUserPrompt(request, walkthroughContext))
+	}
+	payload := map[string]any{
 		"model": s.config.LLMModel,
 		"messages": []map[string]string{
 			{"role": "system", "content": system},
@@ -298,5 +406,9 @@ func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext
 		"temperature":          0.2,
 		"max_tokens":           maxTokens,
 		"chat_template_kwargs": map[string]bool{"enable_thinking": false},
-	})
+	}
+	if s.config.GenerationSeed != nil {
+		payload["seed"] = *s.config.GenerationSeed
+	}
+	return json.Marshal(payload)
 }

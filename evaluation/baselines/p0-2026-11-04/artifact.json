@@ -1,0 +1,16 @@
+{
+  "version": "p0-2026-11-04-v1",
+  "path": "bin/evaluation-artifacts/p0-2026-11-04-v1.tar.gz",
+  "sha256": "66f2852705b3196c98e01537e17efbc21e05a3d8dc4db68980642accbff944ab",
+  "bytes": 5665069,
+  "contains": [
+    "corpora",
+    "questions",
+    "embedding caches and cache manifests",
+    "all raw records and results",
+    "exact source snapshots per run",
+    "model/runtime manifests",
+    "runtime logs and non-thinking template probe"
+  ],
+  "storage": "local ignored artifact; no external upload performed"
+}

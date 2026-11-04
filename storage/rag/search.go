@@ -12,21 +12,50 @@ import (
 )
 
 type SearchResult struct {
+	ChunkID    int64
+	DocumentID int64
+	Sequence   int
+	// Score is cosine similarity, including when results are ordered by fusion.
+
 	Title     string
 	Section   string
 	Text      string
 	SourceURL string
 	Score     float64
+	BM25      *float64 `json:"bm25,omitempty"`
+	RRF       *float64 `json:"rrf,omitempty"`
+	Rerank    *float64 `json:"rerank,omitempty"`
 }
 
 type SearchOptions struct {
-	Beginning bool
+	QueryText string
+	// Empty mode selects hybrid when QueryText is supplied; vector keeps the old ranking.
+	Mode  string
+	Trace *SearchTrace
+}
+
+// SearchTrace records the existing ranking path without changing candidate depth.
+// Nil scores mean that a stage did not run for that candidate.
+type SearchTrace struct {
+	BeforeFilters []SearchResult `json:"before_filters"`
+	Candidates    []SearchResult `json:"candidates"`
+	Selected      []SearchResult `json:"selected"`
+	Selection     string         `json:"selection"`
+}
+
+func traceResults(chunks []rankedChunk) []SearchResult {
+	results := make([]SearchResult, len(chunks))
+	for i, c := range chunks {
+		results[i] = c.SearchResult
+	}
+	return results
 }
 
 type rankedChunk struct {
 	SearchResult
 	documentID int64
 	sequence   int
+	fusion     float64
 }
 
 func (r *Repository) Search(ctx context.Context, gameID string, query []float32, limit int) ([]SearchResult, error) {
@@ -34,6 +63,9 @@ func (r *Repository) Search(ctx context.Context, gameID string, query []float32,
 }
 
 func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query []float32, limit int, options SearchOptions) ([]SearchResult, error) {
+	if options.Mode != "" && options.Mode != "vector" && options.Mode != "hybrid" {
+		return nil, fmt.Errorf("unsupported retrieval mode %q", options.Mode)
+	}
 	if !gameIDPattern.MatchString(gameID) {
 		return nil, fmt.Errorf("invalid game ID %q: expected a stable lowercase slug", gameID)
 	}
@@ -57,7 +89,7 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 	defer database.Close()
 
 	rows, err := database.QueryContext(ctx, `
-		SELECT c.title, c.section, c.text, d.source_url, e.dimensions, e.vector, c.document_id, c.sequence
+		SELECT c.id, c.title, c.section, c.text, d.source_url, e.dimensions, e.vector, c.document_id, c.sequence
 		FROM embeddings e
 		JOIN chunks c ON c.id = e.chunk_id
 		JOIN documents d ON d.id = c.document_id`)
@@ -70,7 +102,7 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		var chunk rankedChunk
 		var dimensions int
 		var encoded []byte
-		if err := rows.Scan(&chunk.Title, &chunk.Section, &chunk.Text, &chunk.SourceURL, &dimensions, &encoded, &chunk.documentID, &chunk.sequence); err != nil {
+		if err := rows.Scan(&chunk.ChunkID, &chunk.Title, &chunk.Section, &chunk.Text, &chunk.SourceURL, &dimensions, &encoded, &chunk.documentID, &chunk.sequence); err != nil {
 			return nil, fmt.Errorf("scan RAG chunk: %w", err)
 		}
 		if dimensions != len(query) {
@@ -80,26 +112,18 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		if err != nil {
 			return nil, err
 		}
+		chunk.DocumentID, chunk.Sequence = chunk.documentID, chunk.sequence
 		chunk.Score = cosineSimilarity(query, vector)
 		chunks = append(chunks, chunk)
 	}
 	if err := rows.Err(); err != nil {
 		return nil, fmt.Errorf("iterate RAG chunks: %w", err)
 	}
-	if options.Beginning && len(chunks) > 0 {
-		// Prefer the first document and its earliest chunks, never a later
-		// walkthrough episode that happens to be semantically similar.
-		sort.Slice(chunks, func(i, j int) bool { return earlier(chunks[i], chunks[j]) })
-		firstDocument := chunks[0].documentID
-		var results []SearchResult
-		for _, chunk := range chunks {
-			if chunk.documentID == firstDocument && len(results) < limit && chunk.sequence < 2 {
-				results = append(results, chunk.SearchResult)
-			}
-		}
-		if len(results) > 0 {
-			return results, nil
-		}
+	if err := rows.Close(); err != nil {
+		return nil, fmt.Errorf("close RAG chunks: %w", err)
+	}
+	if options.Trace != nil {
+		options.Trace.BeforeFilters = traceResults(chunks)
 	}
 	sort.Slice(chunks, func(i, j int) bool {
 		if chunks[i].Score != chunks[j].Score {
@@ -107,12 +131,30 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		}
 		return earlier(chunks[i], chunks[j])
 	})
+	if options.Mode != "vector" && options.QueryText != "" {
+		chunks, err = fuseKeywords(ctx, database, chunks, options.QueryText, limit)
+		if err != nil {
+			return nil, err
+		}
+	}
+	if options.Trace != nil {
+		candidates := chunks
+		// With no lexical hits, only the bounded dense pool is a candidate set.
+		if len(candidates) > max(20, limit*4) && candidates[0].RRF == nil {
+			candidates = candidates[:max(20, limit*4)]
+		}
+		options.Trace.Candidates = traceResults(candidates)
+		options.Trace.Selection = "rank_limit"
+	}
 	if len(chunks) > limit {
 		chunks = chunks[:limit]
 	}
 	results := make([]SearchResult, len(chunks))
 	for i, chunk := range chunks {
 		results[i] = chunk.SearchResult
+	}
+	if options.Trace != nil {
+		options.Trace.Selected = results
 	}
 	return results, nil
 }

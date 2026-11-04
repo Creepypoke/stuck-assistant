@@ -87,6 +87,8 @@ func queryConfig() (query.Config, error) {
 		SystemPrompt:        systemPrompt,
 		Timeout:             timeout,
 		ResultLimit:         5,
+		RetrievalMode:       environmentOrDefault("WALKTHROUGH_RETRIEVAL_MODE", "hybrid"),
+		PromptProfile:       environmentOrDefault("WALKTHROUGH_PROMPT_PROFILE", "default"),
 	}, nil
 }
 

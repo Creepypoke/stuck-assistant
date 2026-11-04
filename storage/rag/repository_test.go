@@ -99,35 +99,3 @@ func TestSearchReturnsMostSimilarChunks(t *testing.T) {
 		t.Fatalf("unexpected results: %#v", results)
 	}
 }
-
-func TestSearchAnchorsBeginning(t *testing.T) {
-	t.Parallel()
-	repository, err := NewRepository(t.TempDir())
-	if err != nil {
-		t.Fatal(err)
-	}
-	_, err = repository.Save(context.Background(), ingestion.Document{
-		GameID: "dino-crisis-psx", GameName: "Dino Crisis", SourceURL: "https://example.com/guide",
-		Title: "Guide", Markdown: "body",
-		Chunks: []ingestion.Chunk{
-			{Sequence: 0, Text: "Start. **Material storage.** Take the key."},
-			{Sequence: 1, Text: "Leave the storage. Go to the generator."},
-			{Sequence: 2, Section: "Generator room", Text: "Start the generator."},
-			{Sequence: 3, Text: "Later: **Hallway for carrying in materials.**"},
-		},
-		Embeddings: [][]float32{{0, 1}, {0.1, 1}, {0.9, 0.1}, {1, 0}},
-		Embedding:  ingestion.EmbeddingInfo{Model: "test", Dimensions: 2, Version: "1"}, ChunkingVersion: "v1",
-	})
-	if err != nil {
-		t.Fatal(err)
-	}
-	ctx := context.Background()
-	beginning, err := repository.SearchWithOptions(ctx, "dino-crisis-psx", []float32{1, 0}, 5, SearchOptions{Beginning: true})
-	if err != nil || len(beginning) != 2 || beginning[0].Text != "Start. **Material storage.** Take the key." || beginning[1].Text != "Leave the storage. Go to the generator." {
-		t.Fatalf("beginning results: %#v, %v", beginning, err)
-	}
-	semantic, err := repository.Search(ctx, "dino-crisis-psx", []float32{1, 0}, 1)
-	if err != nil || len(semantic) != 1 || semantic[0].Text != "Later: **Hallway for carrying in materials.**" {
-		t.Fatalf("semantic results: %#v, %v", semantic, err)
-	}
-}

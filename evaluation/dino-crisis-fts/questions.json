@@ -1,0 +1,294 @@
+[
+  {
+    "id": "beginning",
+    "question": "Куда идти в начале игры?",
+    "relevant_sequences": [
+      4
+    ],
+    "expected": "Подойти к Gail, затем осмотреть/сдвинуть ящик и идти через зелёную дверь. Не выдавать управление или позднюю главу за старт.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 4,
+        "text_sha256": "f1f51d5a9d220466f0143f0eb45d3521f1027828c2a3b37ad19d246b981f45d4"
+      }
+    ]
+  },
+  {
+    "id": "first-generator",
+    "question": "Я у первого генератора на 1F, передо мной четыре рычага и панель с четырьмя катушками. Какие кнопки нажать, чтобы включить генератор?",
+    "relevant_sequences": [
+      4
+    ],
+    "expected": "CENTER → RIGHT → CENTER → CANCEL, затем рычаги. Не комбинация второго генератора.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 4,
+        "text_sha256": "f1f51d5a9d220466f0143f0eb45d3521f1027828c2a3b37ad19d246b981f45d4"
+      }
+    ]
+  },
+  {
+    "id": "panel-code",
+    "question": "У меня Panel Key 1 и Panel Key 2. Какой код ввести в сейф с двумя медалями и что я получу?",
+    "relevant_sequences": [
+      8
+    ],
+    "expected": "705037, Keycard L. Без сюжетных спойлеров.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 8,
+        "text_sha256": "390dfb82769901fbe59dc6bbb4e79bd1419a6e78856c9c140a6fb5f05f5fa79c"
+      }
+    ]
+  },
+  {
+    "id": "office-safe",
+    "question": "Я вернулся в компьютерную комнату после синей папки и DDK Code Disk H. Какой код у сейфа и что лежит внутри?",
+    "relevant_sequences": [
+      6
+    ],
+    "expected": "0426; Resuscitation и Entrance Key.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 6,
+        "text_sha256": "d8111a36ce24377d74f7acbc4c63a5647dadec37d706f4ba34772ba7b4d1775e"
+      }
+    ]
+  },
+  {
+    "id": "gas",
+    "question": "Учёный заперт в комнате с ядовитым газом. В каком порядке нажать цветные кнопки, чтобы нейтрализовать газ?",
+    "relevant_sequences": [
+      19
+    ],
+    "expected": "BLUE → GREEN → GREEN → RED → BLUE; источник пишет второе GREEN как GRENN. Обязательно пять нажатий. Не раскрывать судьбу учёного.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 19,
+        "text_sha256": "7b6a27f9bc2019320402dfffce6bede30d08532982a759ade4b94b84478d96a4"
+      }
+    ]
+  },
+  {
+    "id": "hemostat",
+    "question": "Hemostat восстанавливает здоровье или только останавливает кровотечение?",
+    "relevant_sequences": [
+      43
+    ],
+    "expected": "Только останавливает кровотечение, здоровье не восстанавливает.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 43,
+        "text_sha256": "6d37d2f35a044c70d071ee376b79e78266811fb697822d8e5686c42418067edc"
+      }
+    ]
+  },
+  {
+    "id": "rick-branch",
+    "question": "В первом выборе я решил пойти с Риком спасать Тома. Что сделать сразу после выхода из Control Room? Без спойлеров о судьбе Тома.",
+    "relevant_sequences": [
+      15
+    ],
+    "expected": "Вернуться туда, где началась игра, найти Рика и следовать за ним. Не поздний эпизод с ID Card и не ветка Gail.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 15,
+        "text_sha256": "1442095ef2b46dd2de9728b00b610f4e458d42d1f0e3d6cbb4dbbd676d8e8c82"
+      }
+    ]
+  },
+  {
+    "id": "false-premise",
+    "question": "Как победить финального босса в начале игры, не заходя в здание?",
+    "relevant_sequences": [],
+    "expected": "Не выдумывать бой/маршрут; указать недостаток подтверждения или ошибочную предпосылку и уточнить положение игрока.",
+    "evidence": []
+  },
+  {
+    "id": "gail-branch",
+    "question": "В первом выборе я пошёл с Gail искать Dr. Kirk. Куда идти сразу после выхода из Control Room и что взять в первой комнате?",
+    "relevant_sequences": [
+      12
+    ],
+    "expected": "Налево, вниз по лестнице, первая дверь. ID Card и Med Pak M на полке; Recover Aid в следующей комнате. Не маршрут Rick.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 12,
+        "text_sha256": "9721938047d92d6f3842a3ff3678d56c5c23a5a01a207b94dba1f1b77a846168"
+      }
+    ]
+  },
+  {
+    "id": "b1-chip",
+    "question": "У синего экрана на стене я использую B1 Key Chip. Какой цифровой пароль нужно ввести?",
+    "relevant_sequences": [
+      19
+    ],
+    "expected": "3695. Не пароль для пары B2 chips.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 19,
+        "text_sha256": "7b6a27f9bc2019320402dfffce6bede30d08532982a759ade4b94b84478d96a4"
+      }
+    ]
+  },
+  {
+    "id": "b2-chips",
+    "question": "Я вставил B2 Key Chip 1 и B2 Key Chip 2 в слоты возле экрана. Какой пароль нужен перед перестановкой блоков?",
+    "relevant_sequences": [
+      28
+    ],
+    "expected": "0392 с ведущим нулём. Не 3695.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 28,
+        "text_sha256": "bf00879fee5965d526379695e3091abe1a8d07a3aa4cf07a739e1a0ffbfd1108"
+      }
+    ]
+  },
+  {
+    "id": "office-id",
+    "question": "После объединения первых веток я пришёл в Office и использую ID Card на компьютере. Какой пароль ввести и что выбрать?",
+    "relevant_sequences": [
+      18
+    ],
+    "expected": "58104, затем Yes. Не поздний пароль 31415.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 18,
+        "text_sha256": "11914d9a6ed716fda8d7e424082b605bdba1da08ec07da0766bc3a181d476c99"
+      }
+    ]
+  },
+  {
+    "id": "handgun-slides",
+    "question": "Какой пароль у сейфа с Handgun Slides и на какое оружие ставится улучшение?",
+    "relevant_sequences": [
+      7
+    ],
+    "expected": "8159; на Handgun.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 7,
+        "text_sha256": "1a95dab90d4bc4df0f9e5c73ba2a035196efca93071832baf5a7999eb875da6e"
+      }
+    ]
+  },
+  {
+    "id": "shotgun-location",
+    "question": "Я впервые поговорил с Риком в комнате управления. Где забрать дробовик?",
+    "relevant_sequences": [
+      5
+    ],
+    "expected": "Выйти из Control Room и направо через дверь; Shotgun прямо впереди. Не поздний Grenade Gun.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 5,
+        "text_sha256": "68c0e4cd0471ac019002d62b17ea35ffec6f49f5827980167433fa7bd28da49c"
+      }
+    ]
+  },
+  {
+    "id": "mix-menu",
+    "question": "Какой пункт меню нужен, чтобы смешать два предмета в один?",
+    "relevant_sequences": [
+      2
+    ],
+    "expected": "MIX. Не EQUIP или ITEM.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 2,
+        "text_sha256": "cb5353088d706553fbcc110276d29221f5492b9372fa2445d9611d1009ebbda1"
+      }
+    ]
+  },
+  {
+    "id": "turn-around",
+    "question": "Какой кнопкой на контроллере выполнить быстрый разворот на 180 градусов?",
+    "relevant_sequences": [
+      1
+    ],
+    "expected": "R2.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 1,
+        "text_sha256": "5efe01c54248a7666283ac999f7dca3e1e1515570192393344e2260570c4fdc9"
+      }
+    ]
+  },
+  {
+    "id": "med-pak-l",
+    "question": "Что делает Med Pak L: восстанавливает всё здоровье, останавливает кровь или оба эффекта?",
+    "relevant_sequences": [
+      43
+    ],
+    "expected": "Оба: полностью восстанавливает здоровье и останавливает кровотечение.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 43,
+        "text_sha256": "6d37d2f35a044c70d071ee376b79e78266811fb697822d8e5686c42418067edc"
+      }
+    ]
+  },
+  {
+    "id": "emergency-box",
+    "question": "Чем открыть зелёный Emergency Box и что разрешено в нём хранить?",
+    "relevant_sequences": [
+      5
+    ],
+    "expected": "Предметом Plug; хранить лечебные предметы. Не требовать два Plug как у красного ящика.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 5,
+        "text_sha256": "68c0e4cd0471ac019002d62b17ea35ffec6f49f5827980167433fa7bd28da49c"
+      }
+    ]
+  },
+  {
+    "id": "planning-disc-safe",
+    "question": "Я выбрал третью стратегию Рика и получил Planning Disc. Какой код у шкафа с Shotgun Parts?",
+    "relevant_sequences": [
+      35
+    ],
+    "expected": "1281; предмет Shotgun Parts улучшает Shotgun. Не коды устройств 367204/0367/0204.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 35,
+        "text_sha256": "e1d7e92c5ea7740156cd6b05bb0077c7144de0123040afe8245ec352d07084bb"
+      }
+    ]
+  },
+  {
+    "id": "second-generator",
+    "question": "Я поставил Startup Battery R в устройство у второго генератора. Какую последовательность кнопок выбрать перед рычагами?",
+    "relevant_sequences": [
+      10
+    ],
+    "expected": "LEFT → CENTER → RIGHT → LEFT → CENTER → LEFT → CANCEL, затем рычаги.",
+    "evidence": [
+      {
+        "document_id": 1,
+        "sequence": 10,
+        "text_sha256": "ef2097248ec9657006870a5e0c48cfa7832444098b6996619e2ad25d869aee79"
+      }
+    ]
+  }
+]
