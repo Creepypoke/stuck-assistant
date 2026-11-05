@@ -1,0 +1,1357 @@
+{
+  "protocol": {
+    "cases": 38,
+    "answerable": 34,
+    "unanswerable_or_ambiguous": 4,
+    "source": "recovered baseline chunks; NOT original .rag",
+    "hardware": "Apple M1 Pro, 32 GiB; no Steam Deck measurements",
+    "prompt": "default",
+    "generation": "Qwen3.5-2B UD-Q4_K_XL",
+    "runtime": "b11706-f74e2fa6a",
+    "seed": 20261104,
+    "temperature": 0.2,
+    "max_tokens": 256,
+    "retry_max_tokens": 512,
+    "limit": 5,
+    "context_cap_tokens": 2400,
+    "embedding_format": "raw-text-v1/no-application-prefix",
+    "oracle": "manually source-reviewed exact evidence; source-only full chunks vs compact situation clauses",
+    "judge": "same agent as annotation; not independent; conservative notes retained"
+  },
+  "retrieval": {
+    "control": {
+      "vector": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 21,
+          "denominator": 34,
+          "value": 0.6176470588235294
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 24.566666666666663,
+          "denominator": 34,
+          "value": 0.722549019607843
+        },
+        "candidate_all_evidence": {
+          "numerator": 32,
+          "denominator": 34,
+          "value": 0.9411764705882353
+        },
+        "context_all_evidence": {
+          "numerator": 30,
+          "denominator": 34,
+          "value": 0.8823529411764706
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 1027.0,
+          "p95_nearest_rank": 1415,
+          "min": 472,
+          "max": 1475
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 5.789,
+          "p95_nearest_rank": 8.325,
+          "min": 5.021,
+          "max": 11.131
+        }
+      },
+      "hybrid": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 23,
+          "denominator": 34,
+          "value": 0.6764705882352942
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 25.73333333333333,
+          "denominator": 34,
+          "value": 0.7568627450980392
+        },
+        "candidate_all_evidence": {
+          "numerator": 33,
+          "denominator": 34,
+          "value": 0.9705882352941176
+        },
+        "context_all_evidence": {
+          "numerator": 30,
+          "denominator": 34,
+          "value": 0.8823529411764706
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 1202.5,
+          "p95_nearest_rank": 1377,
+          "min": 472,
+          "max": 1423
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 6.0225,
+          "p95_nearest_rank": 6.763,
+          "min": 5.413,
+          "max": 6.788
+        }
+      }
+    },
+    "A": {
+      "vector": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 28,
+          "denominator": 34,
+          "value": 0.8235294117647058
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 30.666666666666664,
+          "denominator": 34,
+          "value": 0.9019607843137254
+        },
+        "candidate_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 1184.5,
+          "p95_nearest_rank": 1493,
+          "min": 220,
+          "max": 1618
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 8.5105,
+          "p95_nearest_rank": 9.993,
+          "min": 7.525,
+          "max": 10.623
+        }
+      },
+      "hybrid": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 31,
+          "denominator": 34,
+          "value": 0.9117647058823529
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 32.25,
+          "denominator": 34,
+          "value": 0.9485294117647058
+        },
+        "candidate_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 1378.0,
+          "p95_nearest_rank": 1693,
+          "min": 632,
+          "max": 1724
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 8.748999999999999,
+          "p95_nearest_rank": 10.083,
+          "min": 7.417,
+          "max": 11.187
+        }
+      }
+    },
+    "B": {
+      "vector": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 33,
+          "denominator": 34,
+          "value": 0.9705882352941176
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 33.5,
+          "denominator": 34,
+          "value": 0.9852941176470589
+        },
+        "candidate_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 737.5,
+          "p95_nearest_rank": 934,
+          "min": 423,
+          "max": 951
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 8.27,
+          "p95_nearest_rank": 11.677,
+          "min": 7.379,
+          "max": 12.197
+        }
+      },
+      "hybrid": {
+        "hit_at_1_any_required_evidence": {
+          "numerator": 32,
+          "denominator": 34,
+          "value": 0.9411764705882353
+        },
+        "mrr_at_5": {
+          "reciprocal_rank_sum": 32.7,
+          "denominator": 34,
+          "value": 0.9617647058823531
+        },
+        "candidate_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_all_evidence": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 750.5,
+          "p95_nearest_rank": 951,
+          "min": 436,
+          "max": 958
+        },
+        "retrieval_ms_cached_query_embeddings": {
+          "n": 34,
+          "p50": 8.745999999999999,
+          "p95_nearest_rank": 11.365,
+          "min": 7.733,
+          "max": 12.523
+        }
+      }
+    }
+  },
+  "generation": {
+    "control-local": {
+      "all": {
+        "task_pass": {
+          "numerator": 15,
+          "denominator": 38,
+          "value": 0.39473684210526316
+        },
+        "strict_pass": {
+          "numerator": 13,
+          "denominator": 38,
+          "value": 0.34210526315789475
+        },
+        "unsupported_addition": {
+          "numerator": 20,
+          "denominator": 38,
+          "value": 0.5263157894736842
+        },
+        "spoiler": {
+          "numerator": 2,
+          "denominator": 38,
+          "value": 0.05263157894736842
+        },
+        "episode_error_answerable": {
+          "numerator": 8,
+          "denominator": 34,
+          "value": 0.23529411764705882
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 4,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 10,
+          "denominator": 13,
+          "value": 0.7692307692307693
+        },
+        "exact_sequence": {
+          "numerator": 6,
+          "denominator": 7,
+          "value": 0.8571428571428571
+        },
+        "runtime_success": {
+          "numerator": 38,
+          "denominator": 38,
+          "value": 1.0
+        }
+      },
+      "existing-regression": {
+        "task_pass": {
+          "numerator": 10,
+          "denominator": 20,
+          "value": 0.5
+        },
+        "strict_pass": {
+          "numerator": 9,
+          "denominator": 20,
+          "value": 0.45
+        },
+        "unsupported_addition": {
+          "numerator": 8,
+          "denominator": 20,
+          "value": 0.4
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 20,
+          "value": 0.05
+        },
+        "episode_error_answerable": {
+          "numerator": 4,
+          "denominator": 19,
+          "value": 0.21052631578947367
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 1,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 6,
+          "denominator": 7,
+          "value": 0.8571428571428571
+        },
+        "exact_sequence": {
+          "numerator": 2,
+          "denominator": 3,
+          "value": 0.6666666666666666
+        },
+        "runtime_success": {
+          "numerator": 20,
+          "denominator": 20,
+          "value": 1.0
+        }
+      },
+      "independent-source-diagnostic": {
+        "task_pass": {
+          "numerator": 5,
+          "denominator": 18,
+          "value": 0.2777777777777778
+        },
+        "strict_pass": {
+          "numerator": 4,
+          "denominator": 18,
+          "value": 0.2222222222222222
+        },
+        "unsupported_addition": {
+          "numerator": 12,
+          "denominator": 18,
+          "value": 0.6666666666666666
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 18,
+          "value": 0.05555555555555555
+        },
+        "episode_error_answerable": {
+          "numerator": 4,
+          "denominator": 15,
+          "value": 0.26666666666666666
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 4,
+          "denominator": 6,
+          "value": 0.6666666666666666
+        },
+        "exact_sequence": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 18,
+          "denominator": 18,
+          "value": 1.0
+        }
+      },
+      "context_tokens": {
+        "n": 38,
+        "p50": 1163.0,
+        "p95_nearest_rank": 1377,
+        "min": 472,
+        "max": 1423
+      },
+      "generation_seconds_including_retry": {
+        "n": 38,
+        "p50": 2.2450729999999997,
+        "p95_nearest_rank": 3.779315,
+        "min": 0.904593,
+        "max": 4.200771
+      },
+      "total_seconds_cached_embeddings": {
+        "n": 38,
+        "p50": 2.257912,
+        "p95_nearest_rank": 3.7904989999999996,
+        "min": 0.915686,
+        "max": 4.213824
+      },
+      "prompt_tokens_last_attempt": {
+        "n": 38,
+        "p50": 1415.5,
+        "p95_nearest_rank": 1635,
+        "min": 706,
+        "max": 1676
+      }
+    },
+    "A-branchsafe-local": {
+      "all": {
+        "task_pass": {
+          "numerator": 18,
+          "denominator": 38,
+          "value": 0.47368421052631576
+        },
+        "strict_pass": {
+          "numerator": 17,
+          "denominator": 38,
+          "value": 0.4473684210526316
+        },
+        "unsupported_addition": {
+          "numerator": 17,
+          "denominator": 38,
+          "value": 0.4473684210526316
+        },
+        "spoiler": {
+          "numerator": 3,
+          "denominator": 38,
+          "value": 0.07894736842105263
+        },
+        "episode_error_answerable": {
+          "numerator": 5,
+          "denominator": 34,
+          "value": 0.14705882352941177
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 4,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 11,
+          "denominator": 13,
+          "value": 0.8461538461538461
+        },
+        "exact_sequence": {
+          "numerator": 4,
+          "denominator": 7,
+          "value": 0.5714285714285714
+        },
+        "runtime_success": {
+          "numerator": 38,
+          "denominator": 38,
+          "value": 1.0
+        }
+      },
+      "existing-regression": {
+        "task_pass": {
+          "numerator": 10,
+          "denominator": 20,
+          "value": 0.5
+        },
+        "strict_pass": {
+          "numerator": 10,
+          "denominator": 20,
+          "value": 0.5
+        },
+        "unsupported_addition": {
+          "numerator": 7,
+          "denominator": 20,
+          "value": 0.35
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 20,
+          "value": 0.05
+        },
+        "episode_error_answerable": {
+          "numerator": 1,
+          "denominator": 19,
+          "value": 0.05263157894736842
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 1,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0.0
+        },
+        "runtime_success": {
+          "numerator": 20,
+          "denominator": 20,
+          "value": 1.0
+        }
+      },
+      "independent-source-diagnostic": {
+        "task_pass": {
+          "numerator": 8,
+          "denominator": 18,
+          "value": 0.4444444444444444
+        },
+        "strict_pass": {
+          "numerator": 7,
+          "denominator": 18,
+          "value": 0.3888888888888889
+        },
+        "unsupported_addition": {
+          "numerator": 10,
+          "denominator": 18,
+          "value": 0.5555555555555556
+        },
+        "spoiler": {
+          "numerator": 2,
+          "denominator": 18,
+          "value": 0.1111111111111111
+        },
+        "episode_error_answerable": {
+          "numerator": 4,
+          "denominator": 15,
+          "value": 0.26666666666666666
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 4,
+          "denominator": 6,
+          "value": 0.6666666666666666
+        },
+        "exact_sequence": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 18,
+          "denominator": 18,
+          "value": 1.0
+        }
+      },
+      "context_tokens": {
+        "n": 38,
+        "p50": 1356.5,
+        "p95_nearest_rank": 1693,
+        "min": 632,
+        "max": 1724
+      },
+      "generation_seconds_including_retry": {
+        "n": 38,
+        "p50": 1.729407,
+        "p95_nearest_rank": 3.9290030000000002,
+        "min": 0.288374,
+        "max": 8.532929
+      },
+      "total_seconds_cached_embeddings": {
+        "n": 38,
+        "p50": 1.7464084999999998,
+        "p95_nearest_rank": 3.9458789999999997,
+        "min": 0.304388,
+        "max": 8.549293
+      },
+      "prompt_tokens_last_attempt": {
+        "n": 38,
+        "p50": 1608.5,
+        "p95_nearest_rank": 1953,
+        "min": 878,
+        "max": 1984
+      }
+    },
+    "B-local": {
+      "all": {
+        "task_pass": {
+          "numerator": 24,
+          "denominator": 38,
+          "value": 0.631578947368421
+        },
+        "strict_pass": {
+          "numerator": 22,
+          "denominator": 38,
+          "value": 0.5789473684210527
+        },
+        "unsupported_addition": {
+          "numerator": 11,
+          "denominator": 38,
+          "value": 0.2894736842105263
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 38,
+          "value": 0.02631578947368421
+        },
+        "episode_error_answerable": {
+          "numerator": 1,
+          "denominator": 34,
+          "value": 0.029411764705882353
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 4,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 13,
+          "denominator": 13,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 38,
+          "denominator": 38,
+          "value": 1.0
+        }
+      },
+      "existing-regression": {
+        "task_pass": {
+          "numerator": 15,
+          "denominator": 20,
+          "value": 0.75
+        },
+        "strict_pass": {
+          "numerator": 15,
+          "denominator": 20,
+          "value": 0.75
+        },
+        "unsupported_addition": {
+          "numerator": 4,
+          "denominator": 20,
+          "value": 0.2
+        },
+        "spoiler": {
+          "numerator": 0,
+          "denominator": 20,
+          "value": 0.0
+        },
+        "episode_error_answerable": {
+          "numerator": 1,
+          "denominator": 19,
+          "value": 0.05263157894736842
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 1,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 3,
+          "denominator": 3,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 20,
+          "denominator": 20,
+          "value": 1.0
+        }
+      },
+      "independent-source-diagnostic": {
+        "task_pass": {
+          "numerator": 9,
+          "denominator": 18,
+          "value": 0.5
+        },
+        "strict_pass": {
+          "numerator": 7,
+          "denominator": 18,
+          "value": 0.3888888888888889
+        },
+        "unsupported_addition": {
+          "numerator": 7,
+          "denominator": 18,
+          "value": 0.3888888888888889
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 18,
+          "value": 0.05555555555555555
+        },
+        "episode_error_answerable": {
+          "numerator": 0,
+          "denominator": 15,
+          "value": 0.0
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 3,
+          "value": 0.0
+        },
+        "exact_code": {
+          "numerator": 6,
+          "denominator": 6,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 18,
+          "denominator": 18,
+          "value": 1.0
+        }
+      },
+      "context_tokens": {
+        "n": 38,
+        "p50": 750.5,
+        "p95_nearest_rank": 951,
+        "min": 436,
+        "max": 958
+      },
+      "generation_seconds_including_retry": {
+        "n": 38,
+        "p50": 1.394254,
+        "p95_nearest_rank": 2.254493,
+        "min": 0.706031,
+        "max": 2.8217510000000003
+      },
+      "total_seconds_cached_embeddings": {
+        "n": 38,
+        "p50": 1.409421,
+        "p95_nearest_rank": 2.268901,
+        "min": 0.719382,
+        "max": 2.8348780000000002
+      },
+      "prompt_tokens_last_attempt": {
+        "n": 38,
+        "p50": 1002.5,
+        "p95_nearest_rank": 1201,
+        "min": 677,
+        "max": 1221
+      }
+    },
+    "control-oracle": {
+      "all": {
+        "task_pass": {
+          "numerator": 16,
+          "denominator": 34,
+          "value": 0.47058823529411764
+        },
+        "strict_pass": {
+          "numerator": 15,
+          "denominator": 34,
+          "value": 0.4411764705882353
+        },
+        "unsupported_addition": {
+          "numerator": 16,
+          "denominator": 34,
+          "value": 0.47058823529411764
+        },
+        "spoiler": {
+          "numerator": 2,
+          "denominator": 34,
+          "value": 0.058823529411764705
+        },
+        "episode_error_answerable": {
+          "numerator": 2,
+          "denominator": 34,
+          "value": 0.058823529411764705
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 12,
+          "denominator": 13,
+          "value": 0.9230769230769231
+        },
+        "exact_sequence": {
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 33,
+          "denominator": 34,
+          "value": 0.9705882352941176
+        }
+      },
+      "existing-regression": {
+        "task_pass": {
+          "numerator": 10,
+          "denominator": 19,
+          "value": 0.5263157894736842
+        },
+        "strict_pass": {
+          "numerator": 9,
+          "denominator": 19,
+          "value": 0.47368421052631576
+        },
+        "unsupported_addition": {
+          "numerator": 7,
+          "denominator": 19,
+          "value": 0.3684210526315789
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 19,
+          "value": 0.05263157894736842
+        },
+        "episode_error_answerable": {
+          "numerator": 1,
+          "denominator": 19,
+          "value": 0.05263157894736842
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 6,
+          "denominator": 7,
+          "value": 0.8571428571428571
+        },
+        "exact_sequence": {
+          "numerator": 3,
+          "denominator": 3,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 18,
+          "denominator": 19,
+          "value": 0.9473684210526315
+        }
+      },
+      "independent-source-diagnostic": {
+        "task_pass": {
+          "numerator": 6,
+          "denominator": 15,
+          "value": 0.4
+        },
+        "strict_pass": {
+          "numerator": 6,
+          "denominator": 15,
+          "value": 0.4
+        },
+        "unsupported_addition": {
+          "numerator": 9,
+          "denominator": 15,
+          "value": 0.6
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 15,
+          "value": 0.06666666666666667
+        },
+        "episode_error_answerable": {
+          "numerator": 1,
+          "denominator": 15,
+          "value": 0.06666666666666667
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 6,
+          "denominator": 6,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 4,
+          "denominator": 4,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 15,
+          "denominator": 15,
+          "value": 1.0
+        }
+      },
+      "context_tokens": {
+        "n": 34,
+        "p50": 283.0,
+        "p95_nearest_rank": 317,
+        "min": 85,
+        "max": 596
+      },
+      "generation_seconds_including_retry": {
+        "n": 34,
+        "p50": 1.045835,
+        "p95_nearest_rank": 7.385503,
+        "min": 0.42120100000000005,
+        "max": 10.955152
+      },
+      "total_seconds_cached_embeddings": {
+        "n": 34,
+        "p50": 1.0469925,
+        "p95_nearest_rank": 7.38638,
+        "min": 0.421938,
+        "max": 10.956181
+      },
+      "prompt_tokens_last_attempt": {
+        "n": 34,
+        "p50": 532.0,
+        "p95_nearest_rank": 574,
+        "min": 331,
+        "max": 856
+      }
+    },
+    "B-oracle": {
+      "all": {
+        "task_pass": {
+          "numerator": 24,
+          "denominator": 34,
+          "value": 0.7058823529411765
+        },
+        "strict_pass": {
+          "numerator": 22,
+          "denominator": 34,
+          "value": 0.6470588235294118
+        },
+        "unsupported_addition": {
+          "numerator": 9,
+          "denominator": 34,
+          "value": 0.2647058823529412
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 34,
+          "value": 0.029411764705882353
+        },
+        "episode_error_answerable": {
+          "numerator": 0,
+          "denominator": 34,
+          "value": 0.0
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 13,
+          "denominator": 13,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 6,
+          "denominator": 7,
+          "value": 0.8571428571428571
+        },
+        "runtime_success": {
+          "numerator": 34,
+          "denominator": 34,
+          "value": 1.0
+        }
+      },
+      "existing-regression": {
+        "task_pass": {
+          "numerator": 14,
+          "denominator": 19,
+          "value": 0.7368421052631579
+        },
+        "strict_pass": {
+          "numerator": 14,
+          "denominator": 19,
+          "value": 0.7368421052631579
+        },
+        "unsupported_addition": {
+          "numerator": 5,
+          "denominator": 19,
+          "value": 0.2631578947368421
+        },
+        "spoiler": {
+          "numerator": 0,
+          "denominator": 19,
+          "value": 0.0
+        },
+        "episode_error_answerable": {
+          "numerator": 0,
+          "denominator": 19,
+          "value": 0.0
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 7,
+          "denominator": 7,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 3,
+          "denominator": 3,
+          "value": 1.0
+        },
+        "runtime_success": {
+          "numerator": 19,
+          "denominator": 19,
+          "value": 1.0
+        }
+      },
+      "independent-source-diagnostic": {
+        "task_pass": {
+          "numerator": 10,
+          "denominator": 15,
+          "value": 0.6666666666666666
+        },
+        "strict_pass": {
+          "numerator": 8,
+          "denominator": 15,
+          "value": 0.5333333333333333
+        },
+        "unsupported_addition": {
+          "numerator": 4,
+          "denominator": 15,
+          "value": 0.26666666666666666
+        },
+        "spoiler": {
+          "numerator": 1,
+          "denominator": 15,
+          "value": 0.06666666666666667
+        },
+        "episode_error_answerable": {
+          "numerator": 0,
+          "denominator": 15,
+          "value": 0.0
+        },
+        "safe_unanswerable": {
+          "numerator": 0,
+          "denominator": 0,
+          "value": null
+        },
+        "exact_code": {
+          "numerator": 6,
+          "denominator": 6,
+          "value": 1.0
+        },
+        "exact_sequence": {
+          "numerator": 3,
+          "denominator": 4,
+          "value": 0.75
+        },
+        "runtime_success": {
+          "numerator": 15,
+          "denominator": 15,
+          "value": 1.0
+        }
+      },
+      "context_tokens": {
+        "n": 34,
+        "p50": 142.0,
+        "p95_nearest_rank": 184,
+        "min": 60,
+        "max": 284
+      },
+      "generation_seconds_including_retry": {
+        "n": 34,
+        "p50": 0.8715305,
+        "p95_nearest_rank": 1.733738,
+        "min": 0.34253500000000003,
+        "max": 2.027107
+      },
+      "total_seconds_cached_embeddings": {
+        "n": 34,
+        "p50": 0.8724115,
+        "p95_nearest_rank": 1.734764,
+        "min": 0.34332799999999997,
+        "max": 2.027876
+      },
+      "prompt_tokens_last_attempt": {
+        "n": 34,
+        "p50": 398.5,
+        "p95_nearest_rank": 439,
+        "min": 306,
+        "max": 544
+      }
+    },
+    "A-paired-vs-control": {
+      "improved": [
+        "office-safe",
+        "handgun-slides",
+        "gail-pipes",
+        "rick-pipes",
+        "late-rick-id",
+        "b2-ru-plain"
+      ],
+      "regressed": [
+        "first-generator",
+        "second-generator",
+        "second-rick-memory"
+      ]
+    },
+    "B-paired-vs-control": {
+      "improved": [
+        "gas",
+        "rick-branch",
+        "b2-chips",
+        "handgun-slides",
+        "shotgun-location",
+        "red-box",
+        "gail-pipes",
+        "rick-pipes",
+        "disc-yellow-leading-zero",
+        "b2-ru-plain",
+        "b1-b2-distinction"
+      ],
+      "regressed": [
+        "disc-blue-leading-zero",
+        "late-gail-id"
+      ]
+    }
+  },
+  "database_integrity": {
+    "original_regression_chunk_hashes_verified": "19/19",
+    "recovered_chunks": 45,
+    "cards": 39,
+    "fact_action_code_evidence_links_checked": 104,
+    "ordered_actions_including_repeats": 48,
+    "exact_code_strings": 17,
+    "source_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+    "sqlite_and_embedding_input_checks": {
+      "control": {
+        "chunks": 45,
+        "verified_situation_views": 0,
+        "bytes": 348160,
+        "rag_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+        "max_embedding_tokens": 299,
+        "max_generator_tokens_with_header": 322
+      },
+      "A": {
+        "chunks": 59,
+        "verified_situation_views": 39,
+        "bytes": 532480,
+        "rag_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+        "max_embedding_tokens": 379,
+        "max_generator_tokens_with_header": 361
+      },
+      "B": {
+        "chunks": 59,
+        "verified_situation_views": 39,
+        "bytes": 446464,
+        "rag_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+        "max_embedding_tokens": 293,
+        "max_generator_tokens_with_header": 317
+      }
+    },
+    "semantic_checks": "Agent source review plus explicit branch/code/repetition assertions; not an independent human review",
+    "limitations": [
+      "Original HTML/Markdown and original .rag byte identity not verified.",
+      "39 curated situations; 20 uncurated raw fallback blocks.",
+      "A retains old whole blocks including historic splits/overlap; full sentence-safe resegmentation requires original source."
+    ]
+  },
+  "preparation": {
+    "elapsed_seconds": 6.256086291999964,
+    "process_maxrss_platform_units": 44220416,
+    "cpu_seconds": 1.17907,
+    "embedding_requests_unique": 114,
+    "cards": 39,
+    "raw_fallback_blocks": 20,
+    "source_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+    "original_source_unmodified": true,
+    "checks": [
+      "all exact quotes match saved Unicode source offsets",
+      "all action/code strings occur in their fact quote",
+      "all required items occur in source block",
+      "all context evidence quotes match block or section",
+      "actual embedding usage equals server tokenization",
+      "no embedding input exceeds 2048 tokens",
+      "SQLite integrity_check and FTS row count"
+    ]
+  },
+  "langfuse": {
+    "items": 410,
+    "scores": 2644,
+    "experiments": [
+      {
+        "id": "e2bc845ad6de05558179204cbf1ca78b",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "retrieval",
+          "manifest_sha256": "5ae33235fb7fb14740bd277707b8609891d595b7f68ca70bfc306fefff34042c",
+          "mode": "vector",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-control-retrieval / vector / default / 39e2f3ba"
+      },
+      {
+        "id": "b03255ce431a154854a04b191d658030",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "retrieval",
+          "manifest_sha256": "5ae33235fb7fb14740bd277707b8609891d595b7f68ca70bfc306fefff34042c",
+          "mode": "hybrid",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-control-retrieval / hybrid / default / 39e2f3ba"
+      },
+      {
+        "id": "248635cb28a5bdfab6735637ac82cb56",
+        "metadata": {
+          "corpus_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+          "kind": "retrieval",
+          "manifest_sha256": "c3e94a483ef1ff5025ef93462ec46e238a148ea4c35d4d76addffc4ccf0fbe6d",
+          "mode": "vector",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-A-branchsafe-retrieval / vector / default / 60c5a199"
+      },
+      {
+        "id": "6a51fbb7f70fd7f5eb1fb64271176c46",
+        "metadata": {
+          "corpus_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+          "kind": "retrieval",
+          "manifest_sha256": "c3e94a483ef1ff5025ef93462ec46e238a148ea4c35d4d76addffc4ccf0fbe6d",
+          "mode": "hybrid",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-A-branchsafe-retrieval / hybrid / default / 60c5a199"
+      },
+      {
+        "id": "9c9770b86ce588f164277206cbb20150",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "retrieval",
+          "manifest_sha256": "1b7f45639c6991256f2d1409d65f2a881945c2eb5e9327f641a8a3a39a30d9ba",
+          "mode": "vector",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-B-retrieval / vector / default / 7fde1d1e"
+      },
+      {
+        "id": "c8638cc36cb6fe4e6c4f88ccb7895f69",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "retrieval",
+          "manifest_sha256": "1b7f45639c6991256f2d1409d65f2a881945c2eb5e9327f641a8a3a39a30d9ba",
+          "mode": "hybrid",
+          "model": "retrieval-only",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-B-retrieval / hybrid / default / 7fde1d1e"
+      },
+      {
+        "id": "d17eed4035e91c0bcef0c282f42e24b1",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "local",
+          "manifest_sha256": "2bcc5d37eaea68ef1c17f3feee652fa4bea817310bfd38e92104d01b7adf91ec",
+          "mode": "hybrid",
+          "model": "assistance-2b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-control-local / hybrid / default / fbd40b48"
+      },
+      {
+        "id": "1a7afa164ef5e4cd8296e83a29a9f7dc",
+        "metadata": {
+          "corpus_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+          "kind": "local",
+          "manifest_sha256": "53cf87e8202540df986a69d480dbb844c58f65f16caf44ce9e66f6b3f1e7014a",
+          "mode": "hybrid",
+          "model": "assistance-2b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-A-branchsafe-local / hybrid / default / f8904a8d"
+      },
+      {
+        "id": "0d967e16ab1fe70d70d421b009dbae4c",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "local",
+          "manifest_sha256": "c915c093fa8c98f821f31f10132c8573fcbffb982641e4d7a2cd94e20a152d47",
+          "mode": "hybrid",
+          "model": "assistance-2b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-B-local / hybrid / default / c1b61c71"
+      },
+      {
+        "id": "0822d8d4882c321a8599ed745e8da060",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "oracle",
+          "manifest_sha256": "c0f75157bfd2f416f54b084d3ee016f80567cbe20ec7a91f6bd1ec765c63ec58",
+          "mode": "hybrid",
+          "model": "assistance-2b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-control-oracle / hybrid / default / 290f21db"
+      },
+      {
+        "id": "f11c068301392a98ed4a7c3ac67c6fed",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "oracle",
+          "manifest_sha256": "b935d746753989eab3b7cc6a3821bcfd270a3493c7a4eec495c7e213de88d94b",
+          "mode": "hybrid",
+          "model": "assistance-2b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-B-oracle / hybrid / default / 9c43c6be"
+      }
+    ],
+    "project": "http://localhost:3000/project/walkthrough-backend"
+  }
+}

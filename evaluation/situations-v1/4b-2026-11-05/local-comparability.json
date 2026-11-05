@@ -1,0 +1,20 @@
+{
+  "control-local": {
+    "cases": 38,
+    "identical_retrieval_contexts_and_messages_to_2b": true,
+    "retries_4b": 3,
+    "retries_2b": 0
+  },
+  "A-local": {
+    "cases": 38,
+    "identical_retrieval_contexts_and_messages_to_2b": true,
+    "retries_4b": 1,
+    "retries_2b": 1
+  },
+  "B-local": {
+    "cases": 38,
+    "identical_retrieval_contexts_and_messages_to_2b": true,
+    "retries_4b": 0,
+    "retries_2b": 0
+  }
+}

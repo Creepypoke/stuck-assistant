@@ -122,3 +122,22 @@ func TestRunnerRetrievalLocalOracleResumeAndManifest(t *testing.T) {
 		}
 	}
 }
+
+func TestSourceGoldSurvivesChunkingAndRequiresEveryFact(t *testing.T) {
+	span := rag.SourceSpan{DocumentSHA256: "doc", BlockID: "b", Start: 10, End: 14, Quote: "0392"}
+	other := rag.SourceSpan{DocumentSHA256: "doc", BlockID: "a", Start: 0, End: 4, Quote: "3695"}
+	c := Case{Evidence: []Evidence{{SourceSpan: &span}, {SourceSpan: &other}}}
+	first := rag.SearchResult{DocumentID: 1, Sequence: 900, SituationID: "b2", SourceSpans: []rag.SourceSpan{span}}
+	if any, all := completeness(c, []rag.SearchResult{first}); !any || all {
+		t.Fatal("compound evidence incorrectly complete")
+	}
+	// Two different chunks can satisfy source evidence without old sequence IDs.
+	second := rag.SearchResult{DocumentID: 1, Sequence: 901, SituationID: "b1", SourceSpans: []rag.SourceSpan{other}}
+	if _, all := completeness(c, []rag.SearchResult{first, second}); !all {
+		t.Fatal("new chunk IDs lost evidence")
+	}
+	first.SourceSpans[0].DocumentSHA256 = "different-version"
+	if match(Case{Evidence: []Evidence{{SourceSpan: &span}}}, first) {
+		t.Fatal("accepted different source version")
+	}
+}

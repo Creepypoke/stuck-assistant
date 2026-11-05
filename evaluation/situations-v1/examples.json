@@ -1,0 +1,1208 @@
+{
+  "schema": "situation-v1-context-audit-v2",
+  "cards": [
+    {
+      "situation_id": "generator-second",
+      "game_variant": "Dino Crisis 1 / Normal / source EN 2024-02-16; platform not established by recovered source",
+      "chapter": "CHAPTER 1",
+      "episode": "generator-second",
+      "branch": null,
+      "location": null,
+      "conditions": [
+        "Глава 1, повторный приход в стартовую внешнюю область с BG Room B1 Key. После лестницы: Startup Battery R, устройство и рычаги генератора."
+      ],
+      "required_items": [
+        "Startup Battery R"
+      ],
+      "entities": [
+        {
+          "source_name": "Rick",
+          "verified_aliases": [
+            {
+              "value": "Рик",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-010",
+                  "start": 7168,
+                  "end": 7172,
+                  "quote": "Rick"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 7168,
+              "end": 7172,
+              "quote": "Rick"
+            }
+          ]
+        },
+        {
+          "source_name": "Startup Battery R",
+          "verified_aliases": [],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6891,
+              "end": 6908,
+              "quote": "Startup Battery R"
+            }
+          ]
+        },
+        {
+          "source_name": "Plug",
+          "verified_aliases": [],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6994,
+              "end": 6998,
+              "quote": "Plug"
+            }
+          ]
+        }
+      ],
+      "aliases": [
+        "второй генератор; Startup Battery R; стартовая батарея; BG Room B1"
+      ],
+      "task": "Второй генератор с Startup Battery R",
+      "facts": [
+        {
+          "value": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        }
+      ],
+      "exact_code": [],
+      "ordered_actions": [
+        {
+          "value": "LEFT",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "CENTER",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "RIGHT",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "LEFT",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "CENTER",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "LEFT",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "CANCEL",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        },
+        {
+          "value": "pull the levers",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-010",
+              "start": 6811,
+              "end": 7166,
+              "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+            }
+          ]
+        }
+      ],
+      "result": null,
+      "next_situation_ids": [],
+      "source_spans": [
+        {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-010",
+          "start": 6811,
+          "end": 7166,
+          "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+        }
+      ],
+      "original_source_block": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there.",
+      "validation_status": "source-reviewed",
+      "field_evidence": {
+        "chapter": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "branch": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "location": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "conditions": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "required_items": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "task": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "result": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010",
+            "start": 6652,
+            "end": 7213,
+            "quote": "go back to the room control, after the conversation, go to the outside area where the game started and open the door that was locked with the BG Room B1 Key.\n\nGet the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator, Rick calls you to the control room, go there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-010-heading",
+            "start": 6612,
+            "end": 6650,
+            "quote": "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND"
+          }
+        ],
+        "game_variant": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-000",
+            "start": 60,
+            "end": 258,
+            "quote": "February 16, 2024\nBy: José Ricardo Fortes da Silva (Ash_Riot)\n\n**WARNING:**  This walkthrough was made playing on Normal difficulty, if you play on Easy you will find different items in some places."
+          }
+        ]
+      },
+      "normalizations": [],
+      "context_validation_status": "agent-reviewed against full original block and explicit branch headings; no independent human review"
+    },
+    {
+      "situation_id": "b2-chips-panel",
+      "game_variant": "Dino Crisis 1 / Normal / source EN 2024-02-16; platform not established by recovered source",
+      "chapter": "CHAPTER 4",
+      "episode": "b2-chips-panel",
+      "branch": null,
+      "location": null,
+      "conditions": [
+        "Глава 4. Два B2 Key Chip вставлены в слоты возле экрана в месте получения первого B2 чипа. Пароль перед перестановкой блоков."
+      ],
+      "required_items": [
+        "B2 Key Chip 1",
+        "B2 Key Chip 2"
+      ],
+      "entities": [
+        {
+          "source_name": "Rick",
+          "verified_aliases": [
+            {
+              "value": "Рик",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-028",
+                  "start": 23472,
+                  "end": 23476,
+                  "quote": "Rick"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 23472,
+              "end": 23476,
+              "quote": "Rick"
+            }
+          ]
+        },
+        {
+          "source_name": "Regina",
+          "verified_aliases": [
+            {
+              "value": "Регина",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-028",
+                  "start": 23216,
+                  "end": 23222,
+                  "quote": "Regina"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 23216,
+              "end": 23222,
+              "quote": "Regina"
+            }
+          ]
+        },
+        {
+          "source_name": "B2 Key Chip",
+          "verified_aliases": [
+            {
+              "value": "чип B2",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-028",
+                  "start": 24058,
+                  "end": 24069,
+                  "quote": "B2 Key Chip"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 24058,
+              "end": 24069,
+              "quote": "B2 Key Chip"
+            }
+          ]
+        },
+        {
+          "source_name": "Plug",
+          "verified_aliases": [],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 23678,
+              "end": 23682,
+              "quote": "Plug"
+            }
+          ]
+        }
+      ],
+      "aliases": [
+        "B2 Key Chip 1; B2 Key Chip 2; чип B2; два чипа; цифровой пароль"
+      ],
+      "task": "B2 Key Chip 1 и 2: цифровой пароль",
+      "facts": [
+        {
+          "value": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 24016,
+              "end": 24230,
+              "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+            }
+          ]
+        }
+      ],
+      "exact_code": [
+        {
+          "value": "0392",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-028",
+              "start": 24016,
+              "end": 24230,
+              "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+            }
+          ]
+        }
+      ],
+      "ordered_actions": [],
+      "result": null,
+      "next_situation_ids": [],
+      "source_spans": [
+        {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-028",
+          "start": 24016,
+          "end": 24230,
+          "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+        }
+      ],
+      "original_source_block": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go",
+      "validation_status": "source-reviewed",
+      "field_evidence": {
+        "chapter": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "branch": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "location": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "conditions": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "required_items": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-026",
+            "start": 22029,
+            "end": 22042,
+            "quote": "B2 Key Chip 1"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-027",
+            "start": 23074,
+            "end": 23087,
+            "quote": "B2 Key Chip 2"
+          }
+        ],
+        "task": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "result": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028",
+            "start": 23196,
+            "end": 24393,
+            "quote": "When she gets there Regina hears screams over the radio and when the elevator arrives, our friend Tyrannousaurus arrives for dinner, but ends up getting the biggest shock and passes out, but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power, go to the large elevator and examine the bodies to get a Plug , the Port Card Key and the DDK Input Disk D, return to the room where Rick is and Regina gives him the Port Card Key, with it Rick will open a passage in this room, but upon entering it they discover a kind of portal that should to have been a side effect of Kirk’s experiments, after the conversation, take the DDK Code Disk S and head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them, when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it, go straight ahead until the next door, Now go"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-028-heading",
+            "start": 23159,
+            "end": 23194,
+            "quote": "CHAPTER 4 – FINDING ANOTHER WAY OUT"
+          }
+        ],
+        "game_variant": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-000",
+            "start": 60,
+            "end": 258,
+            "quote": "February 16, 2024\nBy: José Ricardo Fortes da Silva (Ash_Riot)\n\n**WARNING:**  This walkthrough was made playing on Normal difficulty, if you play on Easy you will find different items in some places."
+          }
+        ]
+      },
+      "normalizations": [],
+      "context_validation_status": "agent-reviewed against full original block and explicit branch headings; no independent human review"
+    },
+    {
+      "situation_id": "first-rick-immediate",
+      "game_variant": "Dino Crisis 1 / Normal / source EN 2024-02-16; platform not established by recovered source",
+      "chapter": "CHAPTER 2",
+      "episode": "first-rick-immediate",
+      "branch": "first-choice/Rick",
+      "location": null,
+      "conditions": [
+        "Глава 2, первый выбор: идти с Rick спасать Tom. Сразу после выхода из Control Room — найти Rick в месте старта."
+      ],
+      "required_items": [],
+      "entities": [
+        {
+          "source_name": "Rick",
+          "verified_aliases": [
+            {
+              "value": "Рик",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-015",
+                  "start": 10889,
+                  "end": 10893,
+                  "quote": "Rick"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 10889,
+              "end": 10893,
+              "quote": "Rick"
+            }
+          ]
+        },
+        {
+          "source_name": "Tom",
+          "verified_aliases": [
+            {
+              "value": "Том",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-015",
+                  "start": 11164,
+                  "end": 11167,
+                  "quote": "Tom"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 11164,
+              "end": 11167,
+              "quote": "Tom"
+            }
+          ]
+        },
+        {
+          "source_name": "Resuscitation",
+          "verified_aliases": [],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 10941,
+              "end": 10954,
+              "quote": "Resuscitation"
+            }
+          ]
+        }
+      ],
+      "aliases": [
+        "Rick; Рик; Tom; Том; первый выбор"
+      ],
+      "task": "Первый выбор Rick: первый шаг",
+      "facts": [
+        {
+          "value": "Leave the room and go to the place where the game started, you will see Rick, follow behind him",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 10817,
+              "end": 10912,
+              "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+            }
+          ]
+        }
+      ],
+      "exact_code": [],
+      "ordered_actions": [
+        {
+          "value": "go to the place where the game started",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 10817,
+              "end": 10912,
+              "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+            }
+          ]
+        },
+        {
+          "value": "follow behind him",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-015",
+              "start": 10817,
+              "end": 10912,
+              "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+            }
+          ]
+        }
+      ],
+      "result": null,
+      "next_situation_ids": [],
+      "source_spans": [
+        {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-015",
+          "start": 10817,
+          "end": 10912,
+          "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+        }
+      ],
+      "original_source_block": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6",
+      "validation_status": "source-reviewed",
+      "field_evidence": {
+        "chapter": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "branch": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "location": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "conditions": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "required_items": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "task": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "result": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015",
+            "start": 10817,
+            "end": 11565,
+            "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him, get the Slag Bullets and a Resuscitation on the way, you will arrive at the big elevator and a pterodactyl will grab you, press all the buttons to get free , pick up your weapon that fell and go to the white door on the right, you will find Rick and Tom who is seriously injured, he gives you the DDK Code Disk L and passes out, take the DDK Input Disk L on the table and enter the door Next, go to the next one, quickly go to the next door and go down the stairs, pick up the B1 Crane Key on the floor and push the shelf to find an An Aid, here there are six panels that control the gas pipes, they are arranged more or less like this:\n\n1 2\n\n3 4\n\n5 6"
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-015-heading",
+            "start": 10768,
+            "end": 10815,
+            "quote": "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM"
+          }
+        ],
+        "game_variant": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-000",
+            "start": 60,
+            "end": 258,
+            "quote": "February 16, 2024\nBy: José Ricardo Fortes da Silva (Ash_Riot)\n\n**WARNING:**  This walkthrough was made playing on Normal difficulty, if you play on Easy you will find different items in some places."
+          }
+        ]
+      },
+      "normalizations": [],
+      "context_validation_status": "agent-reviewed against full original block and explicit branch headings; no independent human review"
+    },
+    {
+      "situation_id": "gas-neutralize",
+      "game_variant": "Dino Crisis 1 / Normal / source EN 2024-02-16; platform not established by recovered source",
+      "chapter": "CHAPTER 2",
+      "episode": "gas-neutralize",
+      "branch": null,
+      "location": null,
+      "conditions": [
+        "Глава 2, после объединения веток. Учёный заперт в ядовитом газе. Нажатия панели для нейтрализации; исходное GRENN сохранено."
+      ],
+      "required_items": [],
+      "entities": [
+        {
+          "source_name": "Gail",
+          "verified_aliases": [
+            {
+              "value": "Гейл",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-019",
+                  "start": 15645,
+                  "end": 15649,
+                  "quote": "Gail"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 15645,
+              "end": 15649,
+              "quote": "Gail"
+            }
+          ]
+        },
+        {
+          "source_name": "Handgun",
+          "verified_aliases": [
+            {
+              "value": "пистолет",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-019",
+                  "start": 15111,
+                  "end": 15118,
+                  "quote": "Handgun"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 15111,
+              "end": 15118,
+              "quote": "Handgun"
+            }
+          ]
+        },
+        {
+          "source_name": "B1 Key Chip",
+          "verified_aliases": [
+            {
+              "value": "чип B1",
+              "kind": "agent-reviewed RU translation/transliteration; not a new game label",
+              "evidence": [
+                {
+                  "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+                  "block_id": "baseline-block-019",
+                  "start": 14923,
+                  "end": 14934,
+                  "quote": "B1 Key Chip"
+                }
+              ]
+            }
+          ],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14923,
+              "end": 14934,
+              "quote": "B1 Key Chip"
+            }
+          ]
+        },
+        {
+          "source_name": "Small Size Key",
+          "verified_aliases": [],
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14962,
+              "end": 14976,
+              "quote": "Small Size Key"
+            }
+          ]
+        }
+      ],
+      "aliases": [
+        "газ; poisonous gas; цветные кнопки; учёный"
+      ],
+      "task": "Нейтрализация ядовитого газа",
+      "facts": [
+        {
+          "value": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        }
+      ],
+      "exact_code": [],
+      "ordered_actions": [
+        {
+          "value": "BLUE",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        },
+        {
+          "value": "GREEN",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        },
+        {
+          "value": "GRENN",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        },
+        {
+          "value": "RED",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        },
+        {
+          "value": "BLUE",
+          "evidence": [
+            {
+              "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+              "block_id": "baseline-block-019",
+              "start": 14693,
+              "end": 14866,
+              "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+            }
+          ]
+        }
+      ],
+      "result": null,
+      "next_situation_ids": [],
+      "source_spans": [
+        {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-019",
+          "start": 14693,
+          "end": 14866,
+          "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+        }
+      ],
+      "original_source_block": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there.",
+      "validation_status": "source-reviewed",
+      "field_evidence": {
+        "chapter": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "branch": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "location": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "conditions": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "required_items": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "task": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "result": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019",
+            "start": 14693,
+            "end": 15807,
+            "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas, go in and talk to him, before he dies he gives you the B1 Key Chip, examine his body to get a Small Size Key, try to leave and a raptor attacks you, get rid of him and if you want, turn on the gas to kill him, go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695, now you will have to arrange the blocks according to the figure below, it is not difficult, when you do, go to the place where you lit a green light, use the B1 Key Chip there to get the Keycard R, go to the Computer Room and go to the screen on the wall, there are two card slots on each side of it, use the Key Card L in the left slot, but you need to Let two people swipe both cards at the same time, choose Yes to call Gail, when he arrives, they will both open a door, but there is one more behind it, examine the panel on the side and enter the password ENERGY to open it. there."
+          },
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-019-heading",
+            "start": 14663,
+            "end": 14691,
+            "quote": "HERE THE PATHS COME TOGETHER"
+          }
+        ],
+        "game_variant": [
+          {
+            "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+            "block_id": "baseline-block-000",
+            "start": 60,
+            "end": 258,
+            "quote": "February 16, 2024\nBy: José Ricardo Fortes da Silva (Ash_Riot)\n\n**WARNING:**  This walkthrough was made playing on Normal difficulty, if you play on Easy you will find different items in some places."
+          }
+        ]
+      },
+      "normalizations": [
+        {
+          "original": "GRENN",
+          "normalized": null,
+          "status": "unverified_typo; do not silently correct"
+        }
+      ],
+      "context_validation_status": "agent-reviewed against full original block and explicit branch headings; no independent human review"
+    }
+  ]
+}

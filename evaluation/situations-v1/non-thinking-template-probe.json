@@ -1,0 +1,17 @@
+{
+  "request": {
+    "messages": [
+      {
+        "role": "user",
+        "content": "test"
+      }
+    ],
+    "add_generation_prompt": true,
+    "chat_template_kwargs": {
+      "enable_thinking": false
+    }
+  },
+  "response": {
+    "prompt": "<|im_start|>user\ntest<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n"
+  }
+}

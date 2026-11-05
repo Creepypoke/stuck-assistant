@@ -2,19 +2,89 @@ package rag
 
 import (
 	"context"
+	"crypto/sha256"
 	"database/sql"
 	"encoding/binary"
+	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"math"
 	"os"
 	"path/filepath"
 	"sort"
+	"strings"
 )
 
+// SourceSpan uses Unicode code-point offsets [start,end) in the saved document.
+type SourceSpan struct {
+	DocumentSHA256 string `json:"document_sha256"`
+	BlockID        string `json:"block_id"`
+	Start          int    `json:"start"`
+	End            int    `json:"end"`
+	Quote          string `json:"quote"`
+}
+
+type Situation struct {
+	Schema      string       `json:"schema"`
+	ID          string       `json:"situation_id"`
+	AnswerText  string       `json:"answer_text"`
+	SourceSpans []SourceSpan `json:"source_spans"`
+}
+
+// ApplySituation keeps retrieval text separate from the generator's evidence.
+func ApplySituation(r *SearchResult, metadata []byte) error {
+	var m struct {
+		Situation *Situation `json:"situation,omitempty"`
+	}
+	if err := json.Unmarshal(metadata, &m); err != nil {
+		return fmt.Errorf("chunk metadata: %w", err)
+	}
+	if m.Situation == nil {
+		return nil
+	}
+	if m.Situation.Schema != "situation-v1" || m.Situation.ID == "" || strings.TrimSpace(m.Situation.AnswerText) == "" || len(m.Situation.SourceSpans) == 0 {
+		return fmt.Errorf("invalid or unsupported situation metadata")
+	}
+	for _, span := range m.Situation.SourceSpans {
+		if span.DocumentSHA256 == "" || span.BlockID == "" || span.End <= span.Start || span.Start < 0 || len([]rune(span.Quote)) != span.End-span.Start {
+			return fmt.Errorf("invalid situation source span")
+		}
+	}
+	r.SituationID = m.Situation.ID
+	r.AnswerText = m.Situation.AnswerText
+	r.SourceSpans = m.Situation.SourceSpans
+	for _, span := range r.SourceSpans {
+		if !strings.Contains(r.Text, span.Quote) || !strings.Contains(r.AnswerText, span.Quote) {
+			return fmt.Errorf("situation evidence absent from search or answer representation")
+		}
+	}
+	return nil
+}
+
+func DocumentHash(markdown string) string {
+	h := sha256.Sum256([]byte(markdown))
+	return hex.EncodeToString(h[:])
+}
+
+// Verify against the immutable source, never merely against an annotation quote.
+func ValidateSourceSpans(r SearchResult, markdown string) error {
+	runes := []rune(markdown)
+	for _, span := range r.SourceSpans {
+		if span.DocumentSHA256 != DocumentHash(markdown) || span.Start < 0 || span.End > len(runes) || span.End <= span.Start || string(runes[span.Start:span.End]) != span.Quote {
+			return fmt.Errorf("source span mismatch for situation %s", r.SituationID)
+		}
+	}
+	return nil
+}
+
 type SearchResult struct {
-	ChunkID    int64
-	DocumentID int64
-	Sequence   int
+	DocumentSHA256 string       `json:"document_sha256,omitempty"`
+	SituationID    string       `json:"situation_id,omitempty"`
+	AnswerText     string       `json:"answer_text,omitempty"`
+	SourceSpans    []SourceSpan `json:"source_spans,omitempty"`
+	ChunkID        int64
+	DocumentID     int64
+	Sequence       int
 	// Score is cosine similarity, including when results are ordered by fusion.
 
 	Title     string
@@ -82,14 +152,14 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		}
 		return nil, fmt.Errorf("stat RAG file: %w", err)
 	}
-	database, err := sql.Open("sqlite", path)
+	database, err := sql.Open("sqlite", "file:"+path+"?mode=ro")
 	if err != nil {
 		return nil, fmt.Errorf("open RAG file: %w", err)
 	}
 	defer database.Close()
 
 	rows, err := database.QueryContext(ctx, `
-		SELECT c.id, c.title, c.section, c.text, d.source_url, e.dimensions, e.vector, c.document_id, c.sequence
+		SELECT c.id, c.title, c.section, c.text, d.source_url, e.dimensions, e.vector, c.document_id, c.sequence, c.metadata, d.markdown
 		FROM embeddings e
 		JOIN chunks c ON c.id = e.chunk_id
 		JOIN documents d ON d.id = c.document_id`)
@@ -102,8 +172,17 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		var chunk rankedChunk
 		var dimensions int
 		var encoded []byte
-		if err := rows.Scan(&chunk.ChunkID, &chunk.Title, &chunk.Section, &chunk.Text, &chunk.SourceURL, &dimensions, &encoded, &chunk.documentID, &chunk.sequence); err != nil {
+		var metadata []byte
+		var markdown string
+		if err := rows.Scan(&chunk.ChunkID, &chunk.Title, &chunk.Section, &chunk.Text, &chunk.SourceURL, &dimensions, &encoded, &chunk.documentID, &chunk.sequence, &metadata, &markdown); err != nil {
 			return nil, fmt.Errorf("scan RAG chunk: %w", err)
+		}
+		if err := ApplySituation(&chunk.SearchResult, metadata); err != nil {
+			return nil, err
+		}
+		chunk.DocumentSHA256 = DocumentHash(markdown)
+		if err := ValidateSourceSpans(chunk.SearchResult, markdown); err != nil {
+			return nil, err
 		}
 		if dimensions != len(query) {
 			return nil, fmt.Errorf("RAG embedding dimensions are %d, query embedding dimensions are %d", dimensions, len(query))
@@ -146,6 +225,19 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		options.Trace.Candidates = traceResults(candidates)
 		options.Trace.Selection = "rank_limit"
 	}
+	// Collapse alternate search views without summing alias contributions.
+	seen := map[string]bool{}
+	unique := chunks[:0]
+	for _, chunk := range chunks {
+		if chunk.SituationID != "" {
+			if seen[chunk.SituationID] {
+				continue
+			}
+			seen[chunk.SituationID] = true
+		}
+		unique = append(unique, chunk)
+	}
+	chunks = unique
 	if len(chunks) > limit {
 		chunks = chunks[:limit]
 	}

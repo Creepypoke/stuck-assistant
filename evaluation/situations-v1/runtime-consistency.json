@@ -1,0 +1,17 @@
+{
+  "generation_manifests_identical_except_kind_and_corpus": true,
+  "exact_query_vectors_identical_all_six_local_and_retrieval_runs": true,
+  "original_available_russian_rag_sha256_unchanged": "cc86c167d6c59ae40ac12e6972068566a3dadf1f7024c23475fcc8eec83895e3",
+  "controls_and_B_v2_v3_byte_identical": true,
+  "original_english_rag_not_accessed": true,
+  "runtime_source_files_snapshotted": 46,
+  "builder_and_support_script_sha256": {
+    "curate.py": "b796a8863934041b928dfe494acd9df425562607ce921f402af2b3f8283315e5",
+    "audit_context.py": "41412e5edb103d8197eff43af8d307452cf8955c01395bc15e00b46f48acf9a4",
+    "review.py": "43dfe9b0ccdfa4d331be8ba46cc537fa8e62c61813715877b2559a9a8778025c",
+    "validate.py": "2a494d9598ba4ee0f4f9504c9a801cb02778fecb6fb8d740d14a8b8221712798",
+    "make_cases.py": "389682a8f17463cd2936536b98af2bbf9f01adb50cbef7b3393a770f8872700e",
+    "prepare.py": "9d367cd39583b99b17614a8106a1f851ada6a158c925a3418ee1600aab33cfbb",
+    "analyze.py": "6f33af3927458fa25627fc5bca6cb892a5ac603f68f5c2091fa807b05be16471"
+  }
+}

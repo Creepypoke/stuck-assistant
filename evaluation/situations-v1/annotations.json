@@ -1,0 +1,846 @@
+[
+  {
+    "id": "controls-turn",
+    "block": 1,
+    "task": "Быстрый разворот на 180 градусов",
+    "context": "Справка управления. Кнопка быстрого разворота.",
+    "chapter": null,
+    "quotes": [
+      "R2 – Rotate 180º"
+    ],
+    "context_evidence": [
+      "CONTROLS",
+      "R2 – Rotate 180º"
+    ],
+    "aliases": [
+      "разворот; rotate; R2"
+    ]
+  },
+  {
+    "id": "menu-mix",
+    "block": 2,
+    "task": "Меню смешивания предметов",
+    "context": "Справочная информация: пункт меню для смешивания двух предметов.",
+    "chapter": null,
+    "quotes": [
+      "MIX – Here you can mix two items to form a new one."
+    ],
+    "context_evidence": [
+      "OPTIONS MENU",
+      "MIX – Here you can mix two items to form a new one."
+    ],
+    "aliases": [
+      "смешать; MIX"
+    ]
+  },
+  {
+    "id": "opening-gail",
+    "block": 4,
+    "task": "Начало игры: первый маршрут Regina",
+    "context": "Начало главы 1, первое получение управления Regina. Подойти к Gail, проверить ящик, пройти зелёную дверью.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "When you take control of Regina, walk a little and talk to Gail, after the conversation go to a box and push it to discover a Med Pak M, here is a locked door, we will come back here later, now go through the green door and get it in this room a Resuscitation and the BG Area Key"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "When you take control of Regina,"
+    ],
+    "location": null,
+    "aliases": [
+      "начало игры; начало прохождения; Gail; Гейл; Regina; Регина"
+    ],
+    "ordered_actions": [
+      "talk to Gail",
+      "push it",
+      "go through the green door"
+    ],
+    "result": "Resuscitation and the BG Area Key"
+  },
+  {
+    "id": "generator-first",
+    "block": 4,
+    "task": "Первый генератор: четыре катушки и рычаги",
+    "context": "Глава 1, первый запуск генератора после разговора с Gail. Панель с четырьмя катушками, затем рычаги. Этаж в цитате не указан.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "continue in forward and talk to Gail, he tells Regina to enter while he stands guard, enter the next door and go forward until you see four levers, examine the panel ahead to see four coils, choose the options CENTER, RIGHT, CENTER AND CANCEL, now pull the levers to turn on the generator"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "continue in forward and talk to Gail,"
+    ],
+    "aliases": [
+      "первый генератор; катушки; рычаги; Gail; Гейл"
+    ],
+    "ordered_actions": [
+      "CENTER",
+      "RIGHT",
+      "CENTER",
+      "CANCEL",
+      "pull the levers"
+    ]
+  },
+  {
+    "id": "emergency-green",
+    "block": 5,
+    "task": "Зелёный Emergency Box",
+    "context": "Справка по зелёному Emergency Box при первом проходе через вентиляцию. Хранение лечебных предметов и открытие Plug.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "the green panel on the wall is an Emergency Box (let’s call it only from Box) in it you can store healing items, but it is locked and to open it you need an item called Plug"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "the green panel on the wall"
+    ],
+    "aliases": [
+      "зелёный ящик; Emergency Box; Plug; лечебные предметы"
+    ]
+  },
+  {
+    "id": "shotgun-first",
+    "block": 5,
+    "task": "Shotgun после первого разговора с Rick",
+    "context": "Глава 1, первый разговор с Rick в Control Room. Место получения Shotgun после выхода из комнаты.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "enter the side door to find Rick, this is the Control Room, after the conversation, exit and follow go to the right to a door, go in and get the Shotgun straight ahead, also get the DDK Input Disc H and a Plug on top of the cabinet"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "enter the side door to find Rick,"
+    ],
+    "location": "Control Room → door to the right",
+    "aliases": [
+      "дробовик; Shotgun; Rick; Рик; Control Room"
+    ],
+    "ordered_actions": [
+      "exit",
+      "right to a door",
+      "get the Shotgun"
+    ]
+  },
+  {
+    "id": "safe-office-early",
+    "block": 6,
+    "task": "Сейф после синей папки: 0426",
+    "context": "Глава 1, возврат к сейфу в компьютерной комнате после DDK Code Disk H и синей папки. Код и содержимое.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "get the DDK Code Disk H and a An Dart M, examine the blue folder and go back to the computer room, examine the safe and enter the password 0426 to open it, get a Resuscitation and the Entrance Key"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "get the DDK Code Disk H"
+    ],
+    "aliases": [
+      "компьютерная комната; синий документ; сейф; safe"
+    ],
+    "exact_code": [
+      "0426"
+    ],
+    "required_items": [],
+    "result": "Resuscitation and the Entrance Key"
+  },
+  {
+    "id": "handgun-slides",
+    "block": 7,
+    "task": "Сейф с Handgun Slides",
+    "context": "Глава 1. Панель сейфа с Handgun Slides; установка улучшения на Handgun.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "enter the double doors, kill another raptor and get a resuscitation, go to the end and examine the panel , enter the password 8159 to open the safe and get the Handgun Slides, use it on the Handgun to improve it"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "enter the double doors,"
+    ],
+    "aliases": [
+      "Handgun Slides; улучшение пистолета; сейф; пароль"
+    ],
+    "exact_code": [
+      "8159"
+    ]
+  },
+  {
+    "id": "door-head",
+    "block": 7,
+    "task": "DDK дверь HEAD",
+    "context": "Глава 1, дверь после сейфа с Handgun Slides. Пароль двери HEAD.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "exit this room and examine the panel next to the door ahead, enter the password HEAD to open the door"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "exit this room and examine the panel next to the door ahead,"
+    ],
+    "aliases": [
+      "DDK; дверь; HEAD"
+    ],
+    "exact_code": [
+      "HEAD"
+    ]
+  },
+  {
+    "id": "panel-keys",
+    "block": 8,
+    "task": "Сейф двух Panel Keys",
+    "context": "Глава 1. Устройство с двумя медалями: использование обоих Panel Keys, код сейфа и Keycard L.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "examine the place with two medals and use both Panel Keys on it, enter the password 705037 to open the safe and get Keycard L"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "examine the place with two medals"
+    ],
+    "aliases": [
+      "Panel Key; ключ панели; медали; сейф"
+    ],
+    "exact_code": [
+      "705037"
+    ],
+    "required_items": [
+      "Panel Keys"
+    ],
+    "result": "Keycard L"
+  },
+  {
+    "id": "emergency-red",
+    "block": 9,
+    "task": "Красный ящик: два Plug",
+    "context": "Глава 1. Красный ящик в комнате лифтов содержит боеприпасы и требует два Plug.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "here is a red box, in it you will find ammunition , but you need two plugs to open it"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "here is a red box"
+    ],
+    "aliases": [
+      "красный ящик; ammunition; plugs"
+    ]
+  },
+  {
+    "id": "generator-second",
+    "block": 10,
+    "task": "Второй генератор с Startup Battery R",
+    "context": "Глава 1, повторный приход в стартовую внешнюю область с BG Room B1 Key. После лестницы: Startup Battery R, устройство и рычаги генератора.",
+    "chapter": "CHAPTER 1",
+    "quotes": [
+      "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+    ],
+    "context_evidence": [
+      "CHAPTER 1 – WELCOME TO DINOSAUR ISLAND",
+      "Get the An Aid"
+    ],
+    "aliases": [
+      "второй генератор; Startup Battery R; стартовая батарея; BG Room B1"
+    ],
+    "required_items": [
+      "Startup Battery R"
+    ],
+    "ordered_actions": [
+      "LEFT",
+      "CENTER",
+      "RIGHT",
+      "LEFT",
+      "CENTER",
+      "LEFT",
+      "CANCEL",
+      "pull the levers"
+    ]
+  },
+  {
+    "id": "first-gail-immediate",
+    "block": 12,
+    "task": "Первый выбор Gail: первый шаг и предметы",
+    "context": "Глава 2, первый выбор: идти с Gail за Dr. Kirk. Сразу после выхода из Control Room. Предметы первой комнаты и Recover Aid в следующей.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "Leave the room and go left, go down the stairs and enter the first door you find, inside take the ID Card, a Med Pak M, on the shelf and a Recover Aid in the next room"
+    ],
+    "context_evidence": [
+      "FIRST CHOICE – OPTION 1 – GO WITH GAIL AFTER DR. KIRK",
+      "Leave the room"
+    ],
+    "branch": "first-choice/Gail",
+    "aliases": [
+      "Gail; Гейл; Dr. Kirk; Кирк; первый выбор"
+    ],
+    "ordered_actions": [
+      "go left",
+      "go down the stairs",
+      "enter the first door"
+    ],
+    "result": "ID Card and Med Pak M; Recover Aid in next room"
+  },
+  {
+    "id": "first-gail-pipes",
+    "block": 14,
+    "task": "Gail: трубы перед большим лифтом",
+    "context": "Глава 2, первая ветка Gail. Последовательность соединения газовых труб для включения большого лифта.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "You must connect the tubes of the same color so choose the options as follows, in this order: 5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE, this will activate the large elevator"
+    ],
+    "context_evidence": [
+      "FIRST CHOICE – OPTION 1 – GO WITH GAIL AFTER DR. KIRK",
+      "You must connect"
+    ],
+    "branch": "first-choice/Gail",
+    "aliases": [
+      "Gail; Гейл; газовые трубы; gas pipes"
+    ],
+    "ordered_actions": [
+      "5=RED",
+      "3=GREEN",
+      "1=BLUE",
+      "2=RED",
+      "4=GREEN",
+      "6=BLUE"
+    ]
+  },
+  {
+    "id": "first-rick-immediate",
+    "block": 15,
+    "task": "Первый выбор Rick: первый шаг",
+    "context": "Глава 2, первый выбор: идти с Rick спасать Tom. Сразу после выхода из Control Room — найти Rick в месте старта.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+    ],
+    "context_evidence": [
+      "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM",
+      "Leave the room"
+    ],
+    "branch": "first-choice/Rick",
+    "aliases": [
+      "Rick; Рик; Tom; Том; первый выбор"
+    ],
+    "ordered_actions": [
+      "go to the place where the game started",
+      "follow behind him"
+    ]
+  },
+  {
+    "id": "first-rick-pipes",
+    "block": 16,
+    "task": "Rick: трубы перед большим лифтом",
+    "context": "Глава 2, первая ветка Rick. Соединить трубы перед возвращением к большому лифту.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "You must connect the tubes of the same color so choose the options as follows, in this order: 5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE, this will activate the large elevator"
+    ],
+    "context_evidence": [
+      "FIRST CHOICE – OPTION 2 – GO WITH RICK SAVE TOM",
+      "You must connect"
+    ],
+    "branch": "first-choice/Rick",
+    "aliases": [
+      "Rick; Рик; газовые трубы; gas pipes"
+    ],
+    "ordered_actions": [
+      "5=RED",
+      "3=GREEN",
+      "1=BLUE",
+      "2=RED",
+      "4=GREEN",
+      "6=BLUE"
+    ]
+  },
+  {
+    "id": "office-id-early",
+    "block": 18,
+    "task": "Office ID Card после объединения веток",
+    "context": "Глава 2, первые пути объединились. В Office использовать ID Card на компьютере; пароль и выбор Yes.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "Go to the elevator room, use the FC Device on the body that is here, now go through the next door and enter the next one to reach the Office, go to the computer and use the ID Card on it, enter the password 58104 and choose Yes"
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "Go to the elevator room"
+    ],
+    "location": "Office",
+    "required_items": [
+      "ID Card"
+    ],
+    "aliases": [
+      "Office; офис; ID Card; идентификационная карта"
+    ],
+    "exact_code": [
+      "58104"
+    ],
+    "ordered_actions": [
+      "use the ID Card",
+      "58104",
+      "Yes"
+    ]
+  },
+  {
+    "id": "laboratory-unlock",
+    "block": 18,
+    "task": "Отпереть дверь лаборатории: 7248",
+    "context": "Глава 2, после объединения веток. Компьютер открывает дверь предыдущей комнаты.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "examine the computer that is on and enter the password 7248 to unlock the door to the previous room, go there and enter through it."
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "examine the computer that is on"
+    ],
+    "aliases": [
+      "компьютер; laboratory; лаборатория; дверь"
+    ],
+    "exact_code": [
+      "7248"
+    ]
+  },
+  {
+    "id": "gas-neutralize",
+    "block": 19,
+    "task": "Нейтрализация ядовитого газа",
+    "context": "Глава 2, после объединения веток. Учёный заперт в ядовитом газе. Нажатия панели для нейтрализации; исходное GRENN сохранено.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "You will see a scientist"
+    ],
+    "aliases": [
+      "газ; poisonous gas; цветные кнопки; учёный"
+    ],
+    "ordered_actions": [
+      "BLUE",
+      "GREEN",
+      "GRENN",
+      "RED",
+      "BLUE"
+    ],
+    "normalizations": [
+      {
+        "original": "GRENN",
+        "normalized": null,
+        "status": "unverified_typo; do not silently correct"
+      }
+    ]
+  },
+  {
+    "id": "b1-chip-panel",
+    "block": 19,
+    "task": "B1 Key Chip: пароль синего экрана",
+    "context": "Глава 2, после события с газом. В комнате получения Handgun Sights использовать B1 Key Chip на синем экране. Цифровой пароль перед блоками.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695"
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "go to the room where you got the Handgun Sights"
+    ],
+    "required_items": [
+      "B1 Key Chip"
+    ],
+    "aliases": [
+      "B1 Key Chip; чип B1; синий экран; пароль"
+    ],
+    "exact_code": [
+      "3695"
+    ]
+  },
+  {
+    "id": "second-gail",
+    "block": 21,
+    "task": "Второй выбор Gail: путь к контейнерам",
+    "context": "Глава 2, второй выбор: следовать Gail после закрытия дверей. Возврат в комнату лифта и к контейнерам.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "Go all the way back to the room where there is an elevator, there will be a bunch of raptors on the way, the gate that closed before is now open, go to the location of the containers and you will find Gail who managed to capture Dr. Kirk."
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "Go all the way back"
+    ],
+    "branch": "second-choice/Gail",
+    "aliases": [
+      "второй выбор; Gail; Гейл; контейнеры"
+    ]
+  },
+  {
+    "id": "second-rick",
+    "block": 21,
+    "task": "Второй выбор Rick: игра памяти",
+    "context": "Глава 2, второй выбор: идея Rick, возвращение в simulator room. Панель с игрой памяти и две ошибки.",
+    "chapter": "CHAPTER 2",
+    "quotes": [
+      "Go to the simulator room (I advise you to save first) and go to the control panel at the end, you will have to play a memory game, the first two are not very difficult, as the third requires an excellent memory, if you make two mistakes, the system is deactivated, if this happens, reset and try again, when you succeed, a trapdoor opens, Regina ends up at the Containers location where she finds Kirk and Gail."
+    ],
+    "context_evidence": [
+      "HERE THE PATHS COME TOGETHER",
+      "Go to the simulator room"
+    ],
+    "branch": "second-choice/Rick",
+    "location": "simulator room",
+    "aliases": [
+      "второй выбор; Rick; Рик; память; simulator"
+    ]
+  },
+  {
+    "id": "small-size-boxes",
+    "block": 22,
+    "task": "Small Size Key: выбор двух ящиков",
+    "context": "Глава 3. Повторный приход в infirmary, где получена ID Card. Выбор одного из двух ящиков с Small Size Key.",
+    "chapter": "CHAPTER 3",
+    "quotes": [
+      "on the way, enter the infirmary where you got the ID Card, in the next room there are two boxes that can be opened with the Small Size Key, you will have to choose one, the one on the left has a Resuscitation, the one on the right has a Multiplier, it’s up to you"
+    ],
+    "context_evidence": [
+      "CHAPTER 3 – MISSION ACCOMPLISHED, TIME TO GET OUT",
+      "on the way, enter the infirmary"
+    ],
+    "location": "infirmary / next room",
+    "required_items": [
+      "Small Size Key"
+    ],
+    "aliases": [
+      "Small Size Key; малый ключ; ящики; infirmary"
+    ]
+  },
+  {
+    "id": "waterway-door",
+    "block": 27,
+    "task": "Дверь WATERWAY и B2 Key Chip 2",
+    "context": "Глава 4. Синий щиток двери в комнате тела, где ранее получен Plug. Пароль WATERWAY; второй B2 чип у тела в следующей комнате.",
+    "chapter": "CHAPTER 4",
+    "quotes": [
+      "go all the way back to the room with a body where you got a Plug, go to the blue panel next to a door and enter the password WATERWAY to open it, enter and walk a little, Rick appears, during the conversation someone calls on a radio that is with the body, Rick says that they are coming through the large elevator, you You must go there, take the B2 Key Chip 2 and a Plug from the body in this room, head to the large elevator."
+    ],
+    "context_evidence": [
+      "CHAPTER 4 – FINDING ANOTHER WAY OUT",
+      "go all the way back to the room with a body"
+    ],
+    "aliases": [
+      "WATERWAY; водный путь; B2 Key Chip 2; чип B2"
+    ],
+    "exact_code": [
+      "WATERWAY"
+    ]
+  },
+  {
+    "id": "restore-power-acd",
+    "block": 28,
+    "task": "Восстановить питание: батарея A C D",
+    "context": "Глава 4. После прибытия большого лифта пропало питание. Вернуть батарею на исходное устройство и выбрать A, C, D, Cancel.",
+    "chapter": "CHAPTER 4",
+    "quotes": [
+      "but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power"
+    ],
+    "context_evidence": [
+      "CHAPTER 4 – FINDING ANOTHER WAY OUT",
+      "but the place is left without power"
+    ],
+    "aliases": [
+      "питание; батарея; A C D; battery"
+    ],
+    "ordered_actions": [
+      "A",
+      "C",
+      "D",
+      "Cancel"
+    ]
+  },
+  {
+    "id": "b2-chips-panel",
+    "block": 28,
+    "task": "B2 Key Chip 1 и 2: цифровой пароль",
+    "context": "Глава 4. Два B2 Key Chip вставлены в слоты возле экрана в месте получения первого B2 чипа. Пароль перед перестановкой блоков.",
+    "chapter": "CHAPTER 4",
+    "quotes": [
+      "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+    ],
+    "context_evidence": [
+      "CHAPTER 4 – FINDING ANOTHER WAY OUT",
+      "head to the place where you got the first B2 Key Chip"
+    ],
+    "required_items": [],
+    "aliases": [
+      "B2 Key Chip 1; B2 Key Chip 2; чип B2; два чипа; цифровой пароль"
+    ],
+    "exact_code": [
+      "0392"
+    ]
+  },
+  {
+    "id": "stabilizer-door",
+    "block": 28,
+    "task": "Дверь STABILIZER после блоков B2",
+    "context": "Глава 4, после перестановки блоков с двумя B2 чипами. Панель двери в конце коридора.",
+    "chapter": "CHAPTER 4",
+    "quotes": [
+      "when you succeed, exit and examine the panel next to the door at the end, enter the password STABILIZER to open it"
+    ],
+    "context_evidence": [
+      "CHAPTER 4 – FINDING ANOTHER WAY OUT",
+      "when you succeed, exit"
+    ],
+    "aliases": [
+      "STABILIZER; стабилизатор; дверь"
+    ],
+    "exact_code": [
+      "STABILIZER"
+    ]
+  },
+  {
+    "id": "doctorkirk-door",
+    "block": 30,
+    "task": "Дверь DOCTORKIRK и зелёные огни B2",
+    "context": "Глава 4, получен DDK Code Disk D. Пароль двери с синей панелью и применение B2 чипов к зелёным огням.",
+    "chapter": "CHAPTER 4",
+    "quotes": [
+      "go to a door with a blue panel on the side, examine it and enter the password DOCTORKIRK to open the door, go forward until a green light before the door, use the B2 Key Chip 2 on it to open it, use the B2 Key Chip 1 on the other green light to open the other door"
+    ],
+    "context_evidence": [
+      "CHAPTER 4 – FINDING ANOTHER WAY OUT",
+      "go to a door with a blue panel"
+    ],
+    "aliases": [
+      "DOCTORKIRK; Dr. Kirk; дверь; зелёный огонь; B2"
+    ],
+    "exact_code": [
+      "DOCTORKIRK"
+    ]
+  },
+  {
+    "id": "third-gail-id",
+    "block": 33,
+    "task": "Третий выбор Gail: компьютер ID Card",
+    "context": "Глава 5, третья стратегия Gail. После получения Initializer и Stabilizer, компьютер рядом с телом в комнате первого B2 чипа.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "now go to the room where you got the first B2 Key Chip, on the computer near the body use the ID Card, enter the password 31415 and choose Yes"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 1 – FOLLOWING GAIL’S STRATEGY",
+      "now go to the room where you got the first B2 Key Chip"
+    ],
+    "branch": "third-choice/Gail",
+    "required_items": [
+      "ID Card"
+    ],
+    "aliases": [
+      "Gail; Гейл; ID Card; поздний компьютер"
+    ],
+    "exact_code": [
+      "31415"
+    ]
+  },
+  {
+    "id": "third-rick-safe",
+    "block": 35,
+    "task": "Третий выбор Rick: сейф Shotgun Parts",
+    "context": "Глава 5, третья стратегия Rick. Получен Planning Disc; шкаф в месте последнего DDK, отмеченном красным на карте.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "Rick will give you the Planning Disc, go to the place where you got the last DDK (look on the map, the place in red), examine the cabinet in the corner and enter the password 1281 to open it and get the Shotgun Parts, use it the Shotgun to improve it"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 2 – FOLLOWING RICK’S STRATEGY",
+      "Rick will give you the Planning Disc"
+    ],
+    "branch": "third-choice/Rick",
+    "required_items": [
+      "Planning Disc"
+    ],
+    "aliases": [
+      "Rick; Рик; Planning Disc; планирующий диск; шкаф; Shotgun Parts"
+    ],
+    "exact_code": [
+      "1281"
+    ]
+  },
+  {
+    "id": "third-rick-core",
+    "block": 35,
+    "task": "Третий выбор Rick: Core Parts",
+    "context": "Глава 5, третья стратегия Rick. Комната с A на двери, после DOCTORKIRK. Пароль панели для Core Parts.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "go to the location where there is the door that opened with the password DOCTORKIRK, enter the room with an A on the door and push the cabinet, take the Plug and examine the panel on the wall, now examine the control panel and enter with the password 367204, take the Core Parts and also the GG Parts in the corridor on the left"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 2 – FOLLOWING RICK’S STRATEGY",
+      "go to the location where there is the door"
+    ],
+    "branch": "third-choice/Rick",
+    "aliases": [
+      "Core Parts; GG Parts; A; Rick; Рик"
+    ],
+    "exact_code": [
+      "367204"
+    ]
+  },
+  {
+    "id": "third-rick-0367",
+    "block": 35,
+    "task": "Planning Disc у жёлтой папки: 0367",
+    "context": "Глава 5, третья стратегия Rick. Experiment Room Hall, комната с C на двери, панель около жёлтой папки.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "go to the Experiment Room Hall, go to the room where with a C on the door (other than the one you just now), in the panel near the yellow folder use the Planning Disc and enter the password 0367 to get another part in the Stabilizer"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 2 – FOLLOWING RICK’S STRATEGY",
+      "go to the Experiment Room Hall"
+    ],
+    "branch": "third-choice/Rick",
+    "required_items": [
+      "Planning Disc"
+    ],
+    "aliases": [
+      "Planning Disc; жёлтая папка; yellow folder; Stabilizer; Rick"
+    ],
+    "exact_code": [
+      "0367"
+    ]
+  },
+  {
+    "id": "third-rick-0204",
+    "block": 36,
+    "task": "Planning Disc у синего круга: 0204",
+    "context": "Глава 5, третья стратегия Rick. Панель с синим кругом, получение двух оставшихся частей.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "now go to the control panel with a blue circle and use the Planning Disc there, enter the password 0204 to get the two missing parts"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 2 – FOLLOWING RICK’S STRATEGY",
+      "now go to the control panel"
+    ],
+    "branch": "third-choice/Rick",
+    "required_items": [
+      "Planning Disc"
+    ],
+    "aliases": [
+      "Planning Disc; синий круг; blue circle; Rick"
+    ],
+    "exact_code": [
+      "0204"
+    ]
+  },
+  {
+    "id": "third-rick-id",
+    "block": 37,
+    "task": "Третий выбор Rick: компьютер ID Card",
+    "context": "Глава 5, третья стратегия Rick. Собраны Initializer и Stabilizer; компьютер у тела в комнате первого B2 чипа.",
+    "chapter": "CHAPTER 5",
+    "quotes": [
+      "now go to the room where you got the first B2 Key Chip, on the computer near the body use the ID Card, enter the password 31415 and choose Yes"
+    ],
+    "context_evidence": [
+      "THIRD CHOICE – OPTION 2 – FOLLOWING RICK’S STRATEGY",
+      "now go to the room where you got the first B2 Key Chip"
+    ],
+    "branch": "third-choice/Rick",
+    "required_items": [
+      "ID Card"
+    ],
+    "aliases": [
+      "Rick; Рик; ID Card; поздний компьютер"
+    ],
+    "exact_code": [
+      "31415"
+    ]
+  },
+  {
+    "id": "item-hemostat",
+    "block": 43,
+    "task": "Hemostat: остановка кровотечения",
+    "context": "Справочник предметов, вне маршрута и выбора ветки.",
+    "chapter": null,
+    "quotes": [
+      "Hemostat:**  Stops bleeding but does not recover energy"
+    ],
+    "context_evidence": [
+      "ITEMS",
+      "Hemostat:"
+    ],
+    "aliases": [
+      "Hemostat; гемостат; кровотечение"
+    ]
+  },
+  {
+    "id": "item-medpak-l",
+    "block": 43,
+    "task": "Med Pak L: лечение и кровотечение",
+    "context": "Справочник предметов, вне маршрута и выбора ветки.",
+    "chapter": null,
+    "quotes": [
+      "Med Pak L:**  Recovers all energy and stops bleeding"
+    ],
+    "context_evidence": [
+      "ITEMS",
+      "Med Pak L:"
+    ],
+    "aliases": [
+      "Med Pak L; большая аптечка; здоровье; кровотечение"
+    ]
+  },
+  {
+    "id": "item-resuscitation",
+    "block": 43,
+    "task": "Resuscitation: автоматическое оживление",
+    "context": "Справочник предметов, вне маршрута и выбора ветки.",
+    "chapter": null,
+    "quotes": [
+      "Resuscitation:**  Automatically revives"
+    ],
+    "context_evidence": [
+      "ITEMS",
+      "Resuscitation:"
+    ],
+    "aliases": [
+      "Resuscitation; оживление"
+    ]
+  },
+  {
+    "id": "item-medpak-m",
+    "block": 43,
+    "task": "Med Pak M: полное лечение",
+    "context": "Справочник предметов, вне маршрута и выбора ветки.",
+    "chapter": null,
+    "quotes": [
+      "Med Pak M:**  Recovers all energy"
+    ],
+    "context_evidence": [
+      "ITEMS",
+      "Med Pak M:"
+    ],
+    "aliases": [
+      "Med Pak M; аптечка; здоровье"
+    ]
+  },
+  {
+    "id": "item-multiplier",
+    "block": 43,
+    "task": "Multiplier: количество предметов",
+    "context": "Справочник предметов, вне маршрута и выбора ветки.",
+    "chapter": null,
+    "quotes": [
+      "Multiplier:**  Increases the quantity of some items"
+    ],
+    "context_evidence": [
+      "ITEMS",
+      "Multiplier:"
+    ],
+    "aliases": [
+      "Multiplier; множитель"
+    ]
+  }
+]

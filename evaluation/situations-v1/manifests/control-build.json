@@ -1,0 +1,408 @@
+{
+  "schema": "situation-experiment-v1",
+  "variant": "control",
+  "source_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+  "source_provenance": {
+    "type": "langfuse-recovered-baseline-chunks",
+    "trace_id": "f81522cb1f13fcbb9dab778960b49074",
+    "original_corpus_sha256": "36f141abe2fa6f24ae595d3fbf59c6ef873ad840565f3c8de8e3c5a75730bb08",
+    "original_markdown_sha256": null,
+    "raw_source_sha256": null,
+    "warning": "Rebuilt control; NOT a byte-identical historical baseline. Canonical source retains all 45 exact chunks and historic overlap. Original HTML/Markdown unavailable outside restricted backend/tmp."
+  },
+  "game_variant": "Dino Crisis 1 / Normal / source EN 2024-02-16; platform not established by recovered source",
+  "parser_version": "historical-parser-output recovered from Langfuse",
+  "parser_code_sha256": "8c22301240c8a106eddf241237cec30f8e00343598482d0c08553de786bf1b97",
+  "annotation_version": "source-curated-v1",
+  "annotation_sha256": "fbe9d5dcd9d5b5ae8066903ac5a4e84bac60e555d22bddeef6492ca7630a9543",
+  "chunking_version": "historical-45-recovered",
+  "llm_annotation": {
+    "used": true,
+    "model": "Codex GPT-6, active assistant session; exact serving revision unavailable",
+    "method": "agent-curated source selectors and context, followed by deterministic evidence checks; source excerpts read in this user-authorized Codex session; no additional inference service called",
+    "sampling_parameters": "not exposed for active assistant; reproducible build uses frozen annotations, no LLM calls"
+  },
+  "embedding_profile": {
+    "model": "embedding",
+    "revision": "1",
+    "gguf_sha256": "b5ce9d77a3fc4b3b39ccb5643c36777911cc4eb46a66962eadfa3f5f60490d63",
+    "dimensions": 768,
+    "input_format": "raw-text-v1/no-application-prefix"
+  },
+  "embedding_runtime": {
+    "default_generation_settings": {
+      "params": {
+        "seed": 4294967295,
+        "temperature": 0.800000011920929,
+        "dynatemp_range": 0.0,
+        "dynatemp_exponent": 1.0,
+        "top_k": 64,
+        "top_p": 0.949999988079071,
+        "min_p": 0.05000000074505806,
+        "top_n_sigma": -1.0,
+        "xtc_probability": 0.0,
+        "xtc_threshold": 0.10000000149011612,
+        "typical_p": 1.0,
+        "repeat_last_n": 64,
+        "repeat_penalty": 1.0,
+        "presence_penalty": 0.0,
+        "frequency_penalty": 0.0,
+        "dry_multiplier": 0.0,
+        "dry_base": 1.75,
+        "dry_allowed_length": 2,
+        "dry_penalty_last_n": 64,
+        "mirostat": 0,
+        "mirostat_tau": 5.0,
+        "mirostat_eta": 0.10000000149011612,
+        "adaptive_target": -1.0,
+        "adaptive_decay": 0.8999999761581421,
+        "max_tokens": -1,
+        "n_predict": -1,
+        "n_keep": 0,
+        "n_discard": 0,
+        "ignore_eos": false,
+        "stream": false,
+        "n_probs": 0,
+        "min_keep": 0,
+        "chat_format": "Content-only",
+        "reasoning_format": "none",
+        "reasoning_in_content": false,
+        "generation_prompt": "",
+        "samplers": [
+          "penalties",
+          "dry",
+          "top_n_sigma",
+          "top_k",
+          "typ_p",
+          "top_p",
+          "min_p",
+          "xtc",
+          "temperature"
+        ],
+        "speculative.types": "none",
+        "timings_per_token": false,
+        "post_sampling_probs": false,
+        "backend_sampling": false,
+        "lora": []
+      },
+      "n_ctx": 2048
+    },
+    "total_slots": 1,
+    "model_alias": "embedding",
+    "model_ftype": "Q8_0",
+    "model_path": "/Users/a.esaulenko/.cache/huggingface/hub/models--ggml-org--embeddinggemma-300M-GGUF/snapshots/0f741b5a6585bd53aeb15cd1372c56f2a0f65e12/embeddinggemma-300M-Q8_0.gguf",
+    "modalities": {
+      "vision": false,
+      "video": false,
+      "audio": false
+    },
+    "media_marker": "<__media_kcia2OWSbZ0kyphOUDIK5fZqJJjsgKok__>",
+    "endpoint_slots": true,
+    "endpoint_props": false,
+    "endpoint_metrics": false,
+    "ui": true,
+    "ui_settings": {},
+    "chat_template": "{%- for message in messages -%}\n  {{- '<|im_start|>' + message.role + '\n' + message.content + '<|im_end|>\n' -}}\n{%- endfor -%}\n{%- if add_generation_prompt -%}\n  {{- '<|im_start|>assistant\n' -}}\n{%- endif -%}",
+    "chat_template_caps": {
+      "supports_object_arguments": false,
+      "supports_parallel_tool_calls": false,
+      "supports_preserve_reasoning": false,
+      "supports_reasoning_effort": false,
+      "supports_string_content": true,
+      "supports_system_role": true,
+      "supports_tool_calls": false,
+      "supports_tools": false,
+      "supports_typed_content": false
+    },
+    "bos_token": "<bos>",
+    "eos_token": "<eos>",
+    "build_info": "b11706-f74e2fa6a",
+    "is_sleeping": false,
+    "cors_proxy_enabled": false
+  },
+  "tokenizer": {
+    "model_path": "/Users/a.esaulenko/.cache/huggingface/hub/models--unsloth--Qwen3.5-2B-GGUF/snapshots/f6d5376be1edb4d416d56da11e5397a961aca8ae/Qwen3.5-2B-UD-Q4_K_XL.gguf",
+    "gguf_sha256": "0af96165ea615bea39a04118d63f0b6d35908aea850ee4a51aa6151d851b8b35",
+    "runtime_build": "b11706-f74e2fa6a"
+  },
+  "chunk_counts": [
+    {
+      "sequence": 0,
+      "embedding_tokens": 58,
+      "generator_tokens_with_header": 80,
+      "situation_id": null
+    },
+    {
+      "sequence": 1,
+      "embedding_tokens": 78,
+      "generator_tokens_with_header": 85,
+      "situation_id": null
+    },
+    {
+      "sequence": 2,
+      "embedding_tokens": 72,
+      "generator_tokens_with_header": 90,
+      "situation_id": null
+    },
+    {
+      "sequence": 3,
+      "embedding_tokens": 86,
+      "generator_tokens_with_header": 104,
+      "situation_id": null
+    },
+    {
+      "sequence": 4,
+      "embedding_tokens": 252,
+      "generator_tokens_with_header": 283,
+      "situation_id": null
+    },
+    {
+      "sequence": 5,
+      "embedding_tokens": 284,
+      "generator_tokens_with_header": 307,
+      "situation_id": null
+    },
+    {
+      "sequence": 6,
+      "embedding_tokens": 75,
+      "generator_tokens_with_header": 101,
+      "situation_id": null
+    },
+    {
+      "sequence": 7,
+      "embedding_tokens": 234,
+      "generator_tokens_with_header": 262,
+      "situation_id": null
+    },
+    {
+      "sequence": 8,
+      "embedding_tokens": 118,
+      "generator_tokens_with_header": 144,
+      "situation_id": null
+    },
+    {
+      "sequence": 9,
+      "embedding_tokens": 247,
+      "generator_tokens_with_header": 275,
+      "situation_id": null
+    },
+    {
+      "sequence": 10,
+      "embedding_tokens": 129,
+      "generator_tokens_with_header": 157,
+      "situation_id": null
+    },
+    {
+      "sequence": 11,
+      "embedding_tokens": 57,
+      "generator_tokens_with_header": 84,
+      "situation_id": null
+    },
+    {
+      "sequence": 12,
+      "embedding_tokens": 225,
+      "generator_tokens_with_header": 258,
+      "situation_id": null
+    },
+    {
+      "sequence": 13,
+      "embedding_tokens": 275,
+      "generator_tokens_with_header": 309,
+      "situation_id": null
+    },
+    {
+      "sequence": 14,
+      "embedding_tokens": 259,
+      "generator_tokens_with_header": 293,
+      "situation_id": null
+    },
+    {
+      "sequence": 15,
+      "embedding_tokens": 189,
+      "generator_tokens_with_header": 219,
+      "situation_id": null
+    },
+    {
+      "sequence": 16,
+      "embedding_tokens": 269,
+      "generator_tokens_with_header": 297,
+      "situation_id": null
+    },
+    {
+      "sequence": 17,
+      "embedding_tokens": 216,
+      "generator_tokens_with_header": 245,
+      "situation_id": null
+    },
+    {
+      "sequence": 18,
+      "embedding_tokens": 236,
+      "generator_tokens_with_header": 259,
+      "situation_id": null
+    },
+    {
+      "sequence": 19,
+      "embedding_tokens": 277,
+      "generator_tokens_with_header": 302,
+      "situation_id": null
+    },
+    {
+      "sequence": 20,
+      "embedding_tokens": 262,
+      "generator_tokens_with_header": 286,
+      "situation_id": null
+    },
+    {
+      "sequence": 21,
+      "embedding_tokens": 208,
+      "generator_tokens_with_header": 234,
+      "situation_id": null
+    },
+    {
+      "sequence": 22,
+      "embedding_tokens": 212,
+      "generator_tokens_with_header": 241,
+      "situation_id": null
+    },
+    {
+      "sequence": 23,
+      "embedding_tokens": 240,
+      "generator_tokens_with_header": 267,
+      "situation_id": null
+    },
+    {
+      "sequence": 24,
+      "embedding_tokens": 180,
+      "generator_tokens_with_header": 204,
+      "situation_id": null
+    },
+    {
+      "sequence": 25,
+      "embedding_tokens": 293,
+      "generator_tokens_with_header": 317,
+      "situation_id": null
+    },
+    {
+      "sequence": 26,
+      "embedding_tokens": 46,
+      "generator_tokens_with_header": 70,
+      "situation_id": null
+    },
+    {
+      "sequence": 27,
+      "embedding_tokens": 251,
+      "generator_tokens_with_header": 277,
+      "situation_id": null
+    },
+    {
+      "sequence": 28,
+      "embedding_tokens": 270,
+      "generator_tokens_with_header": 293,
+      "situation_id": null
+    },
+    {
+      "sequence": 29,
+      "embedding_tokens": 62,
+      "generator_tokens_with_header": 86,
+      "situation_id": null
+    },
+    {
+      "sequence": 30,
+      "embedding_tokens": 299,
+      "generator_tokens_with_header": 322,
+      "situation_id": null
+    },
+    {
+      "sequence": 31,
+      "embedding_tokens": 54,
+      "generator_tokens_with_header": 79,
+      "situation_id": null
+    },
+    {
+      "sequence": 32,
+      "embedding_tokens": 104,
+      "generator_tokens_with_header": 132,
+      "situation_id": null
+    },
+    {
+      "sequence": 33,
+      "embedding_tokens": 275,
+      "generator_tokens_with_header": 306,
+      "situation_id": null
+    },
+    {
+      "sequence": 34,
+      "embedding_tokens": 90,
+      "generator_tokens_with_header": 124,
+      "situation_id": null
+    },
+    {
+      "sequence": 35,
+      "embedding_tokens": 290,
+      "generator_tokens_with_header": 317,
+      "situation_id": null
+    },
+    {
+      "sequence": 36,
+      "embedding_tokens": 47,
+      "generator_tokens_with_header": 76,
+      "situation_id": null
+    },
+    {
+      "sequence": 37,
+      "embedding_tokens": 268,
+      "generator_tokens_with_header": 300,
+      "situation_id": null
+    },
+    {
+      "sequence": 38,
+      "embedding_tokens": 106,
+      "generator_tokens_with_header": 140,
+      "situation_id": null
+    },
+    {
+      "sequence": 39,
+      "embedding_tokens": 206,
+      "generator_tokens_with_header": 243,
+      "situation_id": null
+    },
+    {
+      "sequence": 40,
+      "embedding_tokens": 165,
+      "generator_tokens_with_header": 203,
+      "situation_id": null
+    },
+    {
+      "sequence": 41,
+      "embedding_tokens": 193,
+      "generator_tokens_with_header": 212,
+      "situation_id": null
+    },
+    {
+      "sequence": 42,
+      "embedding_tokens": 199,
+      "generator_tokens_with_header": 215,
+      "situation_id": null
+    },
+    {
+      "sequence": 43,
+      "embedding_tokens": 240,
+      "generator_tokens_with_header": 230,
+      "situation_id": null
+    },
+    {
+      "sequence": 44,
+      "embedding_tokens": 91,
+      "generator_tokens_with_header": 100,
+      "situation_id": null
+    }
+  ],
+  "bytes": 348160,
+  "rag_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+  "reproduce": "python3 evaluation/situations-v1/prepare.py --out NEW_DIRECTORY",
+  "limitations": [
+    "A retains whole historical source blocks to avoid breaking original run-on sentences; adjacent events can remain.",
+    "Uncurated blocks remain raw fallback; no claim of complete semantic curation.",
+    "No oracle questions or expected answers are read by this builder."
+  ]
+}

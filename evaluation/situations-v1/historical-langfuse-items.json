@@ -1,0 +1,4669 @@
+{
+  "data": [
+    {
+      "id": "a007df4692cab240",
+      "traceId": "87dfb29c483f52dbda256a4356f30d8f",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.330Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "ff709886b20d12c0b207bd59d8fbe26527a373308c0a69a5eb47075cee632697",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"После объединения первых веток я пришёл в Office и использую ID Card на компьютере. Какой пароль ввести и что выбрать?\"}",
+      "output": "Введите пароль 58104 и выберите Yes.",
+      "expectedOutput": "58104, затем Yes. Не поздний пароль 31415.",
+      "scores": [
+        {
+          "id": "647490114db6b1f0a587aeae0df0676e95e7c01d877e43e8317c32610dedccf3",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.699Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        },
+        {
+          "id": "80d6ce2b4afcbd0960310b338de77af2553819b8673459b6e93c0e7cd30b18be",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.696Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        },
+        {
+          "id": "a0194ef5f154cc0b23e5040a5613a706b3f9e929690174fd1736092b3a10870f",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.690Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        },
+        {
+          "id": "fb2b40117e4e9842bb67034b1038714118ce15f138940f7a3cd2294fec05dfd5",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.690Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        },
+        {
+          "id": "ec03413d97da9eab1bd3446a1d2288172bb73c080cbd33cc2acb93edbae67585",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.682Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        },
+        {
+          "id": "1f031b69a92646eb08a04ef7dab2572c3c2210e26c75960cad4286aee43bddfe",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.682Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a007df4692cab240",
+            "traceId": "87dfb29c483f52dbda256a4356f30d8f"
+          }
+        }
+      ]
+    },
+    {
+      "id": "df714bbb81322a3b",
+      "traceId": "bebd313f7eaa7b896be4a1def47ab6de",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.794Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "4f2f334b77aec1b5275611984f5c556f542b9d79beeb65ba943a34e2c0e19571",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я вставил B2 Key Chip 1 и B2 Key Chip 2 в слоты возле экрана. Какой пароль нужен перед перестановкой блоков?\"}",
+      "output": "1. Вставьте B2 Key Chip 1 и B2 Key Chip 2 в слоты возле экрана.\n2. Введите пароль ENERGY перед перестановкой блоков.\n3. Перестаньте блокировать слоты.",
+      "expectedOutput": "0392 с ведущим нулём. Не 3695.",
+      "scores": [
+        {
+          "id": "8f502acf47fed81639ed2e671fbd1e72563ee10c9f2aa913509abfc94b8832e9",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.678Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        },
+        {
+          "id": "f6001e811e421627e1935bf1f00964a97aae3bd341d20ff563db575cce18fdca",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.679Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        },
+        {
+          "id": "2e15708219a9851acdca38a07fe8fa84f4f83459a26776c2af6e0df4865e81b9",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.678Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        },
+        {
+          "id": "0ddf1ddda52133b94f8e13366bf3f5f69fe4b6fbe2bbe46b4f4a144d276188e9",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.676Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        },
+        {
+          "id": "0b03dc6fd4a40aeb93404cc5dae44621f36c56efb073d180e61d5ea0e4783b20",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.678Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        },
+        {
+          "id": "e99102582fb7816e16c50655bb4261a4cc2ab8ad5e7017736766e332e9602818",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.666Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df714bbb81322a3b",
+            "traceId": "bebd313f7eaa7b896be4a1def47ab6de"
+          }
+        }
+      ]
+    },
+    {
+      "id": "7b6e7b4f2e46daf3",
+      "traceId": "f81522cb1f13fcbb9dab778960b49074",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:51.646Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "9425ed71aa35ea91f7ae50e5a8bd95819526ca86b2012033b89515bf30cb1fd4",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой кнопкой на контроллере выполнить быстрый разворот на 180 градусов?\"}",
+      "output": "Для быстрого разворота на 180 градусов используйте кнопку **R2**.",
+      "expectedOutput": "R2.",
+      "scores": [
+        {
+          "id": "611a0c456318e47de8175a3f83d94598bb7743a45033372bb895e9adea2ff64d",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.454Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        },
+        {
+          "id": "0ac718446685a209223775471884ae1f697eafcb7356fe83d67157984139e6f0",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.459Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        },
+        {
+          "id": "5e74ce590bffe32247980c644a05f202bd5b493c67a0bc772e3eea456dfcc9f4",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.459Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        },
+        {
+          "id": "7cba6cf175f3cf85e9aa90be79d519e819b36bbfa2bf6cd510387fc3aad592c8",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.454Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        },
+        {
+          "id": "e342d5693d38a9a99e9c8e812e60053737ea8505c1dfd250be6275bb7e59be91",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.454Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        },
+        {
+          "id": "d8b9f694b544d208baec4e685ffcb5d1b01ce4b986260b79577d7a6366990fb1",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.453Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7b6e7b4f2e46daf3",
+            "traceId": "f81522cb1f13fcbb9dab778960b49074"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3b4750bca0f65a56",
+      "traceId": "c27261676226a26170748d8d49222d7b",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.171Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "26c12d3fe2b1820dac5a89a17bf908d659471ddfa3a89cf5d0baad031365ad2a",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я выбрал третью стратегию Рика и получил Planning Disc. Какой код у шкафа с Shotgun Parts?\"}",
+      "output": "Код для открытия шкафа с Shotgun Parts — **1281**.",
+      "expectedOutput": "1281; предмет Shotgun Parts улучшает Shotgun. Не коды устройств 367204/0367/0204.",
+      "scores": [
+        {
+          "id": "3db2d361c13aed78b05df8af76c69c7c3ef5dbdefb07ab26e4ea0f5c9c8b3032",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.505Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        },
+        {
+          "id": "df2e0ab0c9be91522a82f10eecc3674e4fae7a57631fed797092210eb28e91f5",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.494Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        },
+        {
+          "id": "e5d9e49064184b3d0bf0791627b656fd2d95c5873b894c344039247387a17283",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.494Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        },
+        {
+          "id": "a4bc92ea5bfb9949e9b1f49347aa8e738a9fd7f82e3fb9feab21e8f3957c9baa",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.494Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        },
+        {
+          "id": "de240f87bc9679faf3f70d44afc41319f873e11fb26343c5de939c0ab7755589",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.493Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        },
+        {
+          "id": "976d8e48ba2730b938df1205f251c43af28514b295cf32c27cef564046b1584d",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.494Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3b4750bca0f65a56",
+            "traceId": "c27261676226a26170748d8d49222d7b"
+          }
+        }
+      ]
+    },
+    {
+      "id": "55001c2959df837b",
+      "traceId": "958c68f71c2afebf840250c4b9dcd757",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.639Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "514448e0bd14e0fe3c199b48f7adfb25d5443590ede056fb63bd6d04545cff9f",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я вернулся в компьютерную комнату после синей папки и DDK Code Disk H. Какой код у сейфа и что лежит внутри?\"}",
+      "output": "1. Код сейфа — 0426, а внутри находится Resuscitation и Entrance Key.\n2. В источнике подтверждается: \"examine the safe and enter the password 0426 to open it, get a Resuscitation and the Entrance Key\".",
+      "expectedOutput": "0426; Resuscitation и Entrance Key.",
+      "scores": [
+        {
+          "id": "f393b8dd52a7818cc465e89a42a8b8431bbfd6e0dcf9c05486c57083484ffdce",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.582Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        },
+        {
+          "id": "e670a8cc4dfe482be8d79fe895f381d5b51666341fa64a8159f502b3c86f9d9e",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.582Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        },
+        {
+          "id": "c65a40c6937812d6c0703fdcfabcf8a883731e36b3d645fa6106d689ce21e74f",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.582Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        },
+        {
+          "id": "1983c03b7b8206ff1a16d26901ecdec27fd250a34c4c9915deeedb4dd0f4734f",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.577Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        },
+        {
+          "id": "d7dd61c15918c2a4880ea8819faeb2d116385f5ade61631d2f9bd0139d9616a0",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.579Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        },
+        {
+          "id": "123b96d5d0af8f71aa00c139f4f396780798dd1fabff7c010b44895252d5b596",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.568Z",
+          "subject": {
+            "kind": "observation",
+            "id": "55001c2959df837b",
+            "traceId": "958c68f71c2afebf840250c4b9dcd757"
+          }
+        }
+      ]
+    },
+    {
+      "id": "76673651f7765dc3",
+      "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.019Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "9425ed71aa35ea91f7ae50e5a8bd95819526ca86b2012033b89515bf30cb1fd4",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой кнопкой на контроллере выполнить быстрый разворот на 180 градусов?\"}",
+      "output": "1. Направление вниз – идти назад. 2. Направление влево или вправо – повернуть в одну из этих направлений. 3. R2 – повернуть на 180 градусов.",
+      "expectedOutput": "R2.",
+      "scores": [
+        {
+          "id": "4d8028e94bd64fe399811a132f9e9603e12e277ca1d8b31e1f1d25503d7ce11d",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.745Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        },
+        {
+          "id": "b7c2034aae6474e1c0b154324ddf1548a13b4e88b904a28a9943cd6a787432d1",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.745Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        },
+        {
+          "id": "247bad635c733e018a8c5411b57a042818449a3f35278cdee14e8e0282a202fc",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.745Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        },
+        {
+          "id": "2b61ec3f07ef683dff30d61dea5671eacaf6093bb721ec929bd2cfbd0ddef531",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.744Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        },
+        {
+          "id": "090f79469f85dc5e85ec96ff569b2020fae2ee2538f1f6c3e4f0045a369b5143",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.744Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        },
+        {
+          "id": "86b25e04a3e437d10f7ff1de501094d2942aca20499976c97013cbd81e06441e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.744Z",
+          "subject": {
+            "kind": "observation",
+            "id": "76673651f7765dc3",
+            "traceId": "8f4a37e47d08cfe09eb251f4ce93a9f8"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b3650782b79eda2b",
+      "traceId": "25494100bea447530c65493c83dc69b5",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.428Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "ca9be5a163fff6f9e4f781499ef953a40928996de9a3acaba0636a9251d43c92",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Что делает Med Pak L: восстанавливает всё здоровье, останавливает кровь или оба эффекта?\"}",
+      "output": "Согласно предоставленному контексту, **Med Pak L** выполняет **оба действия одновременно**: оно восстанавливает всё здоровье и останавливает кровотечение.",
+      "expectedOutput": "Оба: полностью восстанавливает здоровье и останавливает кровотечение.",
+      "scores": [
+        {
+          "id": "dc541eb80a6f473b8ce1cfe995aa9ea010c7e013e601948c838f2a4aec9e3c4b",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.475Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        },
+        {
+          "id": "80d57cd831744dbb859318b1c12cdd5ebcba6a0fb7028f5638d52dc4673cf49a",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.475Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        },
+        {
+          "id": "e5490fd47e633cbd66c445a2fdf1dee984a62f5a611bea670a93e0ab44bbfa6e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.472Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        },
+        {
+          "id": "9ef3988e4edc8ed2ce13d078bc3639d97ca77957e1b97f6fb112d18882643a2d",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.470Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        },
+        {
+          "id": "9595fc4d45a188d785881b1e8bdac27472839f5cfee26c886372277017ce1a71",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.471Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        },
+        {
+          "id": "ed6cc21792b74d270f13e3170e868421f89c98891bfb63622cf444aeeb189f7a",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.459Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b3650782b79eda2b",
+            "traceId": "25494100bea447530c65493c83dc69b5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6acc93256c872281",
+      "traceId": "59ecd885b89da71f6d00527062822230",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.582Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "f839b1ea3aeeeb18eb9dcb48b38a09fe8782937885a4fa9cd2796d5f015b4fe0",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я у первого генератора на 1F, передо мной четыре рычага и панель с четырьмя катушками. Какие кнопки нажать, чтобы включить генератор?\"}",
+      "output": "На панели перед вами четыре катушки. Чтобы включить генератор, выберите следующие комбинации: **ЦЕНТР, ПРАВО, ЦЕНТР и КАНЦЕЛ**.",
+      "expectedOutput": "CENTER → RIGHT → CENTER → CANCEL, затем рычаги. Не комбинация второго генератора.",
+      "scores": [
+        {
+          "id": "8f9314ec6f0201c0cc0b2ce469a8e932f780bc3b6b9df957f43a100be1439b4e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.206Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        },
+        {
+          "id": "003a9916690fd25d68ab7bdbd9ca701d45f7d10393396ce58ad7b89b91b1e984",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.204Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        },
+        {
+          "id": "2b02df9a0cf576012fd21870d3e9b55dbb82cf506a0a4991ec52053585633582",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.203Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        },
+        {
+          "id": "f1967003ee31b4b418d7a71d5add7db3ff2b367240b7dde5e845377557d7785b",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.208Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        },
+        {
+          "id": "ac806810628f9422a8f8660f2b192b3e0051794a97d9f30d7203c17175416534",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.203Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        },
+        {
+          "id": "c507f96aac30de185d8735031d71ae27fc026c60a95fbe01f9233c5b68ed68b2",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.204Z",
+          "subject": {
+            "kind": "observation",
+            "id": "6acc93256c872281",
+            "traceId": "59ecd885b89da71f6d00527062822230"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5f5a04ebccc71160",
+      "traceId": "267270b79827b9c1010ff94ba85533e9",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.244Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "061fb54a1130ec73f1db6f5286cc4afd3480433e692c2a8e0e996f532e101af5",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Hemostat восстанавливает здоровье или только останавливает кровотечение?\"}",
+      "output": "Согласно контексту, **Hemostat** (Эффект) **только останавливает кровотечение**, но не восстанавливает энергию.",
+      "expectedOutput": "Только останавливает кровотечение, здоровье не восстанавливает.",
+      "scores": [
+        {
+          "id": "9292064211ad671bede27df2a0ac3027af13f88cf60df67c389b5f6bee065021",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.319Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        },
+        {
+          "id": "baf3c7cf59ae040a02602a28e0f96cd3a15329ff9c63629ba95ce97f0f933ce0",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.318Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        },
+        {
+          "id": "c2c7d94f6975c584c7d309eb8f042a4a0d7446b1b5d4f9c8f91569cc36f460d6",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.319Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        },
+        {
+          "id": "e1591044aef985e8524207e1933d284934d845a2b48e9fd7e06574ba82bdceaf",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.317Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        },
+        {
+          "id": "421a0b514b86cf83f7ac1f00d47b6f7bbf1022c429468c2bc86c665ba37cebd9",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.316Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        },
+        {
+          "id": "3282519a1a711ac5989735de53b56410e5aa6ddc5ae48829fe2425951c06b95e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.317Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5f5a04ebccc71160",
+            "traceId": "267270b79827b9c1010ff94ba85533e9"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3d5bfd1b621e1d4d",
+      "traceId": "eaac7c104f9ee5d95895f8635692ecb5",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.778Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "afdc5f529c9909291b992dbe180bd31ce6f196c7ce99665fde5cd7ef60ed16d1",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Как победить финального босса в начале игры, не заходя в здание?\"}",
+      "output": "В начале игры финального босса — огромного динозавра, который появляется сразу после завершения предыдущих сцен — **не нужно заходить внутрь здания**.\n\nВаша задача — просто **бегать по кругу** в этом открытом пространстве, пока он не позвонит вам. Как только он позвонит, идите в лифт, чтобы вырваться из зоны.",
+      "expectedOutput": "Не выдумывать бой/маршрут; указать недостаток подтверждения или ошибочную предпосылку и уточнить положение игрока.",
+      "scores": [
+        {
+          "id": "c525446a08f7b18fe4f0d617c2a23ea7f3db3f89a23afa27842c4023148c397d",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.348Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3d5bfd1b621e1d4d",
+            "traceId": "eaac7c104f9ee5d95895f8635692ecb5"
+          }
+        },
+        {
+          "id": "954dbe99cc5cd141679bdd5312bb8aac718cf23ef4991b43461e10dfa67411e0",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.347Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3d5bfd1b621e1d4d",
+            "traceId": "eaac7c104f9ee5d95895f8635692ecb5"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d7f5382d816b17f3",
+      "traceId": "46f2a85f3bb0013580679ff3c52733e1",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.444Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "1dc0f97866bd0659a7fbaecd66c0661f8cf2b20c00b135e7edb04c66a878d2f3",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я поставил Startup Battery R в устройство у второго генератора. Какую последовательность кнопок выбрать перед рычагами?\"}",
+      "output": "1. Используйте устройство у второго генератора, чтобы получить зарядку.\n2. Выберите опции LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL.\n3. Включите генератор, нажав рычаги в порядке: LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT.",
+      "expectedOutput": "LEFT → CENTER → RIGHT → LEFT → CENTER → LEFT → CANCEL, затем рычаги.",
+      "scores": [
+        {
+          "id": "b13727ea2776d28c43411724e7491229a67b82745f1cef3a23d4d2993c32316d",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.807Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        },
+        {
+          "id": "fd9e9f61b77569d5f15bced1de315d1443dfad68c5b44eaeb30c789715ca4daa",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.808Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        },
+        {
+          "id": "f36632ee6e93256d07e23a433ea2075cb3c0a2da74256aa2cd75a8ee5bc6c48c",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.807Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        },
+        {
+          "id": "0de54c3165631d7ba87e13d2ed90bc6b4c811ac9558a6aaf248b10c7cbcb9b9c",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.803Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        },
+        {
+          "id": "f5cbdfec60c5334695dad22e32d9da4c4b152b4c125cca087db286a722032a15",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.803Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        },
+        {
+          "id": "22420b2e78f98be33455d4a5c104d0ff8973c1400c4f4342646da5e5c469ee45",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.803Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d7f5382d816b17f3",
+            "traceId": "46f2a85f3bb0013580679ff3c52733e1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "75abe5e4fc17f23b",
+      "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:51.734Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "1280fbda73afd0410caf636f2b65fe177ee37f7676ebb3dd259cdc00a814a27b",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Куда идти в начале игры?\"}",
+      "output": "В начале игры нужно вернуться в комнату управления, пройти к внешней зоне и открыть дверь, запертую ключом от комнаты B1.",
+      "expectedOutput": "Подойти к Gail, затем осмотреть/сдвинуть ящик и идти через зелёную дверь. Не выдавать управление или позднюю главу за старт.",
+      "scores": [
+        {
+          "id": "963c70368f9419a34ba24f639fc35f91c6e1db502a41c520d5bf4490abc0e11e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.223Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        },
+        {
+          "id": "7f66cb6d0ae8f0ec3a0df3bbda6a469b54a703112e97890ab6d1043c07c947c8",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.224Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        },
+        {
+          "id": "faf220f9378563612cc1d953f0ae6cc1a128faafdf214488de22c76fe850d3a1",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.207Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        },
+        {
+          "id": "fea07e0e65140e2928f8c6d449c2fbe5e8ef48bba5a270cf9f4f64871aa5452d",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.206Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        },
+        {
+          "id": "cdb733ddf0d05a8c804dda55e2327f9f605ac08c9404d0ddc2b234a05c2cba65",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.205Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        },
+        {
+          "id": "2616ac8a2cd978f06dce9e5df561ec8c553147e56f0d29414e1cc11dc7138814",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.202Z",
+          "subject": {
+            "kind": "observation",
+            "id": "75abe5e4fc17f23b",
+            "traceId": "d70370eda3dbfe9b8f6ecd30390d06e7"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f6ff4856a494a66f",
+      "traceId": "0a6165f48971c81a62429d6371c947bc",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.798Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "83fb94958e62ed0180a46836e5791b9d393fa80924cf8fe6b5477de0711f6348",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Чем открыть зелёный Emergency Box и что разрешено в нём хранить?\"}",
+      "output": "Для открытия зелёного Emergency Box вам нужно найти предмет **Plug** (входной ключ) и вставить его в соответствующую розетку на панели.\n\nВ этом ящике разрешено хранить **заживляющие предметы** (healing items).",
+      "expectedOutput": "Предметом Plug; хранить лечебные предметы. Не требовать два Plug как у красного ящика.",
+      "scores": [
+        {
+          "id": "aa6d06e354dd7ddffbb5284f774e080a557a92d28ddfd63fc26519fa168bc576",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.495Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        },
+        {
+          "id": "3425bb82129fb908e17cc619a75e6175dd5481218d235985b14417c6294f40ba",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.492Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        },
+        {
+          "id": "89fb042f2fa17ee90eb05af391bc9347c264d84418d10ad05d05346a4994bf45",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.494Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        },
+        {
+          "id": "e270c9948d6cee5bb7e44d6b161213bfcb51cbb8dbfa8457090d836eb8348241",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.492Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        },
+        {
+          "id": "48dc7f16b474a0ff7d6ed19938a3e51e1978d0e150d4962339754e94690d74ab",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.489Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        },
+        {
+          "id": "af905d93afcbf10a295b9d4f7ac9b7139edcbfd2e33cdf860b462eefccf2feb7",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.475Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f6ff4856a494a66f",
+            "traceId": "0a6165f48971c81a62429d6371c947bc"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b9cb64c5d4501bf0",
+      "traceId": "66ebc2ca64cb36b4e3c856b6059d995e",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:51.890Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "2b1a8f995d401bd25ee8f4fcd9b664bcea8aef97472d10e47634d26f01f1881b",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой пункт меню нужен, чтобы смешать два предмета в один?\"}",
+      "output": "1. Откройте меню, выбрав пункт MIX.\n2. Введите код 0204 на панели управления.\n3. Возьмите два предмета и смешайте их в один.",
+      "expectedOutput": "MIX. Не EQUIP или ITEM.",
+      "scores": [
+        {
+          "id": "bd4520f8922cebe48b7fc8388b4a4265ee6ef81edbfb99c06842ac108aa2261c",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.732Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        },
+        {
+          "id": "2912b77f0ce87357611af6f63e6648d2cec44cbfdf3ff274b3993bb1b58a6d58",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.737Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        },
+        {
+          "id": "ba0017e96cd0d85480204e00ac07c82b4f203e30a79b617a388a58f504e168a3",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.737Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        },
+        {
+          "id": "e0c8a19d6c1fbccff20562c38c12575b78a5c64cdd4769f04dbb8c3e0d49d0bc",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.729Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        },
+        {
+          "id": "30119207faca1a42fa1f6edec1a6e1536769aa5d2c5749de332b85a008e7b6f0",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.730Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        },
+        {
+          "id": "1c22a6589e2857e62f60abc1680f4c6b19408f039d91278319f12f985f94201f",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.729Z",
+          "subject": {
+            "kind": "observation",
+            "id": "b9cb64c5d4501bf0",
+            "traceId": "66ebc2ca64cb36b4e3c856b6059d995e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c7d58f0d9fb4bc58",
+      "traceId": "92ca92e72a6290ff264a9c706b1d112e",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.193Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "05722d1f11b6d93096d836d01003967308526fe8e98aa97441e06b8823e0d7bd",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"У меня Panel Key 1 и Panel Key 2. Какой код ввести в сейф с двумя медалями и что я получу?\"}",
+      "output": "Введите код 705037 в сейф с двумя медалями. Вы получите ключ карты уровня B.",
+      "expectedOutput": "705037, Keycard L. Без сюжетных спойлеров.",
+      "scores": [
+        {
+          "id": "8fb5b1318265d6236a5d10baa5e0c9a7f2f9a81ae2dc235fd62f7585fe1a698b",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.565Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        },
+        {
+          "id": "dd0f9f44c5fde3766ece13696bbbb537af684591818a7184bf0d7c194e1c31be",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.565Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        },
+        {
+          "id": "4a7ac79e979e96b722c17f44e766976faa057f997faa62b503fe35eb5fe0d4e5",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.566Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        },
+        {
+          "id": "ee67d86605af99b3875fac4e18eb368099c54525f99b817ad7fb01bfb3b1ca78",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.563Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        },
+        {
+          "id": "441639ba4986fc23964d732b1f0d30ba7ab295d25b1caad0eaaa24cd3760c1b7",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.563Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        },
+        {
+          "id": "e75883165ef3ab90747446331e9efd636d5d9e9756012b7a8ed3522ea13748bb",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.552Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c7d58f0d9fb4bc58",
+            "traceId": "92ca92e72a6290ff264a9c706b1d112e"
+          }
+        }
+      ]
+    },
+    {
+      "id": "740464dff70075f7",
+      "traceId": "6d8f46f1c102beb2a1eab82a64a6199c",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.062Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "1280fbda73afd0410caf636f2b65fe177ee37f7676ebb3dd259cdc00a814a27b",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Куда идти в начале игры?\"}",
+      "output": "1. Откройте дверь, запертую ключом BG Room B1.\n2. Получите An Aid и спуститесь по лестнице.\n3. Пройдите через дверь и получите Startup Battery R.",
+      "expectedOutput": "Подойти к Gail, затем осмотреть/сдвинуть ящик и идти через зелёную дверь. Не выдавать управление или позднюю главу за старт.",
+      "scores": [
+        {
+          "id": "d904259822fc92ed9f3275c5b7c99dc74264d61ac54498bdb876fb27a3b7b537",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.541Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        },
+        {
+          "id": "200e7a67a0b3bf571717de161c170bb4f5579c426e7d70e1378b7ef6d1f6969d",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.540Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        },
+        {
+          "id": "8eb2e85fc9518b78ce64a0dbd0f7d42d2c0cf28ca1d43fce07a1c0ea13b90ecd",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.527Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        },
+        {
+          "id": "dced6e8adb5c2ed9a50d075085b117493b8aed0b18cba257304b8a652e9f0759",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.525Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        },
+        {
+          "id": "1c6714e23a869f9fad82e81e3c3f87373ad33edb9aa490519b890d01f3ca54e1",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.526Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        },
+        {
+          "id": "21d9aa1204de52136617fcf557ff8ce27efc506e3bf445d13de362dc482bf9d2",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.524Z",
+          "subject": {
+            "kind": "observation",
+            "id": "740464dff70075f7",
+            "traceId": "6d8f46f1c102beb2a1eab82a64a6199c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ee28a7d3be214a90",
+      "traceId": "6ba500fa31e2121ac5c11808429d5c38",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.189Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "514448e0bd14e0fe3c199b48f7adfb25d5443590ede056fb63bd6d04545cff9f",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я вернулся в компьютерную комнату после синей папки и DDK Code Disk H. Какой код у сейфа и что лежит внутри?\"}",
+      "output": "Сейф находится в компьютерной комнате, и его код — **0426**. Внутри сейфа лежит **Resuscitation** (первая помощь).",
+      "expectedOutput": "0426; Resuscitation и Entrance Key.",
+      "scores": [
+        {
+          "id": "fc8d7bb95b45c40c61ada2c89507f90e7c707d201d13255f7d6a7d85463df501",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.295Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        },
+        {
+          "id": "08cc59e9c0259edb0f82ef388c7e4e81c106c78a48569b7132287600a3bd3a29",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.304Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        },
+        {
+          "id": "c2128d56821721ad9c3549615b77dbfe1e273621022f3b4895374c73df2fc17c",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.296Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        },
+        {
+          "id": "3f81e2f1acc286c7e2e3473f3a4174c987a44b79e436816e6ac84632b549e367",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.305Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        },
+        {
+          "id": "35d25db7521adb1c822dec4c69f6e904e19fc70643ef46b2b9fa890d2d3525f4",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.208Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        },
+        {
+          "id": "fa25d21c5715e25909ca7f8053e55643670c8d8ec636775ff9eef857ed8a52c2",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.204Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ee28a7d3be214a90",
+            "traceId": "6ba500fa31e2121ac5c11808429d5c38"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ac6be7d6a4e51f4c",
+      "traceId": "5327c7f52cab24d70de242078cc0ab19",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.437Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "ff709886b20d12c0b207bd59d8fbe26527a373308c0a69a5eb47075cee632697",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"После объединения первых веток я пришёл в Office и использую ID Card на компьютере. Какой пароль ввести и что выбрать?\"}",
+      "output": "После того как вы вошли в Office, введите пароль **58104** и выберите **Yes**.",
+      "expectedOutput": "58104, затем Yes. Не поздний пароль 31415.",
+      "scores": [
+        {
+          "id": "bf4ea85d4fa266f8da51b6638010f98c1f1eb8039cd88a5552b493548445298f",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.395Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        },
+        {
+          "id": "aff3a206a221da6331fee6b5b3bed1deb691ad7b559d56e2e7066833f17442f7",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.399Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        },
+        {
+          "id": "1ed42ecd059edfb4c1058f1ec5f91774c32a4d0644bdd197ba2603396d1e2043",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.399Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        },
+        {
+          "id": "4cc93b64bcfbea7197e7870b7c98a33a4dfea3ccdabc0f6409b26e46e508e3d5",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.395Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        },
+        {
+          "id": "e21a1e2f72932a45f80a421a82f4a68f696cb023eace05db38cb4299f2b3c4f4",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.395Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        },
+        {
+          "id": "1bb472e1e8b43eccc5975393a6904c421bc4ea4ad443138174846d3fa236bf90",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.395Z",
+          "subject": {
+            "kind": "observation",
+            "id": "ac6be7d6a4e51f4c",
+            "traceId": "5327c7f52cab24d70de242078cc0ab19"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9c207e3bed604c62",
+      "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:54.170Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "739736ab648a92936856c7cb71d787faf63ebb0adb9e7afc6242ec7b771eb040",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"В первом выборе я решил пойти с Риком спасать Тома. Что сделать сразу после выхода из Control Room? Без спойлеров о судьбе Тома.\"}",
+      "output": "Сразу после выхода из Control Room в первом выборе (сражение с рaptorом) нужно пойти в первую дверь, которую вы видите, и открыть её. Внутри вы встретите Рика, и он сообщит вам, что Том погиб.\n\nПосле этого вам нужно:\n1.  Взять ID-карту на столе.\n2.  Вставить коричневую коробку (это Plug).\n3.  Ввести код на двух дисках (одна из них — DDK Code Disk E, вторая — DDK Code Disk L).\n4.  Открыть дверь, ведущую в коридор с контрольной комнатой.\n\nПосле этого вы увидите, что Том серьезно ранен и падает, а Рик передает вам диск с кодом.",
+      "expectedOutput": "Вернуться туда, где началась игра, найти Рика и следовать за ним. Не поздний эпизод с ID Card и не ветка Gail.",
+      "scores": [
+        {
+          "id": "0be99e52028e5310ccbf5d0bd475b1e7819c1208a6a057da7a53fb37a8fa8073",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.347Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        },
+        {
+          "id": "d1f81285001b166c909f5f14e53bd148838e58c6caf4152076bc5350b29fbd35",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.348Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        },
+        {
+          "id": "57ebd3a9916e99a004b4d57d1ff5e17e2ec8c80bc1b76f1c8a54fbe98e9c79c6",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.331Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        },
+        {
+          "id": "9b42f5b95ed3632c77acb0ebdc8f684288209f007ec751b91aea85bfe32274d5",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.331Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        },
+        {
+          "id": "7ca99ed2c0c397c4b2b5f74e8a09f571c92a9d6b40a38501c2d6e9928311aa6b",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.319Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        },
+        {
+          "id": "209f63ee22255e549afba585e80b863f7757b11c765d5580d7fffe4d40d5bee2",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.317Z",
+          "subject": {
+            "kind": "observation",
+            "id": "9c207e3bed604c62",
+            "traceId": "bf6f57c4af8d5b1cc7e2a20eefbb79dc"
+          }
+        }
+      ]
+    },
+    {
+      "id": "48143fcb5c962d00",
+      "traceId": "9f8007a20d35c351d47c1a5572b216c1",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.470Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "83fb94958e62ed0180a46836e5791b9d393fa80924cf8fe6b5477de0711f6348",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Чем открыть зелёный Emergency Box и что разрешено в нём хранить?\"}",
+      "output": "1. Чтобы открыть Emergency Box, нужно получить ключ Plug.\n2. В коробке можно хранить лечебные предметы.",
+      "expectedOutput": "Предметом Plug; хранить лечебные предметы. Не требовать два Plug как у красного ящика.",
+      "scores": [
+        {
+          "id": "5c992a3da73c1d3e3b8495f6115b70671eb731ec8af25dd33a14b8ac348c0291",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.782Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        },
+        {
+          "id": "6974cf25c1a3ccf1a0b0677993d84028970c891dc4d94fd7a149b9118ab026a7",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.787Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        },
+        {
+          "id": "a92c0574dfe9fafde6fad46516398603ec274de7d1a9931d61f46b047d44ee99",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.782Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        },
+        {
+          "id": "bd6b74c4179894ae5cb6d356bb9b6ff050c606dee5580d5c1e58c92f660573d8",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.771Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        },
+        {
+          "id": "6867fb9a9ddfc49b6033705b7190b293683fe43d92b8aad91fc804ba2a45f8de",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.777Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        },
+        {
+          "id": "27ad9a365771c9907a60e5959abf36c2b26e7a82757008519cb6863df6f9a1fc",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.778Z",
+          "subject": {
+            "kind": "observation",
+            "id": "48143fcb5c962d00",
+            "traceId": "9f8007a20d35c351d47c1a5572b216c1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5097cf6179049928",
+      "traceId": "1790e74cd4c89c945f4d22347a4acea4",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.217Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "ca9be5a163fff6f9e4f781499ef953a40928996de9a3acaba0636a9251d43c92",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Что делает Med Pak L: восстанавливает всё здоровье, останавливает кровь или оба эффекта?\"}",
+      "output": "Med Pak L восстанавливает всё здоровье и останавливает кровь.",
+      "expectedOutput": "Оба: полностью восстанавливает здоровье и останавливает кровотечение.",
+      "scores": [
+        {
+          "id": "02a20eeb58dd51b9b0ef507de9fa74bf1a998e208a7dee9f33d1da159c30ee17",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.765Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        },
+        {
+          "id": "9d312fcb14e2062f57c73e26aeb24b039b5691018468ca487a2aa34c7458a55f",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.759Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        },
+        {
+          "id": "cd8c2e5be09b36a1c054c5f03760b7a5248f11b8a91e5bfa4b40016cf5ee072b",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.759Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        },
+        {
+          "id": "4a973406be1a82b297bfba43e7bec3028348e87a9e79df36d7ffd51747dc3130",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.755Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        },
+        {
+          "id": "928b6974013cf0b248cd4d37df0b18f272b321f885c48cea4630728a4a7a730f",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.754Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        },
+        {
+          "id": "29f147c57136cbccdbfaec10b29da7c06fc9887fa4149956e38c95bd20d24517",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.754Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5097cf6179049928",
+            "traceId": "1790e74cd4c89c945f4d22347a4acea4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "dd49987cd44caa4e",
+      "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.040Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "d7d64e83924d412212d34f0babd1b814066e1167ffd490e7d25e18d8e9aa7a23",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Учёный заперт в комнате с ядовитым газом. В каком порядке нажать цветные кнопки, чтобы нейтрализовать газ?\"}",
+      "output": "Сначала найдите учёного в комнате с ядовитым газом и выберите **Синий** (Blue), затем **Зелёный** (Green), **Грен** (Gren), **Красный** (Red) и снова **Синий** (Blue), чтобы нейтрализовать газ.",
+      "expectedOutput": "BLUE → GREEN → GREEN → RED → BLUE; источник пишет второе GREEN как GRENN. Обязательно пять нажатий. Не раскрывать судьбу учёного.",
+      "scores": [
+        {
+          "id": "346658ad5a0a41a95b45a976a886a77a9d3aadc0d3d4458e1b5c91b34628a836",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.295Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        },
+        {
+          "id": "1d16d77423fee515096b01ab6b54da010fcf50fd0661443cf45b4b138dc0cc22",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.306Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        },
+        {
+          "id": "19a396a6205bb520e039ffd36415e47bd820f0847a5cb3d510c808118f82a651",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.305Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        },
+        {
+          "id": "cb337c182672679561cde0ef7469f36a24d09b9009dd62308f9a44780f600be4",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.306Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        },
+        {
+          "id": "3356f82018be9df83a6849d2d86a9aaf9e150e9ec9aa6554b7fa5a4d6d9464a8",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.305Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        },
+        {
+          "id": "0e7fa4d277088e69f378cd078eae3467ab596943c965a6aa3737bf5be36ba72e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.305Z",
+          "subject": {
+            "kind": "observation",
+            "id": "dd49987cd44caa4e",
+            "traceId": "c16a2dc7bd6d4aa6146d33ca08bd7260"
+          }
+        }
+      ]
+    },
+    {
+      "id": "c36d552661b59ea7",
+      "traceId": "582c9e7a27f0195919372f937f6aba00",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.889Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "739736ab648a92936856c7cb71d787faf63ebb0adb9e7afc6242ec7b771eb040",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"В первом выборе я решил пойти с Риком спасать Тома. Что сделать сразу после выхода из Control Room? Без спойлеров о судьбе Тома.\"}",
+      "output": "1. После выхода из Control Room, идите в инфирмарию и откройте одну из двух коробок с ключом размера Small Size, выбрав тот, что находится слева, чтобы получить Resuscitation.\n2. Перейдите в Control Room, откройте дверь на конце коридора с символом и откройте её ключом ID Card, чтобы получить Plug, FC Device и DDK Code Disk E.\n3. Включите генератор, используя батарейку на устройстве перед четырьмя рычагами, и выберите варианты LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, чтобы включить генератор.",
+      "expectedOutput": "Вернуться туда, где началась игра, найти Рика и следовать за ним. Не поздний эпизод с ID Card и не ветка Gail.",
+      "scores": [
+        {
+          "id": "9b0f6e1ff48108c12a09368e6b091831af4ea78758d636a2048ac97ccf4528a3",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.626Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        },
+        {
+          "id": "c51ddbd316a20edd4aae7a4bbe8a59723744ca64afc0f848da06193fb4ad11b1",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.624Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        },
+        {
+          "id": "d0679aa06f537ae5f4dcd8385202d9bb16b0b40ebfd87f18c73608c295fcc327",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.623Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        },
+        {
+          "id": "3266de0652c8e7f832bec76012bb0d16ede3e681eebbf0f966a30dbb73c0b8fa",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.615Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        },
+        {
+          "id": "94e973d0fa249cf6aab84c86195d2741ba615eccb503f9b4507fb1e783b4403b",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.615Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        },
+        {
+          "id": "0b3cff6eb7fa83554edd0a687fb602863c64d825f7da1e48d6df05cc080e4778",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.615Z",
+          "subject": {
+            "kind": "observation",
+            "id": "c36d552661b59ea7",
+            "traceId": "582c9e7a27f0195919372f937f6aba00"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5c5ff4b493f10b04",
+      "traceId": "407328db0e3dd8e9cab65d3e8da28485",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.354Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "061fb54a1130ec73f1db6f5286cc4afd3480433e692c2a8e0e996f532e101af5",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Hemostat восстанавливает здоровье или только останавливает кровотечение?\"}",
+      "output": "1. Hemostat останавливает кровотечение, но не восстанавливает энергию.\n2. Med Pak L восстанавливает все энергию и останавливает кровотечение.",
+      "expectedOutput": "Только останавливает кровотечение, здоровье не восстанавливает.",
+      "scores": [
+        {
+          "id": "87c80f96bfc7fe2c8aed893b9ff04a6bed9a9a567c1e2e91309e01afaeec3a24",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.613Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        },
+        {
+          "id": "49074d4e2dbb4aae8f8470b933224984e5f709f8dcf3c12c0c2a2089144c3773",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.608Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        },
+        {
+          "id": "5a53529b90e157826d1f4adab14c123d49eabe60c3eceb08498bd60e2a7be473",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.608Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        },
+        {
+          "id": "d015e827658766d469349e46be077158304652112af875559cb89ec2366c1160",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.599Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        },
+        {
+          "id": "98ad82c4948260f1b11dd47e6c7a8181a9239b8070cbc53e4de2e8d9342e9517",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.599Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        },
+        {
+          "id": "42b399509caa072c2f3403ec1db9e8faa184b26cba2026d47d2c863ab1050e9a",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.599Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5c5ff4b493f10b04",
+            "traceId": "407328db0e3dd8e9cab65d3e8da28485"
+          }
+        }
+      ]
+    },
+    {
+      "id": "df89fe373826cbb4",
+      "traceId": "34a00282ea5c9fb10953548354a95ae2",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.800Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "478667bd58f1374927dc53e83263767e0a72dc254866c93a89f3d34c6ba82d60",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"У синего экрана на стене я использую B1 Key Chip. Какой цифровой пароль нужно ввести?\"}",
+      "output": "1. В комнате с ядовитым газом на стене синего экрана на стене нужно ввести пароль 3695.\n2. После ввода парога вы получите ключ-карту R.\n3. Далее вы идете в компьютерную комнату и на экране вставляете ключ-карту R.",
+      "expectedOutput": "3695. Не пароль для пары B2 chips.",
+      "scores": [
+        {
+          "id": "261f66484c217802b5bbd9c155eae4cab3e5b2e34fd0184425e4950cbb0ec910",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.664Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        },
+        {
+          "id": "2bb2e3b4db504f2640dd5b513f68f71b8657ef086e5575919df79654c2b1b6bb",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.657Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        },
+        {
+          "id": "68749311fc725c310c21e8157aed523754e579037bb1e3869b548df6b1951191",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.657Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        },
+        {
+          "id": "b35bcf039b42b783ffdfcc901ef14e4dafe9e7b9d3689cc51d3a9f693276a0a6",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.645Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        },
+        {
+          "id": "295dc66b0801f9e23c22792fa0b6c8c20e42c7c9ba3a66ee1d0b3bdbd8db1c69",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.645Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        },
+        {
+          "id": "9fb8a869159e48c68611e11dbedd4e7f328c9928653d09c5fc9cfb66ddd0f8dd",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.645Z",
+          "subject": {
+            "kind": "observation",
+            "id": "df89fe373826cbb4",
+            "traceId": "34a00282ea5c9fb10953548354a95ae2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "004795c880c2d6a8",
+      "traceId": "5eee4ad35e0595fbc07aeba941c27410",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.585Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "c6c63b35c745cc3cdfe1000798d804fedbd60950abb6729fe82248b3f661894c",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"В первом выборе я пошёл с Gail искать Dr. Kirk. Куда идти сразу после выхода из Control Room и что взять в первой комнате?\"}",
+      "output": "1. Сразу после выхода из Control Room и входа в первую комнату, идите вправо, затем вправо, затем вниз по лестнице и откройте первую дверь, которую найдете.\n2. Внутри первой комнаты возьмите ID Card, Med Pak M и Recover Aid.",
+      "expectedOutput": "Налево, вниз по лестнице, первая дверь. ID Card и Med Pak M на полке; Recover Aid в следующей комнате. Не маршрут Rick.",
+      "scores": [
+        {
+          "id": "0a540ec0e57e2ceb254ccff74a527c93d61dfd6ab7eebd897f528bad36e9900b",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.646Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        },
+        {
+          "id": "11a8182c92597f141c9dea9f42733571d22a6eec22d04cbf41baf3577e8d66d6",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.646Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        },
+        {
+          "id": "22660ac3f38b8219e105a3b99eaef90efd95a676010c276a44ce871d99bde3b7",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.642Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        },
+        {
+          "id": "659f0685cd045180ca6a621e87d28560cb45f85a58cb2450c5d7c1c351bc2a12",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.646Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        },
+        {
+          "id": "968a85ae65d4df47e2a75c866c9c7c8fa7418db016cc7384f0eb893834ec1163",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.637Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        },
+        {
+          "id": "676933119e296a32a959aafa60d4884519957f41ca4d1f1a9c0de92d111d6fa3",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.638Z",
+          "subject": {
+            "kind": "observation",
+            "id": "004795c880c2d6a8",
+            "traceId": "5eee4ad35e0595fbc07aeba941c27410"
+          }
+        }
+      ]
+    },
+    {
+      "id": "1b0eebc6c37fe534",
+      "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:51.449Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "2b1a8f995d401bd25ee8f4fcd9b664bcea8aef97472d10e47634d26f01f1881b",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой пункт меню нужен, чтобы смешать два предмета в один?\"}",
+      "output": "Для смешивания двух предметов в один вам нужен пункт меню **MIX**.",
+      "expectedOutput": "MIX. Не EQUIP или ITEM.",
+      "scores": [
+        {
+          "id": "5bcf4bb6232a28f155796cfceb169881855d1d2959917a3533f5e1aba822a950",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.454Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        },
+        {
+          "id": "18429b8055dfadf36f62e7e3077f23ef64934266713ac738d72004b55823e7c5",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.453Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        },
+        {
+          "id": "d5b7488cce26a0109baeffcba3d4de08f6953470bf91d7c9da15ece3a1241c06",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.438Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        },
+        {
+          "id": "c9dd99c96e7484f807c5c14f1c5894da9576fc45dcab64b2b80560105c3b8a9f",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.442Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        },
+        {
+          "id": "8453c9639e4abb90029f754ea0db801816d1f0ad46bcf97c88bc299b6039ddc9",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.441Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        },
+        {
+          "id": "147c3e94956370fa6d9caf7d562f8127fb3766b3911652afb4bee4842cd53fa9",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.439Z",
+          "subject": {
+            "kind": "observation",
+            "id": "1b0eebc6c37fe534",
+            "traceId": "a5019bff1086d6ff4bfd8a5f5ae79f7c"
+          }
+        }
+      ]
+    },
+    {
+      "id": "982d633399361cb1",
+      "traceId": "e52a5d935469a73b1525d1a3305131f1",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.422Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "478667bd58f1374927dc53e83263767e0a72dc254866c93a89f3d34c6ba82d60",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"У синего экрана на стене я использую B1 Key Chip. Какой цифровой пароль нужно ввести?\"}",
+      "output": "Согласно предоставленному контексту, после того как вы находитесь в комнате с синим экраном на стене и используете B1 Key Chip, вам нужно ввести пароль **3695**.",
+      "expectedOutput": "3695. Не пароль для пары B2 chips.",
+      "scores": [
+        {
+          "id": "3ea8ac6763c9f45abf2121d5da25430de2e3f7cb76a5c5ee4e4e27db0c499e6a",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.371Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        },
+        {
+          "id": "08d6a8f5e74f8198813a7cb23e1e8f7d98ea6821b637899b5cfa3b9052a1015e",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.367Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        },
+        {
+          "id": "e97d5b41d446691624849d99add38f3eb7f20bcfb5614f4797180f3ec01081e5",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.371Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        },
+        {
+          "id": "4350cab2bbe7a23be30da851c7977d7653f3dd2299e0aaf71c02f42f3048df11",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.363Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        },
+        {
+          "id": "784058b5109b47529ca4d79d38a15936ffb3a1aff34eaf2777cf872eaa38193b",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.368Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        },
+        {
+          "id": "893be0d7a2934f6b1ff2475889c299cc06321dd8f80126c8d21afd53e3538e67",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.352Z",
+          "subject": {
+            "kind": "observation",
+            "id": "982d633399361cb1",
+            "traceId": "e52a5d935469a73b1525d1a3305131f1"
+          }
+        }
+      ]
+    },
+    {
+      "id": "7860fade6bbff275",
+      "traceId": "e16c6a61feef0806ecb43d23ff133fae",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.154Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "f90c56a9887e7db8d43558c22237f7fa205566c1175c5fecd15e4ea47d5c0095",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой пароль у сейфа с Handgun Slides и на какое оружие ставится улучшение?\"}",
+      "output": "Сейф с **Handgun Slides** находится в комнате с панелью, ведущей в лабораторию (после убийства исследователя с желтой папкой).\n\nПароль для открытия сейфа: **8159**.\n\nПосле открытия сейфа, вы получаете **Handgun Slides** и ставите их на **Handgun** (ружку), чтобы улучшить её.",
+      "expectedOutput": "8159; на Handgun.",
+      "scores": [
+        {
+          "id": "f4ecc5e62103d8bf668bf2f43f0de1f6d7528bc71323f4ae5879b28b99ea89d5",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.415Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        },
+        {
+          "id": "ac4a9b24e7bc483f4aff14f67782d7be610709997d273c8a16993795d072940e",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.409Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        },
+        {
+          "id": "066877b0c976c5d767a621843b7ba19efa9bd7bfd8ebf0d924db6d33c0323446",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.404Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        },
+        {
+          "id": "542871b7b165143dff9023650c5996d53bb38a62fb4aa485be595f07051697dd",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.401Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        },
+        {
+          "id": "b2d8ef3a81a8c5da11452933f600e26951490cd17851985f04d2ffdfef53b130",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.399Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        },
+        {
+          "id": "2ea35c1019588a9a0d77ec8792389dcb05c310cbb914c440ecf83febfad4b80c",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.399Z",
+          "subject": {
+            "kind": "observation",
+            "id": "7860fade6bbff275",
+            "traceId": "e16c6a61feef0806ecb43d23ff133fae"
+          }
+        }
+      ]
+    },
+    {
+      "id": "a3589fceda42e542",
+      "traceId": "3dd6b03f082dd15cf38497fd4ca671ee",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.169Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "1dc0f97866bd0659a7fbaecd66c0661f8cf2b20c00b135e7edb04c66a878d2f3",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я поставил Startup Battery R в устройство у второго генератора. Какую последовательность кнопок выбрать перед рычагами?\"}",
+      "output": "Сначала выберите **LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL**.\n\nЗатем, как только вы выберете эти варианты, нажмите **pull** (или **pull the levers**) для включения генератора.",
+      "expectedOutput": "LEFT → CENTER → RIGHT → LEFT → CENTER → LEFT → CANCEL, затем рычаги.",
+      "scores": [
+        {
+          "id": "cb3af5f9fe59891d4e4d3af3e02892cfccd2d8191c6e646575517700ed7a6e96",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.523Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        },
+        {
+          "id": "cd7af7aec4465841aaa5a9519f511f6dfc3d1ffaacc57bde2d52404d4efe54ea",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.514Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        },
+        {
+          "id": "024c364bad1c8789767f7287d602f931833732356b7938ff8569823fe6b4b74a",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.517Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        },
+        {
+          "id": "d209f648345bc79c42d298bc446394c98afb607fd75d4fc15c52d850c69227fd",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.505Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        },
+        {
+          "id": "ada4316091ed1d1e2be115f589c6e39365ca7af25f3778ef35e5bcf116bc2153",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.505Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        },
+        {
+          "id": "9b5453ac8af44e1ec9d2870d74f4f25ba73b0e16c8663fb46877c658c379bbca",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.505Z",
+          "subject": {
+            "kind": "observation",
+            "id": "a3589fceda42e542",
+            "traceId": "3dd6b03f082dd15cf38497fd4ca671ee"
+          }
+        }
+      ]
+    },
+    {
+      "id": "db2e4f6a42860f5a",
+      "traceId": "7aea3923dd5cd51d909f6744f784de62",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.138Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "c6c63b35c745cc3cdfe1000798d804fedbd60950abb6729fe82248b3f661894c",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"В первом выборе я пошёл с Gail искать Dr. Kirk. Куда идти сразу после выхода из Control Room и что взять в первой комнате?\"}",
+      "output": "Сразу после выхода из Control Room идите в следующую комнату, где вы найдете **Gail**.\n\nВ этой комнате сразу после входа вам нужно взять:\n*   **ID Card** (для открытия двери с символом)\n*   **Plug**\n*   **FC Device**\n*   **DDK Code Disk E**\n\nПосле этого вы сможете открыть дверь с символом и получить **Yellow Box**, где находятся **Ammo** и **healing items**.",
+      "expectedOutput": "Налево, вниз по лестнице, первая дверь. ID Card и Med Pak M на полке; Recover Aid в следующей комнате. Не маршрут Rick.",
+      "scores": [
+        {
+          "id": "252335faa6d18b7857ba7ff2538c7e3d9ba3fe2da060e192246bbccdb39b528c",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.353Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        },
+        {
+          "id": "87e78c9a60875cae47ca1f4a0b198bb5496e2e38fa85be98b06b6c544d0aafe8",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.350Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        },
+        {
+          "id": "e85a7771c1f1baa0d7b82365a7e3a26dcb0a1e5fc21e6ec22dd858cdb2ac0c05",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.350Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        },
+        {
+          "id": "e829cb5fa913e610cac3cd5c49ab0aa9bb88fb4497858c59938373f0c17642bf",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.350Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        },
+        {
+          "id": "7e39a8917b38af1c71a8809ca595f815809cec775762cbb06f81da656834d7f2",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.350Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        },
+        {
+          "id": "f22d06278eb3999023fd1145d367eb60edb8d1976751363e22a168ebb2c447f9",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.347Z",
+          "subject": {
+            "kind": "observation",
+            "id": "db2e4f6a42860f5a",
+            "traceId": "7aea3923dd5cd51d909f6744f784de62"
+          }
+        }
+      ]
+    },
+    {
+      "id": "45d34c90bcd69178",
+      "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.738Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "74c2c3f9c8ccfd7b7672dc9608d89991c30011aa0b1be64a58d09f3b4625f330",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я впервые поговорил с Риком в комнате управления. Где забрать дробовик?\"}",
+      "output": "1. Откройте дверь справа, чтобы получить дробовик.\n2. Введите код 367204 на панели управления.\n3. Возьмите дробовик, который находится в коридоре слева.",
+      "expectedOutput": "Выйти из Control Room и направо через дверь; Shotgun прямо впереди. Не поздний Grenade Gun.",
+      "scores": [
+        {
+          "id": "6f999b890fecb26c7e17ad8f60cb3d9cee03a7d83d7c1d56e7157c08061ec171",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.730Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        },
+        {
+          "id": "c371cad2351317b53fd45a87880e644c02cfa6d69a79df753f086933306f2c2e",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.727Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        },
+        {
+          "id": "56fd6e06bec0f818b06c31e3f32de0b67dfe85039290db1cf3aad73f67c01e6d",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.723Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        },
+        {
+          "id": "347db11ce4e6468c7b9641253b02452cff2593f4d6eba5e02452766ef7e707af",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.715Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        },
+        {
+          "id": "835e2f1db917eae408d413cfa97797c14120fcd462d0995a2c57023ba4b5b2dc",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.716Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        },
+        {
+          "id": "6bbf479c67a429e259f557bb1f2c5d4fa8e94a98caacd8112f7282665add19ac",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.711Z",
+          "subject": {
+            "kind": "observation",
+            "id": "45d34c90bcd69178",
+            "traceId": "b2d269c2b1d6d08fa10aecec4b806bcc"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e43eb7f064ddd69f",
+      "traceId": "f4b716eef57527d35890649a834568e6",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.979Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "d7d64e83924d412212d34f0babd1b814066e1167ffd490e7d25e18d8e9aa7a23",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Учёный заперт в комнате с ядовитым газом. В каком порядке нажать цветные кнопки, чтобы нейтрализовать газ?\"}",
+      "output": "1. Выберите кнопки BLUE, GREEN, GRENN, RED и BLUE в указанном порядке.\n2. Используйте B1 Key Chip, чтобы получить Small Size Key.\n3. Введите код 3695 на панели с синим экраном, чтобы открыть дверь.",
+      "expectedOutput": "BLUE → GREEN → GREEN → RED → BLUE; источник пишет второе GREEN как GRENN. Обязательно пять нажатий. Не раскрывать судьбу учёного.",
+      "scores": [
+        {
+          "id": "8980d36bb410d77650cfdeadb63381cddb40b9852dcbe674579a37c1a867bc5a",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.597Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        },
+        {
+          "id": "d2b57349bb03a0068045941c94482ff391d839904537d9e54f84518585b86267",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.595Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        },
+        {
+          "id": "27d448a8cb022b2fb3ddc8e6b3cf53c752e1bcddba625f2d8222e48d228c9d74",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.596Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        },
+        {
+          "id": "de6f385ed1f82559e9fe09300ad870ccd6e9cbfc8264c6b22ffb18db4a5e6422",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.592Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        },
+        {
+          "id": "7960e0f0ea1103b5e7ecd81c855328363bf5f64fe3481cc5018c445bef823994",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.592Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        },
+        {
+          "id": "e2042858d869907541e9a369a2fc938eb001a7d00e35f465efa2bd9b6a21a3c8",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.592Z",
+          "subject": {
+            "kind": "observation",
+            "id": "e43eb7f064ddd69f",
+            "traceId": "f4b716eef57527d35890649a834568e6"
+          }
+        }
+      ]
+    },
+    {
+      "id": "f1759094a7937540",
+      "traceId": "d2022558cc90475aa0ab2234d36ef94a",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.563Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "afdc5f529c9909291b992dbe180bd31ce6f196c7ce99665fde5cd7ef60ed16d1",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Как победить финального босса в начале игры, не заходя в здание?\"}",
+      "output": "1. Откройте дверь, используя код \"LABORATORY\", чтобы войти в лабораторию.\n2. В лаборатории найдите и используйте дрон с оружием, чтобы уничтожить рaptor.\n3. Пройдите через дверь, чтобы выйти в коридор, где вас встретит финальный босс.",
+      "expectedOutput": "Не выдумывать бой/маршрут; указать недостаток подтверждения или ошибочную предпосылку и уточнить положение игрока.",
+      "scores": [
+        {
+          "id": "db8048f313a87ed19fe34b1f50e2cb45e5e525e2cc293b711c9eeb6e7db7bee3",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.629Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f1759094a7937540",
+            "traceId": "d2022558cc90475aa0ab2234d36ef94a"
+          }
+        },
+        {
+          "id": "8a2e43aec8adb06778d650a5b7296935fedbde557e3169077b6e2cd39dc253ea",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.629Z",
+          "subject": {
+            "kind": "observation",
+            "id": "f1759094a7937540",
+            "traceId": "d2022558cc90475aa0ab2234d36ef94a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "5d7546eca8152d87",
+      "traceId": "8a60d0ef1330cc58af3537ce72db5b89",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.781Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "26c12d3fe2b1820dac5a89a17bf908d659471ddfa3a89cf5d0baad031365ad2a",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я выбрал третью стратегию Рика и получил Planning Disc. Какой код у шкафа с Shotgun Parts?\"}",
+      "output": "1. Отправься в место, где ты получил последний DDK (смотри карту, место в красном), открой шкаф в углу и введи пароль 1281, чтобы получить части штурмовой винтовки.\n2. Используй полученную винтовку, чтобы улучшить её, затем уходи в дверь с зеленым светом, введи пароль DOCTORKIRK, чтобы открыть комнату с буквой A на двери, и вставь в панель на стене код 367204, чтобы получить части стабилизатора и части GG.",
+      "expectedOutput": "1281; предмет Shotgun Parts улучшает Shotgun. Не коды устройств 367204/0367/0204.",
+      "scores": [
+        {
+          "id": "e9b399bd60c679b679e315ccc76e76ed4edac3045b29672a3487009a46ab1534",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.795Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        },
+        {
+          "id": "f62cfacf636d09a866896d7f46983098d78fdb7813f14c385040862f0f446fac",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.794Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        },
+        {
+          "id": "38929ce74e0917a01e259d12dd29c54055c72407f594946de919881fd6d69ef9",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.794Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        },
+        {
+          "id": "09fbd7c16b3cf83e9e99fb2997bd3cac404ae206bc52cd63fe674dc1eafb7f3f",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.795Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        },
+        {
+          "id": "6f7efe2b1a97a4b7df603d1e52c5ae3c4800ba6434fc732b6e9dac80421f6e9e",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.787Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        },
+        {
+          "id": "2cbf9b517136a807d9c5ea34ce099c7cfd81131d35a903219b893ab8f7c5b74e",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.787Z",
+          "subject": {
+            "kind": "observation",
+            "id": "5d7546eca8152d87",
+            "traceId": "8a60d0ef1330cc58af3537ce72db5b89"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3cd63cb9282dc29a",
+      "traceId": "118e49b8ca916ea393be49eb155e8050",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.502Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "74c2c3f9c8ccfd7b7672dc9608d89991c30011aa0b1be64a58d09f3b4625f330",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я впервые поговорил с Риком в комнате управления. Где забрать дробовик?\"}",
+      "output": "В комнате управления (Control Room) сразу после разговора с Риком, выйдите вправо и откройте дверь. Внутри вас встретит Рик, а за ним — Том.\n\nВам нужно взять **дробовик (Shotgun)**, который находится прямо перед ними.\n\n*Примечание: Если вы не видите дробовик, возможно, Том еще не встал или он находится в другом месте. Если вы не видите его, уточните, где именно вы находились после разговора с Риком.*",
+      "expectedOutput": "Выйти из Control Room и направо через дверь; Shotgun прямо впереди. Не поздний Grenade Gun.",
+      "scores": [
+        {
+          "id": "2b5f1df696c6308ee94f51bf476bc11b36a6141df3215e5cd8f4cc9adfb09818",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.437Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        },
+        {
+          "id": "8b777061f31e28510089472051fb95f4e14945fff27999cee25aaf5a349f87cf",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.432Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        },
+        {
+          "id": "fa5efc56e7d59b8a0a4a099b861a4313811971c855d723b9f620cbc7c41907e8",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.435Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        },
+        {
+          "id": "26e49a292311a51b927696018960ea226e77f9c9ddfe3168a6caa4bc0bfbe8a1",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.432Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        },
+        {
+          "id": "164490ee01bfa254c54f238d94af289c8967eded5ca81bfd96bed024ccf560ca",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.415Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        },
+        {
+          "id": "380dc93fa2569efa285fd1d981cff4c765f67df41d0bf1e9c51abaac4ba2c99d",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.414Z",
+          "subject": {
+            "kind": "observation",
+            "id": "3cd63cb9282dc29a",
+            "traceId": "118e49b8ca916ea393be49eb155e8050"
+          }
+        }
+      ]
+    },
+    {
+      "id": "52fd4471d237430e",
+      "traceId": "0c335cb64a7bb440172782df5a8b9a57",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.460Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "4f2f334b77aec1b5275611984f5c556f542b9d79beeb65ba943a34e2c0e19571",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я вставил B2 Key Chip 1 и B2 Key Chip 2 в слоты возле экрана. Какой пароль нужен перед перестановкой блоков?\"}",
+      "output": "Пароль для перестановки блоков — **ENERGY**.\n\nПо контексту: после того как вы установите блоки в нужном порядке, вы идете к зеленому свету, где находится **B1 Key Chip**, и используете его, чтобы получить **Keycard R**. Затем вы идете в компьютерную комнату, нажимаете **Yes** на экран, чтобы вызвать Гейл, и открываете дверь с секретным ящиком, где нужно ввести **ENERGY**.",
+      "expectedOutput": "0392 с ведущим нулём. Не 3695.",
+      "scores": [
+        {
+          "id": "5bc643e05798ff710d7840ea02bf469dd577c5c4ddf2aeb1356ab1d81ee934e2",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.394Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        },
+        {
+          "id": "030883cbc9d22ab817850110f8c6bfdc591f72dd5068d2f687d446bb03c326b7",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.387Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        },
+        {
+          "id": "1cf79672a9a9870743933fd107f0f336cad9d32cdc95dab51aa07a1bf36cc157",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.372Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        },
+        {
+          "id": "91f28b54d676ba3f312ada00a9f4a46879bfcfa43ce99ce125db517f793b56a6",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.372Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        },
+        {
+          "id": "a7e360765064c37b08d82aa5f51db215ed68be5b280904416ca0442bda1ddf8f",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.372Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        },
+        {
+          "id": "86fbc902b9f9432ec2d046389182c34cac3dea23c597e75722f96b8942327922",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.373Z",
+          "subject": {
+            "kind": "observation",
+            "id": "52fd4471d237430e",
+            "traceId": "0c335cb64a7bb440172782df5a8b9a57"
+          }
+        }
+      ]
+    },
+    {
+      "id": "8d8b42f9df10417d",
+      "traceId": "a7aa5c57bb1ddbeb36c908196d271a75",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.454Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "f90c56a9887e7db8d43558c22237f7fa205566c1175c5fecd15e4ea47d5c0095",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Какой пароль у сейфа с Handgun Slides и на какое оружие ставится улучшение?\"}",
+      "output": "1. Введите пароль HEAD, чтобы открыть сейф с Handgun Slides.\n2. Используйте Handgun Slides на Handgun для улучшения оружия.",
+      "expectedOutput": "8159; на Handgun.",
+      "scores": [
+        {
+          "id": "8a55427ac8c813ae6914001056218137b4f64b955fb5896135df78dd63a8fd67",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.702Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        },
+        {
+          "id": "e04037000a3f831fe28e9c7478594c8842e3882116f71b5e7b95020693c68c0b",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.710Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        },
+        {
+          "id": "c765aca8e1f56231efcb2c0743ff1b424c1d119b07bff4f42c94acda7fdfe047",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.699Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        },
+        {
+          "id": "97f386e355965ae3139e27f1afca7d6f141d7d0406c34aad5c1952eda36dd003",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.698Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        },
+        {
+          "id": "d1a4ff710aa3b3d19ff6035a4e42df24dcfa66485901a7954973f9d2f10923c9",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.698Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        },
+        {
+          "id": "835cc83e9790e01eb3d1bb9f2357a1bfe6af5182234bf30a1970e7ebe822fcec",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.698Z",
+          "subject": {
+            "kind": "observation",
+            "id": "8d8b42f9df10417d",
+            "traceId": "a7aa5c57bb1ddbeb36c908196d271a75"
+          }
+        }
+      ]
+    },
+    {
+      "id": "2a2d1842264d03b6",
+      "traceId": "784caceeab904fc53fde6835f73da4fb",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:53.161Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "5a5b45f198aaf79116409558e30cb287",
+      "experimentName": "no-start-anchor-2b / hybrid / strict-ru / 987eb156",
+      "experimentItemId": "f839b1ea3aeeeb18eb9dcb48b38a09fe8782937885a4fa9cd2796d5f015b4fe0",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"Я у первого генератора на 1F, передо мной четыре рычага и панель с четырьмя катушками. Какие кнопки нажать, чтобы включить генератор?\"}",
+      "output": "1. Выберите варианты LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator.\n2. Используйте аккумулятор на устройстве перед рычагами и проверьте его снова.\n3. Нажмите на полку, чтобы найти штекер, подключите аккумулятор к устройству и осмотритесь еще раз.",
+      "expectedOutput": "CENTER → RIGHT → CENTER → CANCEL, затем рычаги. Не комбинация второго генератора.",
+      "scores": [
+        {
+          "id": "f2358a27b3383d62fe636282b26d7ed62228b74f7e4be31479dc93d97580f7e1",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.549Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        },
+        {
+          "id": "5db8b66550ef3104783fba8f95a2be6c4a5ae03a78671b6bc71b140dc181e55a",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.549Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        },
+        {
+          "id": "c7af65c5f70459fc16f1f1041c305ebb2eb27a9e243d845e3a3ca65cf001803d",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": false,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.551Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        },
+        {
+          "id": "79aebec09d2b5d8abbeecc77e31346e42fec251b40c53ce660c926ca61c70ce7",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.543Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        },
+        {
+          "id": "b9484d51220b879f6074d04951e116a44e4860f0e6c43046454c1f47efd47a99",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.539Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        },
+        {
+          "id": "448ad7421ab9bfb0a5f9cac68df906e95d2590061924407a0148f89128374a04",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.549Z",
+          "subject": {
+            "kind": "observation",
+            "id": "2a2d1842264d03b6",
+            "traceId": "784caceeab904fc53fde6835f73da4fb"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d8c1021ea9f7b2ec",
+      "traceId": "83bee05d36b34a9bd44fe07572b69778",
+      "startTime": "2026-11-04T17:39:50.537Z",
+      "endTime": "2026-11-04T17:39:52.383Z",
+      "level": "DEFAULT",
+      "environment": "evaluation",
+      "experimentId": "2424ad156885ba3e4490ee759b723086",
+      "experimentName": "no-start-anchor-2b / hybrid / default / 987eb156",
+      "experimentItemId": "05722d1f11b6d93096d836d01003967308526fe8e98aa97441e06b8823e0d7bd",
+      "experimentDatasetId": "cmw26ulpj0008p732895yal0v",
+      "experimentItemVersion": null,
+      "input": "{\"answer_length\":\"short\",\"game_id\":\"dino-crisis-1\",\"no_rag\":false,\"no_spoilers\":true,\"question\":\"У меня Panel Key 1 и Panel Key 2. Какой код ввести в сейф с двумя медалями и что я получу?\"}",
+      "output": "У вас есть **Panel Key 1** и **Panel Key 2**. Введите код **705037** в сейф с двумя медалями.\n\nВы получите **Keycard L**.",
+      "expectedOutput": "705037, Keycard L. Без сюжетных спойлеров.",
+      "scores": [
+        {
+          "id": "57634f708ee982a1e9be05da579198fa4d1cc3701e4812bb0f42ec6a6adf046e",
+          "projectId": "walkthrough-backend",
+          "name": "context_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.207Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        },
+        {
+          "id": "050c441337ab2729a3eab1b7fee5592f0971d6de34538254f9646f517b8eee17",
+          "projectId": "walkthrough-backend",
+          "name": "runtime_success",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.208Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        },
+        {
+          "id": "c3cfb4391588102b81b87d0000c09b3f84f9b5521aee2a257054091e6dbadf45",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_complete",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.207Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        },
+        {
+          "id": "f2db6f1b93f6eaabdd2ae5eeb313f30f4d0e322bd58570ebb25b6bfb1b0a97b3",
+          "projectId": "walkthrough-backend",
+          "name": "context_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.223Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        },
+        {
+          "id": "9bdd44d516e97e1190509cf067d293fe93dc14bd8e18f756009cd1bc793acecc",
+          "projectId": "walkthrough-backend",
+          "name": "gold_strict_pass",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:40:13.000Z",
+          "updatedAt": "2026-11-04T17:40:18.204Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        },
+        {
+          "id": "0fb86fa38a2db1443072398e82d8cfd7ff7955af1c9f17ef20e53246c967ed7c",
+          "projectId": "walkthrough-backend",
+          "name": "candidate_hit",
+          "dataType": "BOOLEAN",
+          "value": true,
+          "source": "API",
+          "timestamp": "2026-11-04T17:39:50.537Z",
+          "environment": "evaluation",
+          "createdAt": "2026-11-04T17:39:51.000Z",
+          "updatedAt": "2026-11-04T17:40:18.202Z",
+          "subject": {
+            "kind": "observation",
+            "id": "d8c1021ea9f7b2ec",
+            "traceId": "83bee05d36b34a9bd44fe07572b69778"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {}
+}

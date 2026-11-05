@@ -1,0 +1,2002 @@
+{
+  "schema": "situations-4b-comparison-v1",
+  "model": "Qwen3.5-4B UD-Q4_K_XL",
+  "seed": 20261104,
+  "profiles": [
+    "default"
+  ],
+  "context_token_cap": 2400,
+  "runtime_build": "b11706-f74e2fa6a",
+  "old_artifacts_unchanged": true,
+  "comparability": {
+    "control-local": {
+      "cases": 38,
+      "same_corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+      "same_context_text_ranking_and_tokens": true,
+      "same_messages": true,
+      "same_generation_defaults": true,
+      "same_query_vectors": true
+    },
+    "A-local": {
+      "cases": 38,
+      "same_corpus_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+      "same_context_text_ranking_and_tokens": true,
+      "same_messages": true,
+      "same_generation_defaults": true,
+      "same_query_vectors": true
+    },
+    "B-local": {
+      "cases": 38,
+      "same_corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+      "same_context_text_ranking_and_tokens": true,
+      "same_messages": true,
+      "same_generation_defaults": true,
+      "same_query_vectors": true
+    },
+    "control-oracle": {
+      "cases": 34,
+      "same_corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+      "same_context_text_ranking_and_tokens": true,
+      "same_messages": true,
+      "same_generation_defaults": true,
+      "same_query_vectors": true
+    },
+    "B-oracle": {
+      "cases": 34,
+      "same_corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+      "same_context_text_ranking_and_tokens": true,
+      "same_messages": true,
+      "same_generation_defaults": true,
+      "same_query_vectors": true
+    }
+  },
+  "generation": {
+    "control-local": {
+      "4b": {
+        "all": {
+          "task_pass": {
+            "numerator": 13,
+            "denominator": 38,
+            "value": 0.34210526315789475
+          },
+          "strict_pass": {
+            "numerator": 12,
+            "denominator": 38,
+            "value": 0.3157894736842105
+          },
+          "unsupported_addition": {
+            "numerator": 21,
+            "denominator": 38,
+            "value": 0.5526315789473685
+          },
+          "spoiler": {
+            "numerator": 6,
+            "denominator": 38,
+            "value": 0.15789473684210525
+          },
+          "episode_error_answerable": {
+            "numerator": 6,
+            "denominator": 34,
+            "value": 0.17647058823529413
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 10,
+            "denominator": 13,
+            "value": 0.7692307692307693
+          },
+          "exact_sequence": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "strict_pass": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "unsupported_addition": {
+            "numerator": 13,
+            "denominator": 20,
+            "value": 0.65
+          },
+          "spoiler": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "episode_error_answerable": {
+            "numerator": 3,
+            "denominator": 19,
+            "value": 0.15789473684210525
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "exact_sequence": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 9,
+            "denominator": 18,
+            "value": 0.5
+          },
+          "strict_pass": {
+            "numerator": 8,
+            "denominator": 18,
+            "value": 0.4444444444444444
+          },
+          "unsupported_addition": {
+            "numerator": 8,
+            "denominator": 18,
+            "value": 0.4444444444444444
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 18,
+            "value": 0.1111111111111111
+          },
+          "episode_error_answerable": {
+            "numerator": 3,
+            "denominator": 15,
+            "value": 0.2
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 1163.0,
+          "p95_nearest_rank": 1377,
+          "min": 472,
+          "max": 1423
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 6.5608474999999995,
+          "p95_nearest_rank": 19.591785,
+          "min": 3.905272,
+          "max": 20.737721
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 6.5775065,
+          "p95_nearest_rank": 19.607260999999998,
+          "min": 3.9186289999999997,
+          "max": 20.753077
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1415.5,
+          "p95_nearest_rank": 1635,
+          "min": 706,
+          "max": 1676
+        }
+      },
+      "2b": {
+        "all": {
+          "task_pass": {
+            "numerator": 15,
+            "denominator": 38,
+            "value": 0.39473684210526316
+          },
+          "strict_pass": {
+            "numerator": 13,
+            "denominator": 38,
+            "value": 0.34210526315789475
+          },
+          "unsupported_addition": {
+            "numerator": 20,
+            "denominator": 38,
+            "value": 0.5263157894736842
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 38,
+            "value": 0.05263157894736842
+          },
+          "episode_error_answerable": {
+            "numerator": 8,
+            "denominator": 34,
+            "value": 0.23529411764705882
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 10,
+            "denominator": 13,
+            "value": 0.7692307692307693
+          },
+          "exact_sequence": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 10,
+            "denominator": 20,
+            "value": 0.5
+          },
+          "strict_pass": {
+            "numerator": 9,
+            "denominator": 20,
+            "value": 0.45
+          },
+          "unsupported_addition": {
+            "numerator": 8,
+            "denominator": 20,
+            "value": 0.4
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 20,
+            "value": 0.05
+          },
+          "episode_error_answerable": {
+            "numerator": 4,
+            "denominator": 19,
+            "value": 0.21052631578947367
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "exact_sequence": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 5,
+            "denominator": 18,
+            "value": 0.2777777777777778
+          },
+          "strict_pass": {
+            "numerator": 4,
+            "denominator": 18,
+            "value": 0.2222222222222222
+          },
+          "unsupported_addition": {
+            "numerator": 12,
+            "denominator": 18,
+            "value": 0.6666666666666666
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 18,
+            "value": 0.05555555555555555
+          },
+          "episode_error_answerable": {
+            "numerator": 4,
+            "denominator": 15,
+            "value": 0.26666666666666666
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 1163.0,
+          "p95_nearest_rank": 1377,
+          "min": 472,
+          "max": 1423
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 2.2450729999999997,
+          "p95_nearest_rank": 3.779315,
+          "min": 0.904593,
+          "max": 4.200771
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 2.257912,
+          "p95_nearest_rank": 3.7904989999999996,
+          "min": 0.915686,
+          "max": 4.213824
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1415.5,
+          "p95_nearest_rank": 1635,
+          "min": 706,
+          "max": 1676
+        }
+      }
+    },
+    "A-local": {
+      "4b": {
+        "all": {
+          "task_pass": {
+            "numerator": 14,
+            "denominator": 38,
+            "value": 0.3684210526315789
+          },
+          "strict_pass": {
+            "numerator": 13,
+            "denominator": 38,
+            "value": 0.34210526315789475
+          },
+          "unsupported_addition": {
+            "numerator": 19,
+            "denominator": 38,
+            "value": 0.5
+          },
+          "spoiler": {
+            "numerator": 7,
+            "denominator": 38,
+            "value": 0.18421052631578946
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 34,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 2,
+            "denominator": 4,
+            "value": 0.5
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 6,
+            "denominator": 20,
+            "value": 0.3
+          },
+          "strict_pass": {
+            "numerator": 6,
+            "denominator": 20,
+            "value": 0.3
+          },
+          "unsupported_addition": {
+            "numerator": 10,
+            "denominator": 20,
+            "value": 0.5
+          },
+          "spoiler": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 19,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 8,
+            "denominator": 18,
+            "value": 0.4444444444444444
+          },
+          "strict_pass": {
+            "numerator": 7,
+            "denominator": 18,
+            "value": 0.3888888888888889
+          },
+          "unsupported_addition": {
+            "numerator": 9,
+            "denominator": 18,
+            "value": 0.5
+          },
+          "spoiler": {
+            "numerator": 3,
+            "denominator": 18,
+            "value": 0.16666666666666666
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 4,
+            "value": 0.75
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 1356.5,
+          "p95_nearest_rank": 1693,
+          "min": 632,
+          "max": 1724
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 6.894957,
+          "p95_nearest_rank": 9.932013999999999,
+          "min": 3.460802,
+          "max": 20.606023
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 6.922177,
+          "p95_nearest_rank": 9.956299999999999,
+          "min": 3.4775259999999997,
+          "max": 20.623662
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1608.5,
+          "p95_nearest_rank": 1953,
+          "min": 878,
+          "max": 1984
+        }
+      },
+      "2b": {
+        "all": {
+          "task_pass": {
+            "numerator": 18,
+            "denominator": 38,
+            "value": 0.47368421052631576
+          },
+          "strict_pass": {
+            "numerator": 17,
+            "denominator": 38,
+            "value": 0.4473684210526316
+          },
+          "unsupported_addition": {
+            "numerator": 17,
+            "denominator": 38,
+            "value": 0.4473684210526316
+          },
+          "spoiler": {
+            "numerator": 3,
+            "denominator": 38,
+            "value": 0.07894736842105263
+          },
+          "episode_error_answerable": {
+            "numerator": 5,
+            "denominator": 34,
+            "value": 0.14705882352941177
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 11,
+            "denominator": 13,
+            "value": 0.8461538461538461
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 7,
+            "value": 0.5714285714285714
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 10,
+            "denominator": 20,
+            "value": 0.5
+          },
+          "strict_pass": {
+            "numerator": 10,
+            "denominator": 20,
+            "value": 0.5
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 20,
+            "value": 0.35
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 20,
+            "value": 0.05
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 8,
+            "denominator": 18,
+            "value": 0.4444444444444444
+          },
+          "strict_pass": {
+            "numerator": 7,
+            "denominator": 18,
+            "value": 0.3888888888888889
+          },
+          "unsupported_addition": {
+            "numerator": 10,
+            "denominator": 18,
+            "value": 0.5555555555555556
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 18,
+            "value": 0.1111111111111111
+          },
+          "episode_error_answerable": {
+            "numerator": 4,
+            "denominator": 15,
+            "value": 0.26666666666666666
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 1356.5,
+          "p95_nearest_rank": 1693,
+          "min": 632,
+          "max": 1724
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 1.729407,
+          "p95_nearest_rank": 3.9290030000000002,
+          "min": 0.288374,
+          "max": 8.532929
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 1.7464084999999998,
+          "p95_nearest_rank": 3.9458789999999997,
+          "min": 0.304388,
+          "max": 8.549293
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1608.5,
+          "p95_nearest_rank": 1953,
+          "min": 878,
+          "max": 1984
+        }
+      }
+    },
+    "B-local": {
+      "4b": {
+        "all": {
+          "task_pass": {
+            "numerator": 21,
+            "denominator": 38,
+            "value": 0.5526315789473685
+          },
+          "strict_pass": {
+            "numerator": 19,
+            "denominator": 38,
+            "value": 0.5
+          },
+          "unsupported_addition": {
+            "numerator": 16,
+            "denominator": 38,
+            "value": 0.42105263157894735
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 38,
+            "value": 0.02631578947368421
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 34,
+            "value": 0.029411764705882353
+          },
+          "safe_unanswerable": {
+            "numerator": 1,
+            "denominator": 4,
+            "value": 0.25
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 12,
+            "denominator": 20,
+            "value": 0.6
+          },
+          "strict_pass": {
+            "numerator": 12,
+            "denominator": 20,
+            "value": 0.6
+          },
+          "unsupported_addition": {
+            "numerator": 8,
+            "denominator": 20,
+            "value": 0.4
+          },
+          "spoiler": {
+            "numerator": 0,
+            "denominator": 20,
+            "value": 0.0
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 9,
+            "denominator": 18,
+            "value": 0.5
+          },
+          "strict_pass": {
+            "numerator": 7,
+            "denominator": 18,
+            "value": 0.3888888888888889
+          },
+          "unsupported_addition": {
+            "numerator": 8,
+            "denominator": 18,
+            "value": 0.4444444444444444
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 18,
+            "value": 0.05555555555555555
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 1,
+            "denominator": 3,
+            "value": 0.3333333333333333
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 750.5,
+          "p95_nearest_rank": 951,
+          "min": 436,
+          "max": 958
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 4.4143065,
+          "p95_nearest_rank": 6.975348,
+          "min": 2.8457820000000003,
+          "max": 8.395521
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 4.4281495,
+          "p95_nearest_rank": 6.991801000000001,
+          "min": 2.859608,
+          "max": 8.40957
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1002.5,
+          "p95_nearest_rank": 1201,
+          "min": 677,
+          "max": 1221
+        }
+      },
+      "2b": {
+        "all": {
+          "task_pass": {
+            "numerator": 24,
+            "denominator": 38,
+            "value": 0.631578947368421
+          },
+          "strict_pass": {
+            "numerator": 22,
+            "denominator": 38,
+            "value": 0.5789473684210527
+          },
+          "unsupported_addition": {
+            "numerator": 11,
+            "denominator": 38,
+            "value": 0.2894736842105263
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 38,
+            "value": 0.02631578947368421
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 34,
+            "value": 0.029411764705882353
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 38,
+            "denominator": 38,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 15,
+            "denominator": 20,
+            "value": 0.75
+          },
+          "strict_pass": {
+            "numerator": 15,
+            "denominator": 20,
+            "value": 0.75
+          },
+          "unsupported_addition": {
+            "numerator": 4,
+            "denominator": 20,
+            "value": 0.2
+          },
+          "spoiler": {
+            "numerator": 0,
+            "denominator": 20,
+            "value": 0.0
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 9,
+            "denominator": 18,
+            "value": 0.5
+          },
+          "strict_pass": {
+            "numerator": 7,
+            "denominator": 18,
+            "value": 0.3888888888888889
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 18,
+            "value": 0.3888888888888889
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 18,
+            "value": 0.05555555555555555
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 38,
+          "p50": 750.5,
+          "p95_nearest_rank": 951,
+          "min": 436,
+          "max": 958
+        },
+        "generation_seconds_including_retry": {
+          "n": 38,
+          "p50": 1.394254,
+          "p95_nearest_rank": 2.254493,
+          "min": 0.706031,
+          "max": 2.8217510000000003
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 38,
+          "p50": 1.409421,
+          "p95_nearest_rank": 2.268901,
+          "min": 0.719382,
+          "max": 2.8348780000000002
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 38,
+          "p50": 1002.5,
+          "p95_nearest_rank": 1201,
+          "min": 677,
+          "max": 1221
+        }
+      }
+    },
+    "control-oracle": {
+      "4b": {
+        "all": {
+          "task_pass": {
+            "numerator": 16,
+            "denominator": 34,
+            "value": 0.47058823529411764
+          },
+          "strict_pass": {
+            "numerator": 15,
+            "denominator": 34,
+            "value": 0.4411764705882353
+          },
+          "unsupported_addition": {
+            "numerator": 14,
+            "denominator": 34,
+            "value": 0.4117647058823529
+          },
+          "spoiler": {
+            "numerator": 7,
+            "denominator": 34,
+            "value": 0.20588235294117646
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 34,
+            "value": 0.029411764705882353
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "runtime_success": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 10,
+            "denominator": 19,
+            "value": 0.5263157894736842
+          },
+          "strict_pass": {
+            "numerator": 10,
+            "denominator": 19,
+            "value": 0.5263157894736842
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 19,
+            "value": 0.3684210526315789
+          },
+          "spoiler": {
+            "numerator": 4,
+            "denominator": 19,
+            "value": 0.21052631578947367
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 2,
+            "denominator": 3,
+            "value": 0.6666666666666666
+          },
+          "runtime_success": {
+            "numerator": 19,
+            "denominator": 19,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 6,
+            "denominator": 15,
+            "value": 0.4
+          },
+          "strict_pass": {
+            "numerator": 5,
+            "denominator": 15,
+            "value": 0.3333333333333333
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 15,
+            "value": 0.4666666666666667
+          },
+          "spoiler": {
+            "numerator": 3,
+            "denominator": 15,
+            "value": 0.2
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 15,
+            "denominator": 15,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 283.0,
+          "p95_nearest_rank": 317,
+          "min": 85,
+          "max": 596
+        },
+        "generation_seconds_including_retry": {
+          "n": 34,
+          "p50": 3.084335,
+          "p95_nearest_rank": 5.600023,
+          "min": 1.9617159999999998,
+          "max": 16.641187000000002
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 34,
+          "p50": 3.0860655,
+          "p95_nearest_rank": 5.601350999999999,
+          "min": 1.962449,
+          "max": 16.642421
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 34,
+          "p50": 532.0,
+          "p95_nearest_rank": 574,
+          "min": 331,
+          "max": 856
+        }
+      },
+      "2b": {
+        "all": {
+          "task_pass": {
+            "numerator": 16,
+            "denominator": 34,
+            "value": 0.47058823529411764
+          },
+          "strict_pass": {
+            "numerator": 15,
+            "denominator": 34,
+            "value": 0.4411764705882353
+          },
+          "unsupported_addition": {
+            "numerator": 16,
+            "denominator": 34,
+            "value": 0.47058823529411764
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 34,
+            "value": 0.058823529411764705
+          },
+          "episode_error_answerable": {
+            "numerator": 2,
+            "denominator": 34,
+            "value": 0.058823529411764705
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 12,
+            "denominator": 13,
+            "value": 0.9230769230769231
+          },
+          "exact_sequence": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 33,
+            "denominator": 34,
+            "value": 0.9705882352941176
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 10,
+            "denominator": 19,
+            "value": 0.5263157894736842
+          },
+          "strict_pass": {
+            "numerator": 9,
+            "denominator": 19,
+            "value": 0.47368421052631576
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 19,
+            "value": 0.3684210526315789
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 19,
+            "value": 0.05263157894736842
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 18,
+            "denominator": 19,
+            "value": 0.9473684210526315
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 6,
+            "denominator": 15,
+            "value": 0.4
+          },
+          "strict_pass": {
+            "numerator": 6,
+            "denominator": 15,
+            "value": 0.4
+          },
+          "unsupported_addition": {
+            "numerator": 9,
+            "denominator": 15,
+            "value": 0.6
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 15,
+            "value": 0.06666666666666667
+          },
+          "episode_error_answerable": {
+            "numerator": 1,
+            "denominator": 15,
+            "value": 0.06666666666666667
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 15,
+            "denominator": 15,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 283.0,
+          "p95_nearest_rank": 317,
+          "min": 85,
+          "max": 596
+        },
+        "generation_seconds_including_retry": {
+          "n": 34,
+          "p50": 1.045835,
+          "p95_nearest_rank": 7.385503,
+          "min": 0.42120100000000005,
+          "max": 10.955152
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 34,
+          "p50": 1.0469925,
+          "p95_nearest_rank": 7.38638,
+          "min": 0.421938,
+          "max": 10.956181
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 34,
+          "p50": 532.0,
+          "p95_nearest_rank": 574,
+          "min": 331,
+          "max": 856
+        }
+      }
+    },
+    "B-oracle": {
+      "4b": {
+        "all": {
+          "task_pass": {
+            "numerator": 18,
+            "denominator": 34,
+            "value": 0.5294117647058824
+          },
+          "strict_pass": {
+            "numerator": 15,
+            "denominator": 34,
+            "value": 0.4411764705882353
+          },
+          "unsupported_addition": {
+            "numerator": 14,
+            "denominator": 34,
+            "value": 0.4117647058823529
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 34,
+            "value": 0.058823529411764705
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 34,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 12,
+            "denominator": 19,
+            "value": 0.631578947368421
+          },
+          "strict_pass": {
+            "numerator": 11,
+            "denominator": 19,
+            "value": 0.5789473684210527
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 19,
+            "value": 0.3684210526315789
+          },
+          "spoiler": {
+            "numerator": 0,
+            "denominator": 19,
+            "value": 0.0
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 19,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 19,
+            "denominator": 19,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 6,
+            "denominator": 15,
+            "value": 0.4
+          },
+          "strict_pass": {
+            "numerator": 4,
+            "denominator": 15,
+            "value": 0.26666666666666666
+          },
+          "unsupported_addition": {
+            "numerator": 7,
+            "denominator": 15,
+            "value": 0.4666666666666667
+          },
+          "spoiler": {
+            "numerator": 2,
+            "denominator": 15,
+            "value": 0.13333333333333333
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 15,
+            "denominator": 15,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 142.0,
+          "p95_nearest_rank": 184,
+          "min": 60,
+          "max": 284
+        },
+        "generation_seconds_including_retry": {
+          "n": 34,
+          "p50": 2.7699714999999996,
+          "p95_nearest_rank": 4.6104210000000005,
+          "min": 1.3385550000000002,
+          "max": 4.861109000000001
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 34,
+          "p50": 2.770979,
+          "p95_nearest_rank": 4.611563,
+          "min": 1.3396590000000002,
+          "max": 4.862054
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 34,
+          "p50": 398.5,
+          "p95_nearest_rank": 439,
+          "min": 306,
+          "max": 544
+        }
+      },
+      "2b": {
+        "all": {
+          "task_pass": {
+            "numerator": 24,
+            "denominator": 34,
+            "value": 0.7058823529411765
+          },
+          "strict_pass": {
+            "numerator": 22,
+            "denominator": 34,
+            "value": 0.6470588235294118
+          },
+          "unsupported_addition": {
+            "numerator": 9,
+            "denominator": 34,
+            "value": 0.2647058823529412
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 34,
+            "value": 0.029411764705882353
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 34,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 13,
+            "denominator": 13,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 6,
+            "denominator": 7,
+            "value": 0.8571428571428571
+          },
+          "runtime_success": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          }
+        },
+        "existing-regression": {
+          "task_pass": {
+            "numerator": 14,
+            "denominator": 19,
+            "value": 0.7368421052631579
+          },
+          "strict_pass": {
+            "numerator": 14,
+            "denominator": 19,
+            "value": 0.7368421052631579
+          },
+          "unsupported_addition": {
+            "numerator": 5,
+            "denominator": 19,
+            "value": 0.2631578947368421
+          },
+          "spoiler": {
+            "numerator": 0,
+            "denominator": 19,
+            "value": 0.0
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 19,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "runtime_success": {
+            "numerator": 19,
+            "denominator": 19,
+            "value": 1.0
+          }
+        },
+        "independent-source-diagnostic": {
+          "task_pass": {
+            "numerator": 10,
+            "denominator": 15,
+            "value": 0.6666666666666666
+          },
+          "strict_pass": {
+            "numerator": 8,
+            "denominator": 15,
+            "value": 0.5333333333333333
+          },
+          "unsupported_addition": {
+            "numerator": 4,
+            "denominator": 15,
+            "value": 0.26666666666666666
+          },
+          "spoiler": {
+            "numerator": 1,
+            "denominator": 15,
+            "value": 0.06666666666666667
+          },
+          "episode_error_answerable": {
+            "numerator": 0,
+            "denominator": 15,
+            "value": 0.0
+          },
+          "safe_unanswerable": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "exact_code": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "exact_sequence": {
+            "numerator": 3,
+            "denominator": 4,
+            "value": 0.75
+          },
+          "runtime_success": {
+            "numerator": 15,
+            "denominator": 15,
+            "value": 1.0
+          }
+        },
+        "context_tokens": {
+          "n": 34,
+          "p50": 142.0,
+          "p95_nearest_rank": 184,
+          "min": 60,
+          "max": 284
+        },
+        "generation_seconds_including_retry": {
+          "n": 34,
+          "p50": 0.8715305,
+          "p95_nearest_rank": 1.733738,
+          "min": 0.34253500000000003,
+          "max": 2.027107
+        },
+        "total_seconds_cached_embeddings": {
+          "n": 34,
+          "p50": 0.8724115,
+          "p95_nearest_rank": 1.734764,
+          "min": 0.34332799999999997,
+          "max": 2.027876
+        },
+        "prompt_tokens_last_attempt": {
+          "n": 34,
+          "p50": 398.5,
+          "p95_nearest_rank": 439,
+          "min": 306,
+          "max": 544
+        }
+      }
+    }
+  },
+  "paired": {
+    "control-local": {
+      "improved_4b_vs_2b": [
+        "office-safe",
+        "fresh-green-items",
+        "return-small-key",
+        "rick-pipes",
+        "disc-yellow-leading-zero",
+        "late-rick-id"
+      ],
+      "regressed_4b_vs_2b": [
+        "first-generator",
+        "panel-code",
+        "hemostat",
+        "b1-chip",
+        "office-id",
+        "med-pak-l",
+        "planning-disc-safe",
+        "battery-acd"
+      ]
+    },
+    "A-local": {
+      "improved_4b_vs_2b": [
+        "beginning",
+        "second-generator",
+        "red-box",
+        "second-rick-memory",
+        "disc-yellow-leading-zero",
+        "unanswerable-battery-code",
+        "ambiguous-computer",
+        "b1-b2-distinction"
+      ],
+      "regressed_4b_vs_2b": [
+        "panel-code",
+        "office-safe",
+        "office-id",
+        "handgun-slides",
+        "mix-menu",
+        "med-pak-l",
+        "gail-pipes",
+        "battery-acd",
+        "disc-blue-leading-zero",
+        "late-gail-id",
+        "late-rick-id",
+        "b2-ru-plain"
+      ]
+    },
+    "B-local": {
+      "improved_4b_vs_2b": [
+        "office-safe",
+        "gail-branch",
+        "fresh-green-items",
+        "late-rick-id",
+        "unanswerable-battery-code"
+      ],
+      "regressed_4b_vs_2b": [
+        "gas",
+        "b1-chip",
+        "b2-chips",
+        "office-id",
+        "mix-menu",
+        "red-box",
+        "disc-yellow-leading-zero",
+        "b2-ru-plain"
+      ]
+    },
+    "control-oracle": {
+      "improved_4b_vs_2b": [
+        "office-safe",
+        "b1-chip",
+        "b2-chips",
+        "shotgun-location",
+        "rick-pipes",
+        "late-rick-id"
+      ],
+      "regressed_4b_vs_2b": [
+        "first-generator",
+        "gas",
+        "hemostat",
+        "office-id",
+        "second-rick-memory",
+        "b1-b2-distinction"
+      ]
+    },
+    "B-oracle": {
+      "improved_4b_vs_2b": [
+        "office-safe",
+        "handgun-slides",
+        "shotgun-location",
+        "battery-acd"
+      ],
+      "regressed_4b_vs_2b": [
+        "gas",
+        "b2-chips",
+        "office-id",
+        "mix-menu",
+        "turn-around",
+        "disc-blue-leading-zero",
+        "late-gail-id",
+        "late-rick-id",
+        "b2-ru-plain",
+        "english-first-generator"
+      ]
+    },
+    "A-vs-control-4b": {
+      "improved": [
+        "beginning",
+        "hemostat",
+        "b1-chip",
+        "planning-disc-safe",
+        "red-box",
+        "unanswerable-battery-code",
+        "ambiguous-computer",
+        "b1-b2-distinction"
+      ],
+      "regressed": [
+        "office-safe",
+        "mix-menu",
+        "fresh-green-items",
+        "return-small-key",
+        "disc-blue-leading-zero",
+        "late-gail-id",
+        "late-rick-id"
+      ]
+    },
+    "B-vs-control-4b": {
+      "improved": [
+        "first-generator",
+        "panel-code",
+        "hemostat",
+        "rick-branch",
+        "gail-branch",
+        "handgun-slides",
+        "shotgun-location",
+        "med-pak-l",
+        "planning-disc-safe",
+        "gail-pipes",
+        "battery-acd",
+        "unanswerable-battery-code",
+        "b1-b2-distinction"
+      ],
+      "regressed": [
+        "mix-menu",
+        "return-small-key",
+        "disc-yellow-leading-zero",
+        "disc-blue-leading-zero",
+        "late-gail-id"
+      ]
+    }
+  },
+  "langfuse": {
+    "items": 182,
+    "scores": 1600,
+    "experiments": [
+      {
+        "id": "3ab52acc89a86f5e6671ea17d03e60dd",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "local",
+          "manifest_sha256": "8cf0b70ba2b65e62932a81caafa916dcadf9703e247d1d3750ad6470a6722301",
+          "mode": "hybrid",
+          "model": "assistance-4b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-4b-control-local / hybrid / default / 1902ca36"
+      },
+      {
+        "id": "b2b81e62af0c58ded928092baf9cc203",
+        "metadata": {
+          "corpus_sha256": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+          "kind": "local",
+          "manifest_sha256": "b2d9969dfe0ce4220264121c2051fb817f64d4ee5d0f36d21658b1c7dd941ca3",
+          "mode": "hybrid",
+          "model": "assistance-4b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-4b-A-local / hybrid / default / 3161f0c5"
+      },
+      {
+        "id": "e98c7ffd434848fef8146bb9e5c59841",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "local",
+          "manifest_sha256": "5f216c8faf6d1f26a3f77cd8449a52940284be6ef31edd7c175d694e6b8c84ef",
+          "mode": "hybrid",
+          "model": "assistance-4b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-4b-B-local / hybrid / default / 6c535c01"
+      },
+      {
+        "id": "4a4e0ab29ab5f1f1f8b578f3a5c52557",
+        "metadata": {
+          "corpus_sha256": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+          "kind": "oracle",
+          "manifest_sha256": "df9e4ef0e1c3276ed513b9de525f76783cedaa92c99f492cbd6d454835454c96",
+          "mode": "hybrid",
+          "model": "assistance-4b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-4b-control-oracle / hybrid / default / 8d5651ad"
+      },
+      {
+        "id": "56ba022eec82f978bcef40b6990a5e40",
+        "metadata": {
+          "corpus_sha256": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969",
+          "kind": "oracle",
+          "manifest_sha256": "54341110ff86289975796684335917f59f1fa0f5db55cfbed1bd6608f67e7641",
+          "mode": "hybrid",
+          "model": "assistance-4b",
+          "profile": "default",
+          "seed": 20261104,
+          "source": "Go P0 evaluator; imported artifacts"
+        },
+        "name": "situations-v1-4b-B-oracle / hybrid / default / da44a24a"
+      }
+    ],
+    "project": "http://localhost:3000/project/walkthrough-backend"
+  }
+}

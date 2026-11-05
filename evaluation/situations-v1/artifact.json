@@ -1,0 +1,16 @@
+{
+  "version": "situations-v1-recovered-2026-11-05",
+  "path": "backend/bin/evaluation-artifacts/situations-v1-recovered-2026-11-05.tar.gz",
+  "bytes": 31694741,
+  "sha256": "e5eb77b8e7dcdb7c3b3b93196feb4f5f11d43a1d7a336795e26226a0837d5b62",
+  "entries": 1620,
+  "contains": [
+    "all experimental rag files including retained failed/pilot attempts",
+    "all results and traces",
+    "source snapshot and annotations",
+    "manifests and exact embedding inputs",
+    "source-bound manual reviews",
+    "reproduction scripts and report"
+  ],
+  "warning": "Recovered corpus pilot, not original baseline HTML/Markdown or byte-identical original rag."
+}

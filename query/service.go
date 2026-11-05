@@ -24,6 +24,7 @@ type Config struct {
 	LLMAPIKey           string
 	SystemPrompt        string
 	Timeout             time.Duration
+	ContextTokenBudget  int
 	ResultLimit         int
 	RetrievalMode       string
 	PromptProfile       string
@@ -67,6 +68,9 @@ type DebugAsker interface {
 }
 
 type DebugInfo struct {
+	SearchInput     string             `json:"search_input"`
+	ContextText     string             `json:"context_text"`
+	ContextTokens   int                `json:"context_tokens"`
 	Request         Request            `json:"request"`
 	RetrievedChunks []RetrievedChunk   `json:"retrieved_chunks"`
 	ModelRequest    json.RawMessage    `json:"model_request"`
@@ -78,17 +82,20 @@ type DebugInfo struct {
 }
 
 type RetrievedChunk struct {
-	ChunkID    int64    `json:"chunk_id"`
-	DocumentID int64    `json:"document_id"`
-	Sequence   int      `json:"sequence"`
-	Score      float64  `json:"cosine_score"`
-	BM25       *float64 `json:"bm25,omitempty"`
-	RRF        *float64 `json:"rrf,omitempty"`
-	Rerank     *float64 `json:"rerank,omitempty"`
-	Title      string   `json:"title"`
-	Section    string   `json:"section"`
-	URL        string   `json:"url"`
-	Text       string   `json:"text"`
+	SituationID string           `json:"situation_id,omitempty"`
+	SourceSpans []rag.SourceSpan `json:"source_spans,omitempty"`
+	SearchText  string           `json:"search_text,omitempty"`
+	ChunkID     int64            `json:"chunk_id"`
+	DocumentID  int64            `json:"document_id"`
+	Sequence    int              `json:"sequence"`
+	Score       float64          `json:"cosine_score"`
+	BM25        *float64         `json:"bm25,omitempty"`
+	RRF         *float64         `json:"rrf,omitempty"`
+	Rerank      *float64         `json:"rerank,omitempty"`
+	Title       string           `json:"title"`
+	Section     string           `json:"section"`
+	URL         string           `json:"url"`
+	Text        string           `json:"text"`
 }
 
 type Service struct {
@@ -187,6 +194,7 @@ func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, r
 		}
 		return debug, nil, answer, nil
 	}
+	debug.SearchInput = request.Question
 	results := oracle
 	if oracle != nil {
 		debug.ContextMode = "oracle"
@@ -224,15 +232,46 @@ func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, r
 	}
 	for index, result := range results {
 		sources[index] = Source{Title: result.Title, Section: result.Section, URL: result.SourceURL}
-		contextParts[index] = fmt.Sprintf("[%s / %s]\n%s", result.Title, result.Section, result.Text)
+		text := result.Text
+		if result.AnswerText != "" {
+			text = result.AnswerText
+		}
+		contextParts[index] = fmt.Sprintf("[%s / %s]\n%s", result.Title, result.Section, text)
 		if s.structuredPrompt(request) {
-			contextParts[index] = fmt.Sprintf("<source id=\"%d\" section=\"%s\">\n%s\n</source>", index+1, xmlText(result.Section), xmlText(result.Text))
+			contextParts[index] = fmt.Sprintf("<source id=\"%d\" section=\"%s\">\n%s\n</source>", index+1, xmlText(result.Section), xmlText(text))
 		}
 		if includeDebug {
-			debug.RetrievedChunks[index] = RetrievedChunk{ChunkID: result.ChunkID, DocumentID: result.DocumentID, Sequence: result.Sequence, Score: result.Score, BM25: result.BM25, RRF: result.RRF, Rerank: result.Rerank, Title: result.Title, Section: result.Section, URL: result.SourceURL, Text: result.Text}
+			debug.RetrievedChunks[index] = RetrievedChunk{SituationID: result.SituationID, SourceSpans: result.SourceSpans, SearchText: result.Text, ChunkID: result.ChunkID, DocumentID: result.DocumentID, Sequence: result.Sequence, Score: result.Score, BM25: result.BM25, RRF: result.RRF, Rerank: result.Rerank, Title: result.Title, Section: result.Section, URL: result.SourceURL, Text: text}
 		}
 	}
 	walkthroughContext := strings.Join(contextParts, "\n\n")
+	if s.config.ContextTokenBudget > 0 {
+		kept := 0
+		for i := range contextParts {
+			candidate := strings.Join(contextParts[:i+1], "\n\n")
+			n, tokenErr := s.contextTokens(ctx, candidate)
+			if tokenErr != nil {
+				return debug, nil, "", tokenErr
+			}
+			if n > s.config.ContextTokenBudget {
+				break
+			}
+			kept = i + 1
+			debug.ContextTokens = n
+		}
+		contextParts = contextParts[:kept]
+		results = results[:kept]
+		sources = sources[:kept]
+		if includeDebug {
+			debug.RetrievedChunks = debug.RetrievedChunks[:kept]
+		}
+		debug.Search.Selected = results
+		walkthroughContext = strings.Join(contextParts, "\n\n")
+		if kept == 0 {
+			return debug, nil, "", fmt.Errorf("no complete evidence fits context budget")
+		}
+	}
+	debug.ContextText = walkthroughContext
 	debug.StageMS["context"] = float64(time.Since(contextStarted).Microseconds()) / 1000
 	if retrievalOnly {
 		return debug, sources, "", nil
@@ -411,4 +450,29 @@ func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext
 		payload["seed"] = *s.config.GenerationSeed
 	}
 	return json.Marshal(payload)
+}
+
+// Count with the generator's actual tokenizer, including source wrappers/context.
+func (s *Service) contextTokens(ctx context.Context, text string) (int, error) {
+	payload, _ := json.Marshal(map[string]any{"content": text, "add_special": false})
+	req, err := http.NewRequestWithContext(ctx, "POST", strings.TrimRight(s.config.LLMURL, "/")+"/tokenize", bytes.NewReader(payload))
+	if err != nil {
+		return 0, err
+	}
+	req.Header.Set("Content-Type", "application/json")
+	res, err := s.client.Do(req)
+	if err != nil {
+		return 0, err
+	}
+	defer res.Body.Close()
+	if res.StatusCode != 200 {
+		return 0, fmt.Errorf("tokenizer HTTP %s", res.Status)
+	}
+	var out struct {
+		Tokens []int `json:"tokens"`
+	}
+	if err = json.NewDecoder(res.Body).Decode(&out); err != nil {
+		return 0, err
+	}
+	return len(out.Tokens), nil
 }

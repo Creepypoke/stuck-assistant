@@ -1,0 +1,42 @@
+{
+  "schema": "situations-4b-reproduction-v1",
+  "scripts_sha256": {
+    "run.py": "7b3b74d4a2fe076cd8a57baad86706c00710cc0ff74ca69b872d31e1dfa9fa54",
+    "review.py": "1d1caa1bd14773ae14a642009404d1b890f5b9ba4fae74af7ed1acfc43e831f8",
+    "analyze.py": "d2760eadfd08ac8c28f7dc006f602b0db4aba4da6610c6b21bf35161f8329154"
+  },
+  "cases_sha256": "acfbe1cd0147fafb3f83fa25ef12bb049e9d16ddd4b8a86f4e179f7c02aa2dc8",
+  "judgments_sha256": "87fb8425eb38af07068e9b0b727044f4e8110022f3bafe0817d77d6acd5fd680",
+  "previous_artifact": {
+    "version": "situations-v1-recovered-2026-11-05",
+    "path": "backend/bin/evaluation-artifacts/situations-v1-recovered-2026-11-05.tar.gz",
+    "bytes": 31694741,
+    "sha256": "e5eb77b8e7dcdb7c3b3b93196feb4f5f11d43a1d7a336795e26226a0837d5b62",
+    "entries": 1620,
+    "contains": [
+      "all experimental rag files including retained failed/pilot attempts",
+      "all results and traces",
+      "source snapshot and annotations",
+      "manifests and exact embedding inputs",
+      "source-bound manual reviews",
+      "reproduction scripts and report"
+    ],
+    "warning": "Recovered corpus pilot, not original baseline HTML/Markdown or byte-identical original rag."
+  },
+  "previous_rag_sha256": {
+    "control": "2886cbad496d9b4b95f58e0df4e235dd485683fcbd0da72211d5c86caced4b56",
+    "A": "49e694fc8b02822423262277ccd86f858f343c364f90f08d95990568e166b8af",
+    "B": "0b368d1f764ecc8bde38307a7649b7034862b85e168586bdb7f115ecd40a8969"
+  },
+  "new_results_sha256": {
+    "control-local": "3369bb1ef977d581c4a0fd9017bd51e5c9c0f68a5aa19216498550e5800dd1bb",
+    "A-local": "48e809516a8522ada846d10359f255709a59f00e1e97fef1f3228d60e0e7a9a3",
+    "B-local": "fa09470621a8691fa3e4889b3dade7aa0535ee3c368115b0c3c187ed273bcb9a",
+    "control-oracle": "c6ff6ea177e11f167b8b4fe52cc6478b589cb4db8c3ecba32aae5c5d7c2fde53",
+    "B-oracle": "53faddde5eb9d4a0db204790126a1734083a53846b371b2b8790b015c41ba4b7"
+  },
+  "old_artifacts_preserved": true,
+  "all_182_contexts_rankings_token_counts_and_messages_identical_to_2b": true,
+  "review": "same source-grounded rubric; one agent, not independent; full notes retained",
+  "model_sha256": "b252c5610a42ca82d20fe2a12813e9d069eed89292907e26c783eeb0bc961bc7"
+}

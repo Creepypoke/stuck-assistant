@@ -1,0 +1,617 @@
+[
+  {
+    "id": "beginning",
+    "question": "Куда идти в начале игры?",
+    "expected": "Подойти к Gail, затем осмотреть/сдвинуть ящик и идти через зелёную дверь. Не выдавать управление или позднюю главу за старт.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-004",
+          "start": 1299,
+          "end": 1578,
+          "quote": "When you take control of Regina, walk a little and talk to Gail, after the conversation go to a box and push it to discover a Med Pak M, here is a locked door, we will come back here later, now go through the green door and get it in this room a Resuscitation and the BG Area Key"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "first-generator",
+    "question": "Я у первого генератора на 1F, передо мной четыре рычага и панель с четырьмя катушками. Какие кнопки нажать, чтобы включить генератор?",
+    "expected": "CENTER → RIGHT → CENTER → CANCEL, затем рычаги. Не комбинация второго генератора.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-004",
+          "start": 1759,
+          "end": 2047,
+          "quote": "continue in forward and talk to Gail, he tells Regina to enter while he stands guard, enter the next door and go forward until you see four levers, examine the panel ahead to see four coils, choose the options CENTER, RIGHT, CENTER AND CANCEL, now pull the levers to turn on the generator"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "panel-code",
+    "question": "У меня Panel Key 1 и Panel Key 2. Какой код ввести в сейф с двумя медалями и что я получу?",
+    "expected": "705037, Keycard L. Без сюжетных спойлеров.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-008",
+          "start": 5241,
+          "end": 5366,
+          "quote": "examine the place with two medals and use both Panel Keys on it, enter the password 705037 to open the safe and get Keycard L"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "office-safe",
+    "question": "Я вернулся в компьютерную комнату после синей папки и DDK Code Disk H. Какой код у сейфа и что лежит внутри?",
+    "expected": "0426; Resuscitation и Entrance Key.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-006",
+          "start": 3698,
+          "end": 3894,
+          "quote": "get the DDK Code Disk H and a An Dart M, examine the blue folder and go back to the computer room, examine the safe and enter the password 0426 to open it, get a Resuscitation and the Entrance Key"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "gas",
+    "question": "Учёный заперт в комнате с ядовитым газом. В каком порядке нажать цветные кнопки, чтобы нейтрализовать газ?",
+    "expected": "BLUE → GREEN → GREEN → RED → BLUE; источник пишет второе GREEN как GRENN. Обязательно пять нажатий. Не раскрывать судьбу учёного.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-019",
+          "start": 14693,
+          "end": 14866,
+          "quote": "You will see a scientist who is trapped in a room with poisonous gas, examine the panel ahead and choose the options: BLUE, GREEN, GRENN, RED and BLUE, to neutralize the gas"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "hemostat",
+    "question": "Hemostat восстанавливает здоровье или только останавливает кровотечение?",
+    "expected": "Только останавливает кровотечение, здоровье не восстанавливает.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-043",
+          "start": 35361,
+          "end": 35416,
+          "quote": "Hemostat:**  Stops bleeding but does not recover energy"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "rick-branch",
+    "question": "В первом выборе я решил пойти с Риком спасать Тома. Что сделать сразу после выхода из Control Room? Без спойлеров о судьбе Тома.",
+    "expected": "Вернуться туда, где началась игра, найти Рика и следовать за ним. Не поздний эпизод с ID Card и не ветка Gail.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-015",
+          "start": 10817,
+          "end": 10912,
+          "quote": "Leave the room and go to the place where the game started, you will see Rick, follow behind him"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "false-premise",
+    "question": "Как победить финального босса в начале игры, не заходя в здание?",
+    "expected": "Не выдумывать бой/маршрут; указать недостаток подтверждения или ошибочную предпосылку и уточнить положение игрока.",
+    "evidence": [],
+    "split": "existing-regression"
+  },
+  {
+    "id": "gail-branch",
+    "question": "В первом выборе я пошёл с Gail искать Dr. Kirk. Куда идти сразу после выхода из Control Room и что взять в первой комнате?",
+    "expected": "Налево, вниз по лестнице, первая дверь. ID Card и Med Pak M на полке; Recover Aid в следующей комнате. Не маршрут Rick.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-012",
+          "start": 7566,
+          "end": 7733,
+          "quote": "Leave the room and go left, go down the stairs and enter the first door you find, inside take the ID Card, a Med Pak M, on the shelf and a Recover Aid in the next room"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "b1-chip",
+    "question": "У синего экрана на стене я использую B1 Key Chip. Какой цифровой пароль нужно ввести?",
+    "expected": "3695. Не пароль для пары B2 chips.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-019",
+          "start": 15078,
+          "end": 15220,
+          "quote": "go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "b2-chips",
+    "question": "Я вставил B2 Key Chip 1 и B2 Key Chip 2 в слоты возле экрана. Какой пароль нужен перед перестановкой блоков?",
+    "expected": "0392 с ведущим нулём. Не 3695.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-028",
+          "start": 24016,
+          "end": 24230,
+          "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "office-id",
+    "question": "После объединения первых веток я пришёл в Office и использую ID Card на компьютере. Какой пароль ввести и что выбрать?",
+    "expected": "58104, затем Yes. Не поздний пароль 31415.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-018",
+          "start": 13687,
+          "end": 13914,
+          "quote": "Go to the elevator room, use the FC Device on the body that is here, now go through the next door and enter the next one to reach the Office, go to the computer and use the ID Card on it, enter the password 58104 and choose Yes"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "handgun-slides",
+    "question": "Какой пароль у сейфа с Handgun Slides и на какое оружие ставится улучшение?",
+    "expected": "8159; на Handgun.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-007",
+          "start": 4599,
+          "end": 4810,
+          "quote": "enter the double doors, kill another raptor and get a resuscitation, go to the end and examine the panel , enter the password 8159 to open the safe and get the Handgun Slides, use it on the Handgun to improve it"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "shotgun-location",
+    "question": "Я впервые поговорил с Риком в комнате управления. Где забрать дробовик?",
+    "expected": "Выйти из Control Room и направо через дверь; Shotgun прямо впереди. Не поздний Grenade Gun.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-005",
+          "start": 2764,
+          "end": 2995,
+          "quote": "enter the side door to find Rick, this is the Control Room, after the conversation, exit and follow go to the right to a door, go in and get the Shotgun straight ahead, also get the DDK Input Disc H and a Plug on top of the cabinet"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "mix-menu",
+    "question": "Какой пункт меню нужен, чтобы смешать два предмета в один?",
+    "expected": "MIX. Не EQUIP или ITEM.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-002",
+          "start": 725,
+          "end": 776,
+          "quote": "MIX – Here you can mix two items to form a new one."
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "turn-around",
+    "question": "Какой кнопкой на контроллере выполнить быстрый разворот на 180 градусов?",
+    "expected": "R2.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-001",
+          "start": 415,
+          "end": 431,
+          "quote": "R2 – Rotate 180º"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "med-pak-l",
+    "question": "Что делает Med Pak L: восстанавливает всё здоровье, останавливает кровь или оба эффекта?",
+    "expected": "Оба: полностью восстанавливает здоровье и останавливает кровотечение.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-043",
+          "start": 35491,
+          "end": 35543,
+          "quote": "Med Pak L:**  Recovers all energy and stops bleeding"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "emergency-box",
+    "question": "Чем открыть зелёный Emergency Box и что разрешено в нём хранить?",
+    "expected": "Предметом Plug; хранить лечебные предметы. Не требовать два Plug как у красного ящика.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-005",
+          "start": 2589,
+          "end": 2762,
+          "quote": "the green panel on the wall is an Emergency Box (let’s call it only from Box) in it you can store healing items, but it is locked and to open it you need an item called Plug"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "planning-disc-safe",
+    "question": "Я выбрал третью стратегию Рика и получил Planning Disc. Какой код у шкафа с Shotgun Parts?",
+    "expected": "1281; предмет Shotgun Parts улучшает Shotgun. Не коды устройств 367204/0367/0204.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-035",
+          "start": 28524,
+          "end": 28774,
+          "quote": "Rick will give you the Planning Disc, go to the place where you got the last DDK (look on the map, the place in red), examine the cabinet in the corner and enter the password 1281 to open it and get the Shotgun Parts, use it the Shotgun to improve it"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "second-generator",
+    "question": "Я поставил Startup Battery R в устройство у второго генератора. Какую последовательность кнопок выбрать перед рычагами?",
+    "expected": "LEFT → CENTER → RIGHT → LEFT → CENTER → LEFT → CANCEL, затем рычаги.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-010",
+          "start": 6811,
+          "end": 7166,
+          "quote": "Get the An Aid and go down the stairs, go straight through the door and get the Startup Battery R right after it, continue forward until you see four levers, push the shelf to find a Plug, use the battery on the device ahead and examine it again, choose the options LEFT, CENTER, RIGHT, LEFT, CENTER, LEFT, CANCEL, pull the levers to turn on the generator"
+        }
+      }
+    ],
+    "split": "existing-regression"
+  },
+  {
+    "id": "fresh-green-items",
+    "question": "Какие два предмета лежат за зелёной дверью в самом начале, когда Regina только получила управление?",
+    "expected": "Resuscitation и BG Area Key. Не BG Room B1 Key.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-004",
+          "start": 1299,
+          "end": 1578,
+          "quote": "When you take control of Regina, walk a little and talk to Gail, after the conversation go to a box and push it to discover a Med Pak M, here is a locked door, we will come back here later, now go through the green door and get it in this room a Resuscitation and the BG Area Key"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "return-small-key",
+    "question": "Я вернулся в infirmary, где раньше была ID Card. Что в левом и правом ящике под Small Size Key? Можно открыть оба?",
+    "expected": "Левый: Resuscitation; правый: Multiplier. Нужно выбрать один.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-022",
+          "start": 17970,
+          "end": 18233,
+          "quote": "on the way, enter the infirmary where you got the ID Card, in the next room there are two boxes that can be opened with the Small Size Key, you will have to choose one, the one on the left has a Resuscitation, the one on the right has a Multiplier, it’s up to you"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "red-box",
+    "question": "У красного ящика в комнате лифтов: сколько Plug нужно и что хранится внутри?",
+    "expected": "Два Plug; боеприпасы.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-009",
+          "start": 5730,
+          "end": 5815,
+          "quote": "here is a red box, in it you will find ammunition , but you need two plugs to open it"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "gail-pipes",
+    "question": "Первая ветка Gail. В каком порядке соединять цветные газовые трубы, чтобы запустить большой лифт?",
+    "expected": "5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-014",
+          "start": 9714,
+          "end": 9893,
+          "quote": "You must connect the tubes of the same color so choose the options as follows, in this order: 5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE, this will activate the large elevator"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "rick-pipes",
+    "question": "Первая ветка Rick, газовые трубы перед большим лифтом. Назови все шесть операций по порядку.",
+    "expected": "5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-016",
+          "start": 11779,
+          "end": 11958,
+          "quote": "You must connect the tubes of the same color so choose the options as follows, in this order: 5=RED, 3=GREEN, 1=BLUE, 2=RED, 4=GREEN, 6=BLUE, this will activate the large elevator"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "second-rick-memory",
+    "question": "Во втором выборе я следую идее Рика. Куда идти, чтобы открыть люк, и что будет после двух ошибок?",
+    "expected": "Simulator room, панель в конце, игра памяти; после двух ошибок система отключается, reset и повторить.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-021",
+          "start": 17455,
+          "end": 17866,
+          "quote": "Go to the simulator room (I advise you to save first) and go to the control panel at the end, you will have to play a memory game, the first two are not very difficult, as the third requires an excellent memory, if you make two mistakes, the system is deactivated, if this happens, reset and try again, when you succeed, a trapdoor opens, Regina ends up at the Containers location where she finds Kirk and Gail."
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "second-gail-route",
+    "question": "Второй выбор: иду за Gail после запертых дверей. Куда возвращаться?",
+    "expected": "Комната лифта, затем контейнеры через ранее закрытые ворота.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-021",
+          "start": 17161,
+          "end": 17399,
+          "quote": "Go all the way back to the room where there is an elevator, there will be a bunch of raptors on the way, the gate that closed before is now open, go to the location of the containers and you will find Gail who managed to capture Dr. Kirk."
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "battery-acd",
+    "question": "После прибытия большого лифта пропал свет. Я вернул батарею в исходное устройство. Какие пункты выбрать?",
+    "expected": "A, C, D, Cancel.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-028",
+          "start": 23383,
+          "end": 23619,
+          "quote": "but the place is left without power, examine the battery device and get the battery that Rick had placed there, go to the place where you got it and use it on the device, examine it and choose options A, C, D and Cancel to restore power"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "disc-yellow-leading-zero",
+    "question": "Третья стратегия Рика: Planning Disc у панели рядом с жёлтой папкой в комнате C. Какой цифровой код?",
+    "expected": "0367 с ведущим нулём.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-035",
+          "start": 29339,
+          "end": 29571,
+          "quote": "go to the Experiment Room Hall, go to the room where with a C on the door (other than the one you just now), in the panel near the yellow folder use the Planning Disc and enter the password 0367 to get another part in the Stabilizer"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "disc-blue-leading-zero",
+    "question": "Третья стратегия Rick: Planning Disc у панели с синим кругом. Какой код для двух недостающих деталей?",
+    "expected": "0204 с ведущим нулём.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-036",
+          "start": 29779,
+          "end": 29911,
+          "quote": "now go to the control panel with a blue circle and use the Planning Disc there, enter the password 0204 to get the two missing parts"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "late-gail-id",
+    "question": "Я выбрал третью стратегию Gail, получил Initializer и Stabilizer и использую ID Card у тела в комнате первого B2 чипа. Какой пароль и выбор?",
+    "expected": "31415, Yes.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-033",
+          "start": 27038,
+          "end": 27180,
+          "quote": "now go to the room where you got the first B2 Key Chip, on the computer near the body use the ID Card, enter the password 31415 and choose Yes"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "late-rick-id",
+    "question": "Третья стратегия Rick: я собрал Initializer и Stabilizer и обновляю ID Card на компьютере у тела. Какой пароль и ответ?",
+    "expected": "31415, Yes.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-037",
+          "start": 30313,
+          "end": 30455,
+          "quote": "now go to the room where you got the first B2 Key Chip, on the computer near the body use the ID Card, enter the password 31415 and choose Yes"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "b2-ru-plain",
+    "question": "На экране у стены стоят два ключевых чипа подвала B2. Какие четыре цифры вводятся до головоломки с блоками?",
+    "expected": "0392.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-028",
+          "start": 24016,
+          "end": 24230,
+          "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "english-first-generator",
+    "question": "At the first generator after Gail stands guard, what is the button sequence before pulling the four levers?",
+    "expected": "CENTER, RIGHT, CENTER, CANCEL.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-004",
+          "start": 1759,
+          "end": 2047,
+          "quote": "continue in forward and talk to Gail, he tells Regina to enter while he stands guard, enter the next door and go forward until you see four levers, examine the panel ahead to see four coils, choose the options CENTER, RIGHT, CENTER AND CANCEL, now pull the levers to turn on the generator"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "unanswerable-battery-code",
+    "question": "Какой числовой код из шести цифр нужен для Startup Battery R?",
+    "expected": "Числовой код не подтверждён: источник даёт последовательность кнопок. Уточнить устройство; не выдумывать код.",
+    "evidence": [],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "ambiguous-computer",
+    "question": "Какой пароль компьютера?",
+    "expected": "Уточнить комнату и этап: в прохождении несколько разных компьютеров и паролей.",
+    "evidence": [],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "unanswerable-easy",
+    "question": "На Easy за зелёной дверью в начале лежат те же предметы? Назови точный список для Easy.",
+    "expected": "Точный список для Easy неизвестен; источник написан для Normal и предупреждает об отличии предметов.",
+    "evidence": [],
+    "split": "independent-source-diagnostic"
+  },
+  {
+    "id": "b1-b2-distinction",
+    "question": "Напомни отдельно цифровые пароли: для одного B1 Key Chip на синем экране и для двух B2 чипов перед блоками.",
+    "expected": "B1: 3695. B2: 0392. Не смешивать.",
+    "evidence": [
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-019",
+          "start": 15078,
+          "end": 15220,
+          "quote": "go to the room where you got the Handgun Sights and examine the blue screen on the wall, use the B1 Key Chip on it and enter the password 3695"
+        }
+      },
+      {
+        "source_span": {
+          "document_sha256": "d6a6a128d4584ff73447d8a02ece6cead3871634eb989f3253c17c9afe73782f",
+          "block_id": "baseline-block-028",
+          "start": 24016,
+          "end": 24230,
+          "quote": "head to the place where you got the first B2 Key Chip, put the two Key chips in the slots next to the screen on the wall and examine it , enter the password 0392 and move the blocks to form the figures beneath them"
+        }
+      }
+    ],
+    "split": "independent-source-diagnostic"
+  }
+]

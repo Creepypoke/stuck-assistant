@@ -1,0 +1,19 @@
+{
+  "schema": "situation-experiment-reproduction-v1",
+  "scripts_sha256": {
+    "curate.py": "b796a8863934041b928dfe494acd9df425562607ce921f402af2b3f8283315e5",
+    "audit_context.py": "41412e5edb103d8197eff43af8d307452cf8955c01395bc15e00b46f48acf9a4",
+    "review.py": "43dfe9b0ccdfa4d331be8ba46cc537fa8e62c61813715877b2559a9a8778025c",
+    "validate.py": "2a494d9598ba4ee0f4f9504c9a801cb02778fecb6fb8d740d14a8b8221712798",
+    "make_cases.py": "389682a8f17463cd2936536b98af2bbf9f01adb50cbef7b3393a770f8872700e",
+    "prepare.py": "9d367cd39583b99b17614a8106a1f851ada6a158c925a3418ee1600aab33cfbb",
+    "analyze.py": "6f33af3927458fa25627fc5bca6cb892a5ac603f68f5c2091fa807b05be16471"
+  },
+  "frozen_source_sha256": "76a6062f6f316bab37341e5a416c58914d8bc1484011faa760ef34ead2365777",
+  "annotations_sha256": "fbe9d5dcd9d5b5ae8066903ac5a4e84bac60e555d22bddeef6492ca7630a9543",
+  "cases_sha256": "acfbe1cd0147fafb3f83fa25ef12bb049e9d16ddd4b8a86f4e179f7c02aa2dc8",
+  "schema_version": "SQLite 1 + situation-v1 extension",
+  "offset_unit": "Unicode code points [start,end) in saved canonical source, not bytes or original HTML",
+  "original_source_raw_sha256": null,
+  "source_warning": "Recovered baseline text, not original HTML or original parser Markdown. Full original-source/sentence-safe experiment remains incomplete."
+}

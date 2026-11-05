@@ -34,9 +34,10 @@ type Case struct {
 	ParsedPresent *bool      `json:"parsed_present,omitempty"`
 }
 type Evidence struct {
-	DocumentID int64  `json:"document_id"`
-	Sequence   int    `json:"sequence"`
-	TextSHA256 string `json:"text_sha256"`
+	DocumentID int64           `json:"document_id"`
+	Sequence   int             `json:"sequence"`
+	TextSHA256 string          `json:"text_sha256"`
+	SourceSpan *rag.SourceSpan `json:"source_span,omitempty"`
 }
 type Profile struct {
 	Model       string `json:"model"`
@@ -213,6 +214,17 @@ func ValidateCases(cases []Case) error {
 func match(c Case, r rag.SearchResult) bool {
 	if len(c.Evidence) > 0 {
 		for _, e := range c.Evidence {
+			if e.SourceSpan != nil {
+				if len(r.SourceSpans) == 0 && r.DocumentSHA256 == e.SourceSpan.DocumentSHA256 && strings.Contains(r.Text, e.SourceSpan.Quote) {
+					return true
+				}
+				for _, span := range r.SourceSpans {
+					if span.DocumentSHA256 == e.SourceSpan.DocumentSHA256 && span.Start <= e.SourceSpan.Start && span.End >= e.SourceSpan.End {
+						return true
+					}
+				}
+				continue
+			}
 			if e.DocumentID == r.DocumentID && e.Sequence == r.Sequence && e.TextSHA256 == Hash([]byte(r.Text)) {
 				return true
 			}
@@ -234,13 +246,27 @@ func completeness(c Case, results []rag.SearchResult) (bool, bool) {
 	if required == 0 {
 		return false, false
 	}
-	found := map[string]bool{}
-	for _, r := range results {
-		if match(c, r) {
-			found[fmt.Sprintf("%d/%d", r.DocumentID, r.Sequence)] = true
+	found := 0
+	if len(c.Evidence) > 0 {
+		for _, gold := range c.Evidence {
+			for _, r := range results {
+				if match(Case{Evidence: []Evidence{gold}}, r) {
+					found++
+					break
+				}
+			}
+		}
+	} else {
+		for _, seq := range c.Relevant {
+			for _, r := range results {
+				if r.Sequence == seq {
+					found++
+					break
+				}
+			}
 		}
 	}
-	return len(found) > 0, len(found) >= required
+	return found > 0, found >= required
 }
 
 type Record struct {
@@ -287,18 +313,59 @@ func loadOracle(corpus string, cases []Case) (map[string][]rag.SearchResult, err
 		return nil, e
 	}
 	defer db.Close()
+	var all []rag.SearchResult
+	rows, e := db.Query(`SELECT c.id,c.document_id,c.sequence,c.title,c.section,c.text,d.source_url,c.metadata,d.markdown FROM chunks c JOIN documents d ON d.id=c.document_id ORDER BY c.document_id,c.sequence`)
+	if e != nil {
+		return nil, e
+	}
+	defer rows.Close()
+	documents := map[string]string{}
+	for rows.Next() {
+		var r rag.SearchResult
+		var metadata []byte
+		var markdown string
+		if e = rows.Scan(&r.ChunkID, &r.DocumentID, &r.Sequence, &r.Title, &r.Section, &r.Text, &r.SourceURL, &metadata, &markdown); e != nil {
+			return nil, e
+		}
+		if e = rag.ApplySituation(&r, metadata); e != nil {
+			return nil, e
+		}
+		r.DocumentSHA256 = rag.DocumentHash(markdown)
+		if e = rag.ValidateSourceSpans(r, markdown); e != nil {
+			return nil, e
+		}
+		documents[Hash([]byte(markdown))] = markdown
+		all = append(all, r)
+	}
+	if e = rows.Err(); e != nil {
+		return nil, e
+	}
 	result := map[string][]rag.SearchResult{}
 	for _, c := range cases {
+		seen := map[int64]bool{}
 		for _, gold := range c.Evidence {
-			var r rag.SearchResult
-			e = db.QueryRow(`SELECT c.id,c.document_id,c.sequence,c.title,c.section,c.text,d.source_url FROM chunks c JOIN documents d ON d.id=c.document_id WHERE c.document_id=? AND c.sequence=?`, gold.DocumentID, gold.Sequence).Scan(&r.ChunkID, &r.DocumentID, &r.Sequence, &r.Title, &r.Section, &r.Text, &r.SourceURL)
-			if e != nil {
-				return nil, e
+			if gold.SourceSpan != nil {
+				span := gold.SourceSpan
+				md, ok := documents[span.DocumentSHA256]
+				runes := []rune(md)
+				if !ok || span.Start < 0 || span.End > len(runes) || span.End <= span.Start || string(runes[span.Start:span.End]) != span.Quote {
+					return nil, fmt.Errorf("stale source span: %s", c.ID)
+				}
 			}
-			if Hash([]byte(r.Text)) != gold.TextSHA256 {
-				return nil, fmt.Errorf("stale oracle evidence: %s", c.ID)
+			found := false
+			for _, r := range all {
+				if match(Case{Evidence: []Evidence{gold}}, r) {
+					found = true
+					if !seen[r.ChunkID] {
+						result[c.ID] = append(result[c.ID], r)
+						seen[r.ChunkID] = true
+					}
+					break
+				}
 			}
-			result[c.ID] = append(result[c.ID], r)
+			if !found {
+				return nil, fmt.Errorf("uncovered oracle evidence: %s", c.ID)
+			}
 		}
 	}
 	return result, nil
@@ -322,6 +389,7 @@ func RunArgs(defaultKind string, args []string) error {
 	profilesFlag := fs.String("profiles", "default,strict-ru", "comma-separated prompt profiles")
 	modesFlag := fs.String("modes", "hybrid", "vector and/or hybrid")
 	seed := fs.Int("seed", 20261104, "fixed generation seed")
+	contextTokens := fs.Int("context-tokens", 0, "optional whole-evidence context cap using generator tokenizer")
 	limit := fs.Int("limit", 5, "production result limit")
 	if e := fs.Parse(args); e != nil {
 		return e
@@ -368,6 +436,7 @@ func RunArgs(defaultKind string, args []string) error {
 	if e != nil {
 		return e
 	}
+	manifest["context_token_budget"] = *contextTokens
 	manifest["cases_sha256"] = Hash(raw)
 	h, e := fileHash(corpusAbs)
 	if e != nil {
@@ -492,7 +561,7 @@ func RunArgs(defaultKind string, args []string) error {
 	failures := 0
 	for _, mode := range modes {
 		for _, p := range profiles {
-			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed})
+			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, ContextTokenBudget: *contextTokens, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed})
 			if e != nil {
 				return e
 			}

@@ -1,0 +1,14 @@
+{
+  "raw_usage": {
+    "prompt_tokens": 22,
+    "total_tokens": 22
+  },
+  "raw_tokenize_count": 22,
+  "raw_vs_native_max_absolute_difference": 0.0,
+  "raw_vs_prefixed_cosine": 0.769146707772176,
+  "recommendation_url": "https://huggingface.co/google/embeddinggemma-300m/blob/main/README.md",
+  "recommended_query": "task: search result | query: {question}",
+  "recommended_document": "title: {title or none} | text: {text}",
+  "experiment_profile": "raw-text-v1/no-application-prefix",
+  "note": "raw OpenAI endpoint matches native embedding endpoint; explicit prefix changes vector. This experiment retains the historical raw profile on both sides; no prefix-format improvement is claimed."
+}

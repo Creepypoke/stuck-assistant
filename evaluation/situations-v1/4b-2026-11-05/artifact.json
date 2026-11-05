@@ -1,0 +1,9 @@
+{
+  "version": "situations-v1-4b-2026-11-05",
+  "path": "bin/evaluation-artifacts/situations-v1-4b-2026-11-05.tar.gz",
+  "bytes": 8604458,
+  "sha256": "6ec997081271d79d961656f75c685b09556ce6647cd89bcc59258225046e4956",
+  "entries": 554,
+  "contains": "all 182 new records, full traces, corpus snapshots, manifests, manual reviews, comparison and scripts",
+  "previous_2b_artifact": "situations-v1-recovered-2026-11-05.tar.gz; unchanged"
+}

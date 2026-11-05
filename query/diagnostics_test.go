@@ -115,3 +115,36 @@ func TestBeginningUsesRankedRetrieval(t *testing.T) {
 		})
 	}
 }
+
+func TestSituationAnswerTextAndWholeEvidenceTokenBudget(t *testing.T) {
+	tokenCalls, completionCalls := 0, 0
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/tokenize" {
+			completionCalls++
+			http.Error(w, "no generation in retrieval-only test", 500)
+			return
+		}
+		tokenCalls++
+		var in struct {
+			Content string `json:"content"`
+		}
+		_ = json.NewDecoder(r.Body).Decode(&in)
+		// Independent stand-in tokenizer checks the complete wrapper-inclusive input.
+		n := len([]rune(in.Content))
+		_ = json.NewEncoder(w).Encode(map[string]any{"tokens": make([]int, n)})
+	}))
+	defer server.Close()
+	s := &Service{client: server.Client(), config: Config{LLMURL: server.URL, ContextTokenBudget: 30}}
+	evidence := []rag.SearchResult{{Title: "T", Section: "B2", Text: "SEARCH ONLY: aliases", AnswerText: "0392", SituationID: "b2"}, {Title: "T", Section: "B1", Text: "SEARCH B1", AnswerText: "3695 and a longer evidence text", SituationID: "b1"}}
+	// Exercise actual context assembly and budget logic without embedding or LLM.
+	debug, _, _, err := s.diagnose(context.Background(), Request{GameID: "test", Question: "code"}, true, true, evidence)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if completionCalls != 0 || tokenCalls != 2 || len(debug.RetrievedChunks) != 1 || debug.ContextText != "[T / B2]\n0392" || len(debug.Search.Selected) != 1 {
+		t.Fatalf("unexpected bounded context: %+v", debug)
+	}
+	if debug.RetrievedChunks[0].SearchText != "SEARCH ONLY: aliases" || debug.RetrievedChunks[0].Text != "0392" {
+		t.Fatal("representations conflated")
+	}
+}
