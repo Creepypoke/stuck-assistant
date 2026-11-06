@@ -432,7 +432,13 @@ func (s *Service) completionPayload(request Request, walkthroughContext string) 
 	return s.completionPayloadWithLimit(request, walkthroughContext, maxTokens)
 }
 
+// DefaultAnswerLength applies when a request does not choose one.
+const DefaultAnswerLength = "short"
+
 func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext string, maxTokens int) ([]byte, error) {
+	if request.AnswerLength == "" {
+		request.AnswerLength = DefaultAnswerLength
+	}
 	system := strings.TrimSpace(s.config.SystemPrompt)
 	if system == "" {
 		if request.NoRAG {

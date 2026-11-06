@@ -52,7 +52,8 @@ func TestPromptProfilesPreserveNoRAGAndCustomSystem(t *testing.T) {
 		data, _ := s.completionPayload(Request{Question: "Question"}, "context")
 		var body struct{ Messages []struct{ Content string } }
 		json.Unmarshal(data, &body)
-		if body.Messages[0].Content != "Custom persona." {
+		// The custom persona replaces the built-in one; only the default length note follows it.
+		if body.Messages[0].Content != "Custom persona. Requested answer length: short." {
 			t.Fatal("custom system prompt lost priority")
 		}
 	}
