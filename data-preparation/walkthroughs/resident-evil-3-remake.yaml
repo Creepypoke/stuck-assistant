@@ -1,0 +1,13 @@
+game_id: resident-evil-3-remake
+game_name: Resident Evil 3 Remake
+input: ../../assets/Resident-Evil-3-Remake.htm
+artifacts: ../artifacts/resident-evil-3-remake
+output: ../output/resident-evil-3-remake.rag
+# Empty: deterministic structural preparation. Set to local/openai/claude for AI cards.
+annotation_provider: ""
+embedding_provider: local-embeddings
+max_input_bytes: 33554432
+# Character budget per annotation request; not a tokenizer-based context guarantee.
+max_batch_chars: 12000
+# AI cards start as needs_review. Inspect them, then set validation_status: reviewed.
+require_review: true
