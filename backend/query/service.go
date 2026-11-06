@@ -250,11 +250,15 @@ func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, r
 		sources[index] = Source{Title: result.Title, Section: result.Section, URL: result.SourceURL}
 		text := result.Text
 		if result.AnswerText != "" {
-			text = result.AnswerText
+			text = cleanEvidence(result.AnswerText)
 		}
-		contextParts[index] = fmt.Sprintf("[%s / %s]\n%s", result.Title, result.Section, text)
+		section := modelSection(result)
+		contextParts[index] = fmt.Sprintf("[%s]\n%s", result.Title, text)
+		if section != "" {
+			contextParts[index] = fmt.Sprintf("[%s / %s]\n%s", result.Title, section, text)
+		}
 		if s.structuredPrompt(request) {
-			contextParts[index] = fmt.Sprintf("<source id=\"%d\" section=\"%s\">\n%s\n</source>", index+1, xmlText(result.Section), xmlText(text))
+			contextParts[index] = fmt.Sprintf("<source id=\"%d\" section=\"%s\">\n%s\n</source>", index+1, xmlText(section), xmlText(text))
 		}
 		if includeDebug {
 			debug.RetrievedChunks[index] = RetrievedChunk{SituationID: result.SituationID, SourceSpans: result.SourceSpans, SearchText: result.Text, ChunkID: result.ChunkID, DocumentID: result.DocumentID, Sequence: result.Sequence, Score: result.Score, BM25: result.BM25, RRF: result.RRF, Rerank: result.Rerank, Title: result.Title, Section: result.Section, URL: result.SourceURL, Text: text}
