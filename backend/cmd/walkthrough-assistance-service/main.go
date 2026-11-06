@@ -7,6 +7,7 @@ import (
 	"os"
 	"os/signal"
 	"path/filepath"
+	"strconv"
 	"strings"
 	"syscall"
 	"time"
@@ -75,6 +76,13 @@ func queryConfig() (query.Config, error) {
 		}
 		systemPrompt = string(contents)
 	}
+	cutoff := 0.0
+	if value := os.Getenv("WALKTHROUGH_RELATIVE_SCORE_CUTOFF"); value != "" {
+		cutoff, err = strconv.ParseFloat(value, 64)
+		if err != nil || cutoff < 0 || cutoff > 1 {
+			return query.Config{}, fmt.Errorf("parse WALKTHROUGH_RELATIVE_SCORE_CUTOFF: expected a number from 0 to 1")
+		}
+	}
 	return query.Config{
 		StorageDirectory:    storageDirectory(),
 		EmbeddingURL:        environmentOrDefault("WALKTHROUGH_EMBEDDING_URL", "http://127.0.0.1:8081"),
@@ -89,6 +97,8 @@ func queryConfig() (query.Config, error) {
 		ResultLimit:         5,
 		RetrievalMode:       environmentOrDefault("WALKTHROUGH_RETRIEVAL_MODE", "hybrid"),
 		PromptProfile:       environmentOrDefault("WALKTHROUGH_PROMPT_PROFILE", "default"),
+		RelativeScoreCutoff: cutoff,
+		CodeAnswers:         os.Getenv("WALKTHROUGH_CODE_ANSWERS") == "1",
 	}, nil
 }
 

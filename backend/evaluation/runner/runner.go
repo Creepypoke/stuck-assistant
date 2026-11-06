@@ -391,6 +391,8 @@ func RunArgs(defaultKind string, args []string) error {
 	seed := fs.Int("seed", 20261104, "fixed generation seed")
 	contextTokens := fs.Int("context-tokens", 0, "optional whole-evidence context cap using generator tokenizer")
 	limit := fs.Int("limit", 5, "production result limit")
+	cutoff := fs.Float64("relative-cutoff", 0, "drop sources below this fraction of the best cosine score (0 = off)")
+	codeAnswers := fs.Bool("code-answers", false, "answer code questions from the top card's verified code")
 	if e := fs.Parse(args); e != nil {
 		return e
 	}
@@ -437,6 +439,8 @@ func RunArgs(defaultKind string, args []string) error {
 		return e
 	}
 	manifest["context_token_budget"] = *contextTokens
+	manifest["relative_score_cutoff"] = *cutoff
+	manifest["code_answers"] = *codeAnswers
 	manifest["cases_sha256"] = Hash(raw)
 	h, e := fileHash(corpusAbs)
 	if e != nil {
@@ -561,7 +565,7 @@ func RunArgs(defaultKind string, args []string) error {
 	failures := 0
 	for _, mode := range modes {
 		for _, p := range profiles {
-			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, ContextTokenBudget: *contextTokens, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed})
+			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, ContextTokenBudget: *contextTokens, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed, RelativeScoreCutoff: *cutoff, CodeAnswers: *codeAnswers})
 			if e != nil {
 				return e
 			}

@@ -26,6 +26,8 @@ type Situation struct {
 	ID          string       `json:"situation_id"`
 	AnswerText  string       `json:"answer_text"`
 	SourceSpans []SourceSpan `json:"source_spans"`
+	// ExactCode is optional; each code must appear verbatim in a source quote.
+	ExactCode []string `json:"exact_code,omitempty"`
 }
 
 // ApplySituation keeps retrieval text separate from the generator's evidence.
@@ -55,6 +57,16 @@ func ApplySituation(r *SearchResult, metadata []byte) error {
 			return fmt.Errorf("situation evidence absent from search or answer representation")
 		}
 	}
+	for _, code := range m.Situation.ExactCode {
+		found := false
+		for _, span := range r.SourceSpans {
+			found = found || (code != "" && strings.Contains(span.Quote, code))
+		}
+		if !found {
+			return fmt.Errorf("situation exact code %q absent from source spans", code)
+		}
+	}
+	r.ExactCode = m.Situation.ExactCode
 	return nil
 }
 
@@ -82,6 +94,7 @@ type SearchResult struct {
 	SituationID    string       `json:"situation_id,omitempty"`
 	AnswerText     string       `json:"answer_text,omitempty"`
 	SourceSpans    []SourceSpan `json:"source_spans,omitempty"`
+	ExactCode      []string     `json:"exact_code,omitempty"`
 	ChunkID        int64
 	DocumentID     int64
 	Sequence       int

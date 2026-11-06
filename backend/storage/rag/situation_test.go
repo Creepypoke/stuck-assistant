@@ -26,6 +26,23 @@ func TestSituationSourceAndAnswerSeparation(t *testing.T) {
 	}
 }
 
+func TestSituationExactCodeMustBeQuoted(t *testing.T) {
+	quote := "enter the password 3695"
+	span := SourceSpan{DocumentSHA256: "h", BlockID: "b1", Start: 0, End: len([]rune(quote)), Quote: quote}
+	situation := func(code string) []byte {
+		data, _ := json.Marshal(map[string]any{"situation": Situation{Schema: "situation-v1", ID: "b1", AnswerText: quote, SourceSpans: []SourceSpan{span}, ExactCode: []string{code}}})
+		return data
+	}
+	r := SearchResult{Text: quote}
+	if err := ApplySituation(&r, situation("3695")); err != nil || len(r.ExactCode) != 1 {
+		t.Fatalf("quoted code rejected: %v", err)
+	}
+	r = SearchResult{Text: quote}
+	if ApplySituation(&r, situation("0392")) == nil {
+		t.Fatal("code absent from the source was accepted")
+	}
+}
+
 func TestRejectUnknownSituationSchema(t *testing.T) {
 	var r SearchResult
 	if ApplySituation(&r, []byte(`{"situation":{"schema":"future"}}`)) == nil {

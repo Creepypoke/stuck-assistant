@@ -49,7 +49,12 @@ func Build(ctx context.Context, c Config) error {
 		start = end
 	}
 	for i, entry := range a.Entries {
-		doc.Chunks = append(doc.Chunks, model.Chunk{Title: c.GameName, Section: entry.Section, Sequence: i, Text: entry.SearchText, Metadata: map[string]any{"preparation_card": a.Cards[i], "situation": map[string]any{"schema": "situation-v1", "situation_id": entry.SituationID, "answer_text": entry.AnswerText, "source_spans": entry.SourceSpans}}})
+		situation := map[string]any{"schema": "situation-v1", "situation_id": entry.SituationID, "answer_text": entry.AnswerText, "source_spans": entry.SourceSpans}
+		// Prepare already checked that the code is quoted verbatim in the source spans.
+		if code := a.Cards[i].ExactCode; code != "" {
+			situation["exact_code"] = []string{code}
+		}
+		doc.Chunks = append(doc.Chunks, model.Chunk{Title: c.GameName, Section: entry.Section, Sequence: i, Text: entry.SearchText, Metadata: map[string]any{"preparation_card": a.Cards[i], "situation": situation}})
 	}
 	parent := filepath.Dir(c.Output)
 	if e = os.MkdirAll(parent, 0755); e != nil {

@@ -28,6 +28,12 @@ type Config struct {
 	ResultLimit         int
 	RetrievalMode       string
 	PromptProfile       string
+	// RelativeScoreCutoff drops retrieved sources whose cosine score is below
+	// this fraction of the best one. 0 keeps every result up to ResultLimit.
+	RelativeScoreCutoff float64
+	// CodeAnswers answers code questions from the top card's verified code
+	// instead of the model (see codeAnswer).
+	CodeAnswers bool
 	// GenerationSeed is optional; diagnostics can hold sampling constant.
 	GenerationSeed *int
 }
@@ -79,6 +85,8 @@ type DebugInfo struct {
 	Attempts        []CompletionTrace  `json:"completion_attempts"`
 	FailureReason   string             `json:"failure_reason,omitempty"`
 	ContextMode     string             `json:"context_mode"`
+	// AnswerMode is "model" or "card_code" (answer built from a verified card code).
+	AnswerMode string `json:"answer_mode,omitempty"`
 }
 
 type RetrievedChunk struct {
@@ -130,6 +138,9 @@ func New(config Config) (*Service, error) {
 		return nil, fmt.Errorf("LLM URL and model are required")
 	}
 
+	if config.RelativeScoreCutoff < 0 || config.RelativeScoreCutoff > 1 {
+		return nil, fmt.Errorf("relative score cutoff must be between 0 and 1")
+	}
 	if config.ResultLimit <= 0 {
 		config.ResultLimit = 5
 	}
@@ -219,6 +230,11 @@ func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, r
 			debug.FailureReason = "retrieval_error"
 			return debug, nil, "", err
 		}
+		if s.config.RelativeScoreCutoff > 0 {
+			results = cutRelative(results, s.config.RelativeScoreCutoff)
+			debug.Search.Selected = results
+			debug.Search.Selection = "rank_limit+relative_cosine"
+		}
 	}
 	contextStarted := time.Now()
 	if len(results) == 0 {
@@ -276,6 +292,13 @@ func (s *Service) diagnose(ctx context.Context, request Request, includeDebug, r
 	if retrievalOnly {
 		return debug, sources, "", nil
 	}
+	if s.config.CodeAnswers {
+		if fixed, ok := codeAnswer(request, results); ok {
+			debug.AnswerMode = "card_code"
+			return debug, sources[:1], fixed, nil
+		}
+	}
+	debug.AnswerMode = "model"
 	generationStarted := time.Now()
 	answer, payload, err := s.completeWithPayload(ctx, request, walkthroughContext)
 	debug.StageMS["generation"] = float64(time.Since(generationStarted).Microseconds()) / 1000
