@@ -12,4 +12,4 @@ exec llama serve \
   --host 127.0.0.1 \
   --port 8081 \
   --models-preset "$script_dir/models.ini" \
-  --models-max 1
+  --models-max 2

@@ -9,8 +9,9 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/walkthrough-assistance/backend/ingestion"
 	"github.com/walkthrough-assistance/backend/storage/rag"
+	"github.com/walkthrough-assistance/data-preparation/model"
+	writer "github.com/walkthrough-assistance/data-preparation/rag"
 )
 
 func TestCacheKeyBindsExactInputAndProfile(t *testing.T) {
@@ -56,8 +57,8 @@ func TestValidationAndStageDiagnosis(t *testing.T) {
 }
 func TestRunnerRetrievalLocalOracleResumeAndManifest(t *testing.T) {
 	root := t.TempDir()
-	repo, _ := rag.NewRepository(root)
-	saved, e := repo.Save(context.Background(), ingestion.Document{GameID: "test-game", Title: "Guide", Markdown: "The code is 0392", Chunks: []ingestion.Chunk{{Sequence: 0, Text: "The code is 0392"}}, Embeddings: [][]float32{{1, 0}}, Embedding: ingestion.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
+	repo, _ := writer.NewRepository(root)
+	saved, e := repo.Save(context.Background(), model.Document{GameID: "test-game", Title: "Guide", Markdown: "The code is 0392", Chunks: []model.Chunk{{Sequence: 0, Text: "The code is 0392"}}, Embeddings: [][]float32{{1, 0}}, Embedding: model.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
 	if e != nil {
 		t.Fatal(e)
 	}

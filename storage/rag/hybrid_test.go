@@ -2,22 +2,22 @@ package rag
 
 import (
 	"context"
-	"github.com/walkthrough-assistance/backend/ingestion"
+	"github.com/walkthrough-assistance/data-preparation/model"
 	"strings"
 	"testing"
 )
 
 func TestHybridRetrievesExactItemBeyondVectorCandidates(t *testing.T) {
 	repo, _ := NewRepository(t.TempDir())
-	chunks := []ingestion.Chunk{}
+	chunks := []model.Chunk{}
 	vectors := [][]float32{}
 	for i := 0; i < 25; i++ {
-		chunks = append(chunks, ingestion.Chunk{Sequence: i, Text: "An unrelated generator puzzle."})
+		chunks = append(chunks, model.Chunk{Sequence: i, Text: "An unrelated generator puzzle."})
 		vectors = append(vectors, []float32{1, 0})
 	}
-	chunks = append(chunks, ingestion.Chunk{Sequence: 25, Text: "Use the Panel Key 2 to open this safe."})
+	chunks = append(chunks, model.Chunk{Sequence: 25, Text: "Use the Panel Key 2 to open this safe."})
 	vectors = append(vectors, []float32{0, 1})
-	_, err := repo.Save(context.Background(), ingestion.Document{GameID: "test-game", Title: "Guide", Markdown: "body", Chunks: chunks, Embeddings: vectors, Embedding: ingestion.EmbeddingInfo{Model: "test", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
+	_, err := repo.Save(context.Background(), model.Document{GameID: "test-game", Title: "Guide", Markdown: "body", Chunks: chunks, Embeddings: vectors, Embedding: model.EmbeddingInfo{Model: "test", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -47,7 +47,7 @@ func TestHybridRetrievesExactItemBeyondVectorCandidates(t *testing.T) {
 
 func TestHybridNoLexicalMatchesPreservesVectorOrder(t *testing.T) {
 	repo, _ := NewRepository(t.TempDir())
-	_, err := repo.Save(context.Background(), ingestion.Document{GameID: "test-game", Title: "Guide", Markdown: "body", Chunks: []ingestion.Chunk{{Sequence: 0, Text: "First room"}, {Sequence: 1, Text: "Basement"}}, Embeddings: [][]float32{{0, 1}, {1, 0}}, Embedding: ingestion.EmbeddingInfo{Model: "test", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
+	_, err := repo.Save(context.Background(), model.Document{GameID: "test-game", Title: "Guide", Markdown: "body", Chunks: []model.Chunk{{Sequence: 0, Text: "First room"}, {Sequence: 1, Text: "Basement"}}, Embeddings: [][]float32{{0, 1}, {1, 0}}, Embedding: model.EmbeddingInfo{Model: "test", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
 	if err != nil {
 		t.Fatal(err)
 	}

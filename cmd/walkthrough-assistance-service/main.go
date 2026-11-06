@@ -43,7 +43,7 @@ func main() {
 			Command: environmentOrDefault("WALKTHROUGH_LLAMA_COMMAND", "llama"),
 			Args: []string{
 				"serve", "--host", "127.0.0.1", "--port", "8081",
-				"--models-preset", preset, "--models-max", "1",
+				"--models-preset", preset, "--models-max", "2",
 			},
 			HealthURL:     environmentOrDefault("WALKTHROUGH_LLAMA_HEALTH_URL", "http://127.0.0.1:8081/health"),
 			HealthTimeout: 2 * time.Second,

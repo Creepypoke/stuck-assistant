@@ -8,14 +8,15 @@ import (
 	"testing"
 
 	"github.com/walkthrough-assistance/backend/embeddings/llamacpp"
-	"github.com/walkthrough-assistance/backend/ingestion"
 	"github.com/walkthrough-assistance/backend/storage/rag"
+	"github.com/walkthrough-assistance/data-preparation/model"
+	writer "github.com/walkthrough-assistance/data-preparation/rag"
 )
 
 func TestDiagnosticsRetrievalOracleRetryAndFailure(t *testing.T) {
 	root := t.TempDir()
-	repo, _ := rag.NewRepository(root)
-	_, err := repo.Save(context.Background(), ingestion.Document{GameID: "test-game", Title: "Guide", Markdown: "0392", Chunks: []ingestion.Chunk{{Sequence: 0, Text: "The B2 code is 0392"}}, Embeddings: [][]float32{{1, 0}}, Embedding: ingestion.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
+	repo, _ := writer.NewRepository(root)
+	_, err := repo.Save(context.Background(), model.Document{GameID: "test-game", Title: "Guide", Markdown: "0392", Chunks: []model.Chunk{{Sequence: 0, Text: "The B2 code is 0392"}}, Embeddings: [][]float32{{1, 0}}, Embedding: model.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1"})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -44,7 +45,7 @@ func TestDiagnosticsRetrievalOracleRetryAndFailure(t *testing.T) {
 	}))
 	defer server.Close()
 	provider, _ := llamacpp.New(llamacpp.Config{BaseURL: server.URL, Model: "embedding", Version: "1", Dimensions: 2})
-	s := &Service{repository: repo, embeddings: provider, client: server.Client(), config: Config{LLMURL: server.URL, LLMModel: "test", ResultLimit: 1, RetrievalMode: "hybrid"}}
+	s := &Service{repository: reader(root), embeddings: provider, client: server.Client(), config: Config{LLMURL: server.URL, LLMModel: "test", ResultLimit: 1, RetrievalMode: "hybrid"}}
 	req := Request{GameID: "test-game", Question: "B2 code?"}
 	debug, _, _, err := s.RetrieveDebug(context.Background(), req)
 	if err != nil || calls != 0 || embedCalls != 1 || len(debug.Search.Candidates) != 1 || debug.Search.Selected[0].BM25 == nil || debug.Search.Selected[0].RRF == nil {
@@ -67,19 +68,19 @@ func TestDiagnosticsRetrievalOracleRetryAndFailure(t *testing.T) {
 
 func TestBeginningUsesRankedRetrieval(t *testing.T) {
 	root := t.TempDir()
-	repo, err := rag.NewRepository(root)
+	repo, err := writer.NewRepository(root)
 	if err != nil {
 		t.Fatal(err)
 	}
-	_, err = repo.Save(context.Background(), ingestion.Document{
+	_, err = repo.Save(context.Background(), model.Document{
 		GameID: "test-game", Title: "Guide", Markdown: "Guide",
-		Chunks: []ingestion.Chunk{
+		Chunks: []model.Chunk{
 			{Sequence: 0, Text: "About this guide."},
 			{Sequence: 1, Text: "Controller settings."},
 			{Sequence: 4, Text: "At the beginning of the game, approach Gail and open the green door."},
 		},
 		Embeddings: [][]float32{{0, 1}, {0.1, 1}, {1, 0}},
-		Embedding:  ingestion.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1",
+		Embedding:  model.EmbeddingInfo{Model: "embedding", Version: "1", Dimensions: 2}, ChunkingVersion: "v1",
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -99,7 +100,7 @@ func TestBeginningUsesRankedRetrieval(t *testing.T) {
 	}
 	for _, mode := range []string{"vector", "hybrid"} {
 		t.Run(mode, func(t *testing.T) {
-			s := &Service{repository: repo, embeddings: provider, config: Config{ResultLimit: 1, RetrievalMode: mode}}
+			s := &Service{repository: reader(root), embeddings: provider, config: Config{ResultLimit: 1, RetrievalMode: mode}}
 			for _, question := range []string{"Куда идти в начале игры?", "Я только получил управление Региной. Что сделать первым делом?", "What is the first thing to do at the beginning of the game?"} {
 				debug, _, _, err := s.RetrieveDebug(context.Background(), Request{GameID: "test-game", Question: question})
 				if err != nil {
@@ -147,4 +148,12 @@ func TestSituationAnswerTextAndWholeEvidenceTokenBudget(t *testing.T) {
 	if debug.RetrievedChunks[0].SearchText != "SEARCH ONLY: aliases" || debug.RetrievedChunks[0].Text != "0392" {
 		t.Fatal("representations conflated")
 	}
+}
+
+func reader(root string) *rag.Repository {
+	r, err := rag.NewRepository(root)
+	if err != nil {
+		panic(err)
+	}
+	return r
 }

@@ -1,2 +1,0 @@
-trafilatura>=2.0,<3
-charset-normalizer>=3.0,<4

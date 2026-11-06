@@ -9,14 +9,18 @@ import (
 	"net/url"
 	"strings"
 	"time"
-
-	"github.com/walkthrough-assistance/backend/ingestion"
 )
+
+type EmbeddingInfo struct {
+	Model      string
+	Version    string
+	Dimensions int
+}
 
 type Provider struct {
 	endpoint string
 	client   *http.Client
-	info     ingestion.EmbeddingInfo
+	info     EmbeddingInfo
 }
 
 type Config struct {
@@ -47,13 +51,13 @@ func New(config Config) (*Provider, error) {
 	return &Provider{
 		endpoint: strings.TrimRight(baseURL.String(), "/") + "/v1/embeddings",
 		client:   client,
-		info: ingestion.EmbeddingInfo{
+		info: EmbeddingInfo{
 			Model: config.Model, Dimensions: config.Dimensions, Version: config.Version,
 		},
 	}, nil
 }
 
-func (p *Provider) Info() ingestion.EmbeddingInfo { return p.info }
+func (p *Provider) Info() EmbeddingInfo { return p.info }
 
 func (p *Provider) EmbedBatch(ctx context.Context, texts []string) ([][]float32, error) {
 	if len(texts) == 0 {

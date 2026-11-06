@@ -9,7 +9,7 @@ build:
 	mkdir -p $(BIN_DIR)/llama-cpp
 	go build -o $(BIN_DIR)/$(CLI) ./cmd/$(CLI)
 	go build -o $(BIN_DIR)/$(SERVICE) ./cmd/$(SERVICE)
-	cp .env.example $(BIN_DIR)/.env
+	test -f $(BIN_DIR)/.env || cp .env.example $(BIN_DIR)/.env
 	cp llama-cpp/models.ini $(BIN_DIR)/llama-cpp/models.ini
 
 run:
@@ -22,19 +22,18 @@ install: build
 	install -d $(INSTALL_DIR)/bin $(INSTALL_DIR)/llama-cpp
 	install -m 0755 $(BIN_DIR)/$(CLI) $(INSTALL_DIR)/bin/$(CLI)
 	install -m 0755 $(BIN_DIR)/$(SERVICE) $(INSTALL_DIR)/bin/$(SERVICE)
-	install -m 0755 parser/dist/walkthrough-parser-linux-amd64 $(INSTALL_DIR)/bin/walkthrough-parser
 	install -m 0644 llama-cpp/models.ini $(INSTALL_DIR)/llama-cpp/models.ini
 	$(INSTALL_DIR)/bin/$(CLI) service install \
 		--service-binary $(INSTALL_DIR)/bin/$(SERVICE)
 
 test:
-	go test ./...
+	go test $$(rg --files -g '*.go' -g '!tmp/**' -g '!vendor/**' | xargs -n1 dirname | sort -u | sed 's|^|./|')
 
 fmt:
-	gofmt -w $$(find . -name '*.go' -not -path './vendor/*')
+	gofmt -w $$(rg --files -g '*.go' -g '!tmp/**' -g '!vendor/**')
 
 vet:
-	go vet ./...
+	go vet $$(rg --files -g '*.go' -g '!tmp/**' -g '!vendor/**' | xargs -n1 dirname | sort -u | sed 's|^|./|')
 
 tidy:
 	go mod tidy

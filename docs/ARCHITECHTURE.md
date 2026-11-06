@@ -1,3 +1,5 @@
+> Исторический проект архитектуры. Подготовка данных и создание `.rag` теперь находятся в отдельном модуле `data-preparation/`; актуальные команды и границы ответственности описаны в корневом README и `data-preparation/README.md`. Упоминания ingestion/Python parser внутри backend ниже не описывают текущую реализацию.
+
 # Walkthrough Assistance Backend — MVP
 
 ## 1. Назначение проекта

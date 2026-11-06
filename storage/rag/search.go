@@ -3,14 +3,11 @@ package rag
 import (
 	"context"
 	"crypto/sha256"
-	"database/sql"
 	"encoding/binary"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"math"
-	"os"
-	"path/filepath"
 	"sort"
 	"strings"
 )
@@ -68,9 +65,12 @@ func DocumentHash(markdown string) string {
 
 // Verify against the immutable source, never merely against an annotation quote.
 func ValidateSourceSpans(r SearchResult, markdown string) error {
-	runes := []rune(markdown)
+	return validateSpans(r, DocumentHash(markdown), []rune(markdown))
+}
+
+func validateSpans(r SearchResult, documentHash string, runes []rune) error {
 	for _, span := range r.SourceSpans {
-		if span.DocumentSHA256 != DocumentHash(markdown) || span.Start < 0 || span.End > len(runes) || span.End <= span.Start || string(runes[span.Start:span.End]) != span.Quote {
+		if span.DocumentSHA256 != documentHash || span.Start < 0 || span.End > len(runes) || span.End <= span.Start || string(runes[span.Start:span.End]) != span.Quote {
 			return fmt.Errorf("source span mismatch for situation %s", r.SituationID)
 		}
 	}
@@ -145,61 +145,18 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 	if limit <= 0 {
 		return nil, nil
 	}
-	path := filepath.Join(r.root, gameID+".rag")
-	if _, err := os.Stat(path); err != nil {
-		if os.IsNotExist(err) {
-			return nil, fmt.Errorf("knowledge for game %q is not installed", gameID)
-		}
-		return nil, fmt.Errorf("stat RAG file: %w", err)
-	}
-	database, err := sql.Open("sqlite", "file:"+path+"?mode=ro")
+	index, path, err := r.index(ctx, gameID)
 	if err != nil {
-		return nil, fmt.Errorf("open RAG file: %w", err)
+		return nil, err
 	}
-	defer database.Close()
-
-	rows, err := database.QueryContext(ctx, `
-		SELECT c.id, c.title, c.section, c.text, d.source_url, e.dimensions, e.vector, c.document_id, c.sequence, c.metadata, d.markdown
-		FROM embeddings e
-		JOIN chunks c ON c.id = e.chunk_id
-		JOIN documents d ON d.id = c.document_id`)
-	if err != nil {
-		return nil, fmt.Errorf("read RAG chunks: %w", err)
-	}
-	defer rows.Close()
-	var chunks []rankedChunk
-	for rows.Next() {
-		var chunk rankedChunk
-		var dimensions int
-		var encoded []byte
-		var metadata []byte
-		var markdown string
-		if err := rows.Scan(&chunk.ChunkID, &chunk.Title, &chunk.Section, &chunk.Text, &chunk.SourceURL, &dimensions, &encoded, &chunk.documentID, &chunk.sequence, &metadata, &markdown); err != nil {
-			return nil, fmt.Errorf("scan RAG chunk: %w", err)
+	chunks := make([]rankedChunk, len(index.chunks))
+	for i, cached := range index.chunks {
+		if len(cached.vector) != len(query) {
+			return nil, fmt.Errorf("RAG embedding dimensions are %d, query embedding dimensions are %d", len(cached.vector), len(query))
 		}
-		if err := ApplySituation(&chunk.SearchResult, metadata); err != nil {
-			return nil, err
-		}
-		chunk.DocumentSHA256 = DocumentHash(markdown)
-		if err := ValidateSourceSpans(chunk.SearchResult, markdown); err != nil {
-			return nil, err
-		}
-		if dimensions != len(query) {
-			return nil, fmt.Errorf("RAG embedding dimensions are %d, query embedding dimensions are %d", dimensions, len(query))
-		}
-		vector, err := decodeVector(encoded, dimensions)
-		if err != nil {
-			return nil, err
-		}
-		chunk.DocumentID, chunk.Sequence = chunk.documentID, chunk.sequence
-		chunk.Score = cosineSimilarity(query, vector)
-		chunks = append(chunks, chunk)
-	}
-	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("iterate RAG chunks: %w", err)
-	}
-	if err := rows.Close(); err != nil {
-		return nil, fmt.Errorf("close RAG chunks: %w", err)
+		chunk := rankedChunk{SearchResult: cached.result, documentID: cached.result.DocumentID, sequence: cached.result.Sequence}
+		chunk.Score = cosineSimilarity(query, cached.vector)
+		chunks[i] = chunk
 	}
 	if options.Trace != nil {
 		options.Trace.BeforeFilters = traceResults(chunks)
@@ -211,7 +168,12 @@ func (r *Repository) SearchWithOptions(ctx context.Context, gameID string, query
 		return earlier(chunks[i], chunks[j])
 	})
 	if options.Mode != "vector" && options.QueryText != "" {
+		database, err := openReadOnly(path)
+		if err != nil {
+			return nil, err
+		}
 		chunks, err = fuseKeywords(ctx, database, chunks, options.QueryText, limit)
+		database.Close()
 		if err != nil {
 			return nil, err
 		}

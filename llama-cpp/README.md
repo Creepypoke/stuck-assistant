@@ -15,7 +15,8 @@ bash llama-cpp/start.sh
 The script runs the server in the foreground with:
 
 ```text
-llama-server --host 127.0.0.1 --port 8081 --models-preset ./models.ini --models-max 1
+llama-server --host 127.0.0.1 --port 8081 --models-preset ./models.ini --models-max 2
 ```
 
-Only one model is kept loaded at a time. Stop it with `Ctrl+C`.
+Both presets (generator and embeddings) stay loaded together, so a question
+does not unload one model to load the other. Stop it with `Ctrl+C`.
