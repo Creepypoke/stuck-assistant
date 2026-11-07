@@ -46,27 +46,27 @@ make -C langfuse verify
 
 ```sh
 python3 langfuse/pipeline.py run \
-  --name my-2b-v1 --out backend/tmp/langfuse-my-2b-v1 -- \
+  --name my-2b-v1 -- \
   --embedding-url http://127.0.0.1:18082 \
   --llama-url http://127.0.0.1:18081 --model assistance-2b
 
-python3 langfuse/pipeline.py verify \
-  backend/tmp/langfuse-my-2b-v1 --name my-2b-v1
 ```
 
 Обёртка запускает `go run ./cmd/prompt-eval` из `backend`, затем экспортирует
-его артефакты. Это настоящий `query.Service` с текущими промптами, retrieval и
+его артефакты и проверяет их через API Langfuse. После успешной проверки
+временный каталог удаляется; при ошибке он остаётся в игнорируемом
+`backend/bin/evaluation-artifacts/` для повторного импорта. Это настоящий `query.Service` с текущими промптами, retrieval и
 retry, без дублирования RAG-логики на Python. Daemon поднимать не требуется.
 Пути после `--` считаются от `backend`; `--out` — от текущего каталога shell.
 Штатные параметры: 20 вопросов, профили `default,strict-ru`, поиск `hybrid`.
 Доступны `--profiles`, `--modes`, `--cases`, `--corpus`, `--seed` и остальные
-флаги evaluator. Для новой конфигурации указывай новый `--out`.
+флаги evaluator. При необходимости сохранить локальные артефакты укажи `--out` в игнорируемом Git каталоге; для новой конфигурации используй новый каталог.
 
 В runner есть строгая проверка `/props`, хешей GGUF и Jinja-шаблона с
 `enable_thinking`. Серверы должны предоставлять эти данные, а файлы весов быть
 доступны Go-процессу. Подробнее: [протокол P0](../backend/evaluation/README.md).
 
-Для сравнения 4B повтори команду с её endpoint/model и новым `--name`/`--out`.
+Для сравнения 4B повтори команду с её endpoint/model и новым `--name`.
 Для проверки генерации на вручную подтверждённых источниках добавь
 `--kind oracle` **до** разделителя `--`; для проверки только retrieval —
 `--kind retrieval`.
@@ -74,7 +74,7 @@ retry, без дублирования RAG-логики на Python. Daemon по
 Если Langfuse был выключен или нужна повторная отправка:
 
 ```sh
-python3 langfuse/pipeline.py import backend/tmp/langfuse-my-2b-v1 --name my-2b-v1
+python3 langfuse/pipeline.py import backend/bin/evaluation-artifacts/<каталог-из-вывода> --name my-2b-v1
 ```
 
 Повторный импорт с тем же именем и неизменными артефактами использует те же

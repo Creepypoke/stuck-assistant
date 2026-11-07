@@ -3,6 +3,7 @@ import importlib.util
 import json
 from pathlib import Path
 import tempfile
+import types
 import unittest
 from unittest.mock import patch
 
@@ -113,6 +114,41 @@ class ExportTests(unittest.TestCase):
         other['error'] = 'timeout'
         self.write_records([self.record, other])
         self.assertEqual(p.export(self.path, 'test', dry_run=True), 2)
+
+
+class RunTests(unittest.TestCase):
+    def test_success_cleans_after_export_and_verify(self):
+        with tempfile.TemporaryDirectory() as root, patch.object(p, 'BACKEND', Path(root)):
+            def run(*args, **kwargs):
+                out = Path(args[0][args[0].index('--out') + 1])
+                (out / 'results.json').write_text('[]')
+                return types.SimpleNamespace(returncode=0)
+            with patch.object(p.sys, 'argv', ['pipeline.py', 'run', '--name', 'test']), \
+                 patch.object(p.subprocess, 'run', side_effect=run), \
+                 patch.object(p, 'export') as export, patch.object(p, 'verify') as verify:
+                self.assertEqual(p.main(), 0)
+                out = export.call_args.args[0]
+                verify.assert_called_once_with(out, 'test')
+                self.assertFalse(out.exists())
+
+    def test_failed_upload_preserves_artifacts(self):
+        with tempfile.TemporaryDirectory() as root, patch.object(p, 'BACKEND', Path(root)):
+            def run(*args, **kwargs):
+                out = Path(args[0][args[0].index('--out') + 1])
+                (out / 'results.json').write_text('[]')
+                return types.SimpleNamespace(returncode=0)
+            with patch.object(p.sys, 'argv', ['pipeline.py', 'run', '--name', 'test']), \
+                 patch.object(p.subprocess, 'run', side_effect=run), \
+                 patch.object(p, 'export', side_effect=ValueError('offline')) as export:
+                with self.assertRaisesRegex(ValueError, 'offline'):
+                    p.main()
+                self.assertTrue((export.call_args.args[0] / 'results.json').exists())
+
+    def test_rejects_unignored_output(self):
+        with patch.object(p.sys, 'argv', ['pipeline.py', 'run', '--name', 'test', '--out', 'unignored']), \
+             patch.object(p.subprocess, 'run', return_value=types.SimpleNamespace(returncode=1)):
+            with self.assertRaisesRegex(ValueError, 'Git-ignored'):
+                p.main()
 
 
 if __name__ == '__main__':

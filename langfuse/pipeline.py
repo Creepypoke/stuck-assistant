@@ -9,9 +9,11 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import os
+import shutil
 from pathlib import Path
 import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.parse
@@ -337,7 +339,7 @@ def main():
     check.add_argument('--name', required=True)
     run = commands.add_parser('run', help='Run real Go evaluator, then upload artifacts, including failures')
     run.add_argument('--name', required=True)
-    run.add_argument('--out', required=True, type=Path, help='New artifact directory, relative to shell cwd')
+    run.add_argument('--out', type=Path, help='Optional ignored artifact directory to retain, relative to shell cwd')
     run.add_argument('--kind', choices=['local', 'oracle', 'retrieval'], default='local')
     run.add_argument('backend_args', nargs=argparse.REMAINDER, help='After --: existing evaluator flags (paths relative to backend)')
     args = parser.parse_args()
@@ -347,18 +349,31 @@ def main():
     if args.command == 'import':
         export(args.directory, args.name, args.review, args.dry_run)
         return 0
-    out = args.out.resolve()
     backend_args = args.backend_args
     if backend_args[:1] == ['--']:
         backend_args = backend_args[1:]
     if any(a.split('=')[0] in ('--out', '-out', '--kind', '-kind') for a in backend_args):
         raise ValueError('Set --out and --kind before the -- separator')
     command = './cmd/retrieval-eval' if args.kind == 'retrieval' else './cmd/prompt-eval'
+    if args.out:
+        out = args.out.resolve()
+        ignored = subprocess.run(['git', 'check-ignore', '--no-index', '-q', '--', str(out / 'results.json')], cwd=BACKEND)
+        if ignored.returncode != 0:
+            raise ValueError('--out must be in a Git-ignored directory')
+    else:
+        artifact_root = BACKEND / 'bin' / 'evaluation-artifacts'
+        artifact_root.mkdir(parents=True, exist_ok=True)
+        out = Path(tempfile.mkdtemp(prefix='langfuse-', dir=artifact_root))
+    print(f'Local artifacts: {out}', flush=True)
     result = subprocess.run(['go', 'run', command, '--out', str(out), '--kind', args.kind] + backend_args, cwd=BACKEND)
     if (out / 'results.json').exists():
         export(out, args.name)
+        verify(out, args.name)
+        if not args.out and result.returncode == 0:
+            shutil.rmtree(out)
     else:
         print('No results.json: backend failed before producing records.', file=sys.stderr)
+        return result.returncode or 1
     return result.returncode
 
 

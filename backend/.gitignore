@@ -24,3 +24,10 @@ fabric.properties
 go.work
 go.work.sum
 .env
+
+# Generated evaluation reports and comparison runs.
+/evaluation/reports/
+/evaluation/model-comparison-*/
+/evaluation/situations-v1/build-*/
+/evaluation/**/REPORT.md
+/evaluation/**/.langfuse-*.json
