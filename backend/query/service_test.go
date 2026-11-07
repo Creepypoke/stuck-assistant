@@ -40,6 +40,44 @@ func TestCompleteLimitsGenerationAndDisablesThinking(t *testing.T) {
 	}
 }
 
+func TestThinkingOverridesPreserveReasoningAndTruncatedAttempts(t *testing.T) {
+	var budgets []int
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		var payload struct {
+			MaxTokens   int             `json:"max_tokens"`
+			Temperature float64         `json:"temperature"`
+			Kwargs      map[string]bool `json:"chat_template_kwargs"`
+		}
+		if err := json.NewDecoder(r.Body).Decode(&payload); err != nil {
+			t.Fatal(err)
+		}
+		if payload.Temperature != 0.9 {
+			t.Errorf("temperature override lost: %v", payload.Temperature)
+		}
+		if !payload.Kwargs["enable_thinking"] {
+			t.Error("thinking override was lost")
+		}
+		budgets = append(budgets, payload.MaxTokens)
+		if len(budgets) == 1 {
+			_, _ = w.Write([]byte(`{"choices":[{"finish_reason":"length","message":{"content":"partial","reasoning_content":"reasoning attempt one"}}],"usage":{"prompt_tokens":20,"completion_tokens":64,"completion_tokens_details":{"reasoning_tokens":60}}}`))
+		} else {
+			_, _ = w.Write([]byte(`{"choices":[{"finish_reason":"stop","message":{"content":"0392","reasoning":"reasoning attempt two"}}],"usage":{"prompt_tokens":20,"completion_tokens":80}}`))
+		}
+	}))
+	defer server.Close()
+	temperature := 0.9
+	s := &Service{config: Config{GenerationTemperature: &temperature, LLMURL: server.URL, LLMModel: "fixture", EnableThinking: true, GenerationMaxTokens: 64, GenerationRetryMaxTokens: 128}, client: server.Client()}
+	var attempts []CompletionTrace
+	ctx := context.WithValue(context.Background(), completionTraceKey{}, &attempts)
+	answer, _, err := s.completeWithPayload(ctx, Request{AnswerLength: "short"}, "Guide")
+	if err != nil || answer != "0392" || len(budgets) != 2 || budgets[0] != 64 || budgets[1] != 128 {
+		t.Fatalf("answer=%q budgets=%v err=%v", answer, budgets, err)
+	}
+	if len(attempts) != 2 || attempts[0].Content != "partial" || attempts[0].ReasoningContent != "reasoning attempt one" || attempts[0].ReasoningTokens == nil || *attempts[0].ReasoningTokens != 60 || attempts[1].ReasoningContent != "reasoning attempt two" {
+		t.Fatalf("lost reasoning/retry diagnostics: %+v", attempts)
+	}
+}
+
 func TestCompleteSendsLLMAPIKeyOnlyAsHeader(t *testing.T) {
 	t.Parallel()
 	const key = "test-secret-not-in-payload"

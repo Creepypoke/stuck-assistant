@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"math"
 	"net/http"
 	"strings"
 	"time"
@@ -36,6 +37,11 @@ type Config struct {
 	CodeAnswers bool
 	// GenerationSeed is optional; diagnostics can hold sampling constant.
 	GenerationSeed *int
+	// Evaluation overrides; zero values preserve the production generation policy.
+	EnableThinking           bool
+	GenerationMaxTokens      int
+	GenerationRetryMaxTokens int
+	GenerationTemperature    *float64
 }
 
 const defaultGuidePersona = `You are a friendly, attentive guide for a player who is currently playing a game. Speak like a helpful companion, not a terse checklist or a walkthrough pasted verbatim. Answer in the same language as the player's question. Use natural, clear phrasing and explain the immediate next step first; add brief orientation or a useful reason only when it helps. Preserve in-game names in their original language when useful.`
@@ -140,6 +146,13 @@ func New(config Config) (*Service, error) {
 
 	if config.RelativeScoreCutoff < 0 || config.RelativeScoreCutoff > 1 {
 		return nil, fmt.Errorf("relative score cutoff must be between 0 and 1")
+	}
+	if config.GenerationMaxTokens < 0 || config.GenerationRetryMaxTokens < 0 ||
+		(config.GenerationRetryMaxTokens > 0 && config.GenerationRetryMaxTokens < config.GenerationMaxTokens) {
+		return nil, fmt.Errorf("invalid generation token budgets")
+	}
+	if t := config.GenerationTemperature; t != nil && (*t < 0 || math.IsNaN(*t) || math.IsInf(*t, 0)) {
+		return nil, fmt.Errorf("invalid generation temperature")
 	}
 	if config.ResultLimit <= 0 {
 		config.ResultLimit = 5
@@ -346,7 +359,11 @@ func (s *Service) completeWithPayload(ctx context.Context, request Request, walk
 		if err := json.Unmarshal(payload, &body); err != nil {
 			return "", payload, err
 		}
-		payload, err = s.completionPayloadWithLimit(request, walkthroughContext, body.MaxTokens*2)
+		retryTokens := s.config.GenerationRetryMaxTokens
+		if retryTokens == 0 {
+			retryTokens = body.MaxTokens * 2
+		}
+		payload, err = s.completionPayloadWithLimit(request, walkthroughContext, retryTokens)
 		if err != nil {
 			return "", payload, err
 		}
@@ -363,6 +380,9 @@ type CompletionTrace struct {
 	FinishReason     string          `json:"finish_reason"`
 	Seconds          float64         `json:"seconds"`
 	Error            string          `json:"error,omitempty"`
+	Content          string          `json:"content,omitempty"`
+	ReasoningContent string          `json:"reasoning_content,omitempty"`
+	ReasoningTokens  *int            `json:"reasoning_tokens,omitempty"`
 }
 
 func (s *Service) sendCompletion(ctx context.Context, payload []byte) (answer string, truncated bool, err error) {
@@ -396,13 +416,18 @@ func (s *Service) sendCompletion(ctx context.Context, payload []byte) (answer st
 	}
 	var body struct {
 		Usage *struct {
-			PromptTokens     int `json:"prompt_tokens"`
-			CompletionTokens int `json:"completion_tokens"`
+			PromptTokens            int `json:"prompt_tokens"`
+			CompletionTokens        int `json:"completion_tokens"`
+			CompletionTokensDetails *struct {
+				ReasoningTokens *int `json:"reasoning_tokens"`
+			} `json:"completion_tokens_details"`
 		} `json:"usage"`
 		Choices []struct {
 			FinishReason string `json:"finish_reason"`
 			Message      struct {
-				Content string `json:"content"`
+				Content          string `json:"content"`
+				ReasoningContent string `json:"reasoning_content"`
+				Reasoning        string `json:"reasoning"`
 			} `json:"message"`
 		} `json:"choices"`
 	}
@@ -413,10 +438,18 @@ func (s *Service) sendCompletion(ctx context.Context, payload []byte) (answer st
 		return "", false, fmt.Errorf("generate answer: response contains no choices")
 	}
 	trace.FinishReason = body.Choices[0].FinishReason
+	trace.Content = body.Choices[0].Message.Content
+	trace.ReasoningContent = body.Choices[0].Message.ReasoningContent
+	if trace.ReasoningContent == "" {
+		trace.ReasoningContent = body.Choices[0].Message.Reasoning
+	}
 	if body.Usage != nil {
 		trace.UsageAvailable = true
 		trace.PromptTokens = body.Usage.PromptTokens
 		trace.CompletionTokens = body.Usage.CompletionTokens
+		if body.Usage.CompletionTokensDetails != nil {
+			trace.ReasoningTokens = body.Usage.CompletionTokensDetails.ReasoningTokens
+		}
 	}
 	if body.Choices[0].FinishReason == "length" {
 		return "", true, nil
@@ -432,6 +465,9 @@ func (s *Service) completionPayload(request Request, walkthroughContext string) 
 	switch strings.ToLower(request.AnswerLength) {
 	case "long":
 		maxTokens = 512
+	}
+	if s.config.GenerationMaxTokens > 0 {
+		maxTokens = s.config.GenerationMaxTokens
 	}
 	return s.completionPayloadWithLimit(request, walkthroughContext, maxTokens)
 }
@@ -469,15 +505,19 @@ func (s *Service) completionPayloadWithLimit(request Request, walkthroughContext
 		user.Reset()
 		user.WriteString(s.structuredUserPrompt(request, walkthroughContext))
 	}
+	temperature := 0.2
+	if s.config.GenerationTemperature != nil {
+		temperature = *s.config.GenerationTemperature
+	}
 	payload := map[string]any{
 		"model": s.config.LLMModel,
 		"messages": []map[string]string{
 			{"role": "system", "content": system},
 			{"role": "user", "content": user.String()},
 		},
-		"temperature":          0.2,
+		"temperature":          temperature,
 		"max_tokens":           maxTokens,
-		"chat_template_kwargs": map[string]bool{"enable_thinking": false},
+		"chat_template_kwargs": map[string]bool{"enable_thinking": s.config.EnableThinking},
 	}
 	if s.config.GenerationSeed != nil {
 		payload["seed"] = *s.config.GenerationSeed

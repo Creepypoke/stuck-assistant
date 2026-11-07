@@ -34,6 +34,32 @@ func TestCacheKeyBindsExactInputAndProfile(t *testing.T) {
 		}
 	}
 }
+
+func TestVerifiedNonThinkingIdentityRequiresExplicitOptIn(t *testing.T) {
+	gguf := filepath.Join(t.TempDir(), "model.gguf")
+	if err := os.WriteFile(gguf, []byte("fixture"), 0600); err != nil {
+		t.Fatal(err)
+	}
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		_ = json.NewEncoder(w).Encode(map[string]any{
+			"model_path": gguf, "model_alias": "native-instruct", "model_ftype": "fixture",
+			"build_info": "fixture", "default_generation_settings": map[string]any{},
+			"chat_template": "native instruct template", "chat_template_caps": map[string]any{},
+		})
+	}))
+	defer server.Close()
+	if _, err := identity(context.Background(), server.URL, true, false, false); err == nil {
+		t.Fatal("accepted template without thinking control or explicit opt-in")
+	}
+	got, err := identity(context.Background(), server.URL, true, true, false)
+	if err != nil || got["non_thinking_verified"] != true || got["chat_template"] != "native instruct template" {
+		t.Fatalf("native model identity was not preserved: %v, %v", got, err)
+	}
+	got, err = identity(context.Background(), server.URL, true, false, true)
+	if err != nil || got["reasoning_allowed"] != true || got["non_thinking_verified"] != false {
+		t.Fatalf("reasoning must not be mislabeled as verified non-thinking: %v, %v", got, err)
+	}
+}
 func TestValidationAndStageDiagnosis(t *testing.T) {
 	for _, cases := range [][]Case{nil, {{ID: "../escape", Question: "q"}}, {{ID: "a", Question: "q"}, {ID: "a", Question: "q"}}, {{ID: "a"}}} {
 		if ValidateCases(cases) == nil {
@@ -90,6 +116,9 @@ func TestRunnerRetrievalLocalOracleResumeAndManifest(t *testing.T) {
 	for _, kind := range []string{"retrieval", "local", "oracle"} {
 		out := filepath.Join(root, kind)
 		args := []string{"--kind", kind, "--cases", casePath, "--corpus", saved.RAGPath, "--game", "test-game", "--out", out, "--llama-url", server.URL, "--embedding-url", server.URL, "--model", "fixture", "--dimensions", "2", "--profiles", "default,strict-ru"}
+		if kind == "local" {
+			args = append(args, "--enable-thinking", "--max-tokens", "64", "--retry-max-tokens", "128")
+		}
 		beforeGeneration, beforeEmbeddings := generation, embeddings
 		if e = RunArgs(kind, args); e != nil {
 			t.Fatal(e)
@@ -109,6 +138,19 @@ func TestRunnerRetrievalLocalOracleResumeAndManifest(t *testing.T) {
 		}
 		if kind == "local" && (len(records[0].Debug.Attempts) != 1 || records[0].Debug.Attempts[0].PromptTokens != 20) {
 			t.Fatal("missing usage")
+		}
+		if kind == "local" {
+			var payload struct {
+				MaxTokens int             `json:"max_tokens"`
+				Kwargs    map[string]bool `json:"chat_template_kwargs"`
+			}
+			if err := json.Unmarshal(records[0].Debug.ModelRequest, &payload); err != nil || payload.MaxTokens != 64 || !payload.Kwargs["enable_thinking"] {
+				t.Fatalf("CLI generation overrides were lost: %s, %v", records[0].Debug.ModelRequest, err)
+			}
+			var manifest map[string]any
+			if err := read(filepath.Join(out, "manifest.json"), &manifest); err != nil || manifest["enable_thinking"] != true || manifest["max_tokens"] != float64(64) || manifest["retry_max_tokens"] != float64(128) {
+				t.Fatalf("manifest differs from requested thinking policy: %+v, %v", manifest, err)
+			}
 		}
 		beforeGeneration, beforeEmbeddings = generation, embeddings
 		if e = RunArgs(kind, args); e != nil {

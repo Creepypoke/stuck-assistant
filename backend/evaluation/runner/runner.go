@@ -127,7 +127,7 @@ func props(ctx context.Context, endpoint string) (map[string]any, error) {
 
 // Runtime identity is read from the server, including the exact template and defaults.
 // Hashing the reported local file prevents a logical alias from identifying a run.
-func identity(ctx context.Context, endpoint string, generation bool) (map[string]any, error) {
+func identity(ctx context.Context, endpoint string, generation, verifiedNonThinking, allowReasoning bool) (map[string]any, error) {
 	p, e := props(ctx, endpoint)
 	if e != nil {
 		return nil, e
@@ -144,8 +144,8 @@ func identity(ctx context.Context, endpoint string, generation bool) (map[string
 	if generation {
 		keys = append(keys, "chat_template", "chat_template_caps")
 		t, _ := p["chat_template"].(string)
-		if !strings.Contains(t, "enable_thinking") {
-			return nil, fmt.Errorf("chat template does not declare enable_thinking; verify non-thinking support first")
+		if !strings.Contains(t, "enable_thinking") && !verifiedNonThinking && !allowReasoning {
+			return nil, fmt.Errorf("chat template does not declare enable_thinking; use --verified-non-thinking only after independently verifying that the server generates no reasoning")
 		}
 	}
 	out := map[string]any{"gguf_sha256": h, "endpoint": endpoint}
@@ -154,6 +154,12 @@ func identity(ctx context.Context, endpoint string, generation bool) (map[string
 			out[k] = v
 		} else {
 			return nil, fmt.Errorf("/props missing %s", k)
+		}
+	}
+	if generation {
+		out["non_thinking_verified"] = verifiedNonThinking
+		if allowReasoning {
+			out["reasoning_allowed"] = true
 		}
 	}
 	return out, nil
@@ -393,8 +399,23 @@ func RunArgs(defaultKind string, args []string) error {
 	limit := fs.Int("limit", 5, "production result limit")
 	cutoff := fs.Float64("relative-cutoff", 0, "drop sources below this fraction of the best cosine score (0 = off)")
 	codeAnswers := fs.Bool("code-answers", false, "answer code questions from the top card's verified code")
+	verifiedNonThinking := fs.Bool("verified-non-thinking", false, "independently verified non-thinking server (native instruct or zero reasoning budget); allow template without enable_thinking")
+	allowReasoning := fs.Bool("allow-reasoning", false, "explicitly allow a native reasoning model without enable_thinking; reasoning consumes the same output budget")
+	enableThinking := fs.Bool("enable-thinking", false, "request native thinking through the model's chat template")
+	maxTokens := fs.Int("max-tokens", 256, "first completion budget, including reasoning tokens")
+	retryMaxTokens := fs.Int("retry-max-tokens", 512, "retry completion budget, including reasoning tokens")
+	temperature := fs.Float64("temperature", 0.2, "generation sampling temperature")
 	if e := fs.Parse(args); e != nil {
 		return e
+	}
+	if *verifiedNonThinking && *allowReasoning {
+		return fmt.Errorf("--verified-non-thinking and --allow-reasoning are mutually exclusive")
+	}
+	if *verifiedNonThinking && *enableThinking {
+		return fmt.Errorf("--verified-non-thinking cannot be combined with --enable-thinking")
+	}
+	if *maxTokens <= 0 || *retryMaxTokens < *maxTokens {
+		return fmt.Errorf("token budgets must be positive, with retry >= first budget")
 	}
 	if *kind != "retrieval" && *kind != "local" && *kind != "oracle" {
 		return fmt.Errorf("invalid --kind")
@@ -433,7 +454,7 @@ func RunArgs(defaultKind string, args []string) error {
 		return e
 	}
 	ctx := context.Background()
-	manifest := map[string]any{"schema": "p0-v1", "kind": *kind, "game": *game, "profiles": profiles, "modes": modes, "seed": *seed, "limit": *limit, "temperature": 0.2, "max_tokens": 256, "retry_max_tokens": 512, "enable_thinking": false, "no_spoilers": true, "answer_length": "short", "latency": "cached embeddings; serial generation; first call may be cold"}
+	manifest := map[string]any{"schema": "p0-v1", "kind": *kind, "game": *game, "profiles": profiles, "modes": modes, "seed": *seed, "limit": *limit, "temperature": *temperature, "max_tokens": *maxTokens, "retry_max_tokens": *retryMaxTokens, "enable_thinking": *enableThinking, "no_spoilers": true, "answer_length": "short", "latency": "cached embeddings; serial generation; first call may be cold"}
 	raw, e := os.ReadFile(*casesPath)
 	if e != nil {
 		return e
@@ -457,7 +478,7 @@ func RunArgs(defaultKind string, args []string) error {
 		return e
 	}
 	manifest["git_head"] = strings.TrimSpace(string(commit))
-	embeddingIdentity, e := identity(ctx, *embeddingURL, false)
+	embeddingIdentity, e := identity(ctx, *embeddingURL, false, false, false)
 	if e != nil {
 		return fmt.Errorf("embedding identity: %w", e)
 	}
@@ -465,7 +486,7 @@ func RunArgs(defaultKind string, args []string) error {
 	profile := Profile{Model: *embeddingModel, Revision: *revision, GGUFHash: embeddingIdentity["gguf_sha256"].(string), Dimensions: *dimensions, InputFormat: "raw-text-v1/no-application-prefix"}
 	manifest["embedding_profile"] = profile
 	if *kind != "retrieval" {
-		runtime, e := identity(ctx, *endpoint, true)
+		runtime, e := identity(ctx, *endpoint, true, *verifiedNonThinking, *allowReasoning)
 		if e != nil {
 			return fmt.Errorf("generation identity: %w", e)
 		}
@@ -565,7 +586,7 @@ func RunArgs(defaultKind string, args []string) error {
 	failures := 0
 	for _, mode := range modes {
 		for _, p := range profiles {
-			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, ContextTokenBudget: *contextTokens, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed, RelativeScoreCutoff: *cutoff, CodeAnswers: *codeAnswers})
+			service, e := query.New(query.Config{StorageDirectory: filepath.Dir(snapshot), EmbeddingURL: cached.URL, EmbeddingModel: *embeddingModel, EmbeddingVersion: *revision, EmbeddingDimensions: *dimensions, LLMURL: *endpoint, LLMModel: *model, Timeout: 5 * time.Minute, ResultLimit: *limit, ContextTokenBudget: *contextTokens, RetrievalMode: mode, PromptProfile: p, GenerationSeed: seed, RelativeScoreCutoff: *cutoff, CodeAnswers: *codeAnswers, EnableThinking: *enableThinking, GenerationMaxTokens: *maxTokens, GenerationRetryMaxTokens: *retryMaxTokens, GenerationTemperature: temperature})
 			if e != nil {
 				return e
 			}

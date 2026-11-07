@@ -147,9 +147,15 @@ def make_spans(record, manifest, experiment, dataset_id, item_id, start_ns):
             'langfuse.observation.metadata.finish_reason': attempt.get('finish_reason'),
             'langfuse.observation.metadata.gguf_sha256': manifest.get('generation_runtime', {}).get('gguf_sha256'),
         }
-        # The backend does not retain the text of truncated attempts.
-        if i == len(attempts) - 1 and not record.get('error'):
+        # New traces retain each attempt; older artifacts only have final content.
+        if 'content' in attempt:
+            extra['langfuse.observation.output'] = attempt['content']
+        elif i == len(attempts) - 1 and not record.get('error'):
             extra['langfuse.observation.output'] = record['answer']
+        if attempt.get('reasoning_content'):
+            extra['langfuse.observation.metadata.reasoning_content'] = attempt['reasoning_content']
+        if attempt.get('reasoning_tokens') is not None:
+            extra['langfuse.observation.metadata.reasoning_tokens'] = attempt['reasoning_tokens']
         if attempt.get('usage_available'):
             extra['langfuse.observation.usage_details'] = encoded({
                 'input': attempt['prompt_tokens'], 'output': attempt['completion_tokens']})
@@ -170,7 +176,7 @@ def make_spans(record, manifest, experiment, dataset_id, item_id, start_ns):
     return spans, trace_id, root_id
 
 
-MANUAL_SCORE_KEYS = ('task_pass', 'episode_error', 'unsupported_addition', 'spoiler', 'exact_code', 'exact_sequence')
+MANUAL_SCORE_KEYS = ('task_pass', 'episode_error', 'unsupported_addition', 'spoiler', 'exact_code', 'exact_sequence', 'answer_language_match')
 
 def checked_review(record, review):
     if not review:
@@ -274,7 +280,7 @@ def export(directory, name, review_path=None, dry_run=False):
                 'name': key, 'value': int(val), 'dataType': 'BOOLEAN', 'environment': 'evaluation',
                 'timestamp': datetime.fromtimestamp(state['start_ns'] / 1e9, timezone.utc).isoformat(),
                 'comment': ((reviewed.get('review_note', '') + '\n' + review.get('rubric', ''))
-                            if key in ('gold_strict_pass', 'task_pass', 'episode_error', 'unsupported_addition', 'spoiler', 'exact_code', 'exact_sequence') else 'Deterministic P0 evaluator check; not answer correctness')})
+                            if key == 'gold_strict_pass' or key in MANUAL_SCORE_KEYS else 'Deterministic P0 evaluator check; not answer correctness')})
     if not dry_run:
         for offset in range(0, len(all_scores), 50):
             client.request('/api/public/scores', all_scores[offset:offset + 50])

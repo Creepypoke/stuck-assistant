@@ -83,6 +83,18 @@ class ExportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Duplicate'):
             p.export(self.path, 'test', dry_run=True)
 
+    def test_reasoning_and_partial_attempts_are_preserved(self):
+        record = copy.deepcopy(self.record)
+        record['debug']['completion_attempts'][0].update(
+            content='partial answer', reasoning_content='model reasoning', reasoning_tokens=240)
+        spans, _, _ = p.make_spans(record, self.manifest,
+            {'id': 'run', 'name': 'thinking', 'metadata': {}}, 'dataset', 'item', 1000)
+        first = next(s for s in spans if s['name'] == 'completion-1')
+        attrs = {a['key']: a['value'] for a in first['attributes']}
+        self.assertEqual(attrs['langfuse.observation.output']['stringValue'], 'partial answer')
+        self.assertEqual(attrs['langfuse.observation.metadata.reasoning_content']['stringValue'], 'model reasoning')
+        self.assertEqual(attrs['langfuse.observation.metadata.reasoning_tokens']['intValue'], '240')
+
     def test_review_must_match_actual_answer_and_prompt(self):
         review = {'records': [dict(self.record, strict_pass=True)]}
         self.assertTrue(p.checked_review(self.record, review)['strict_pass'])
@@ -92,9 +104,11 @@ class ExportTests(unittest.TestCase):
 
     def test_manual_metrics_bind_to_evidence_and_validate_before_network(self):
         entry = dict(self.record, strict_pass=False, task_pass=True,
-                     exact_code=True, episode_error=False, exact_sequence=None)
+                     exact_code=True, episode_error=False, exact_sequence=None,
+                     answer_language_match=False)
         review = {'records': [entry]}
         self.assertTrue(p.checked_review(self.record, review)['task_pass'])
+        self.assertFalse(p.checked_review(self.record, review)['answer_language_match'])
         entry['task_pass'] = 'true'
         path = self.path / 'review.json'
         path.write_text(json.dumps(review))
